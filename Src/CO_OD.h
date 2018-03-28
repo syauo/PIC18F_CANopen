@@ -33,7 +33,7 @@
 /*******************************************************************************
    Setup CANopen
 *******************************************************************************/
-   #define CO_NO_SYNC            1  //(0 or 1), is SYNC (producer and consumer) used or not.
+   #define CO_NO_SYNC            0  //(0 or 1), is SYNC (producer and consumer) used or not.
    #define CO_NO_EMERGENCY       1  //(0 or 1), is Emergency message producer used or not.
    #define CO_NO_RPDO            4  //(0 to 512*), number of receive PDOs.
    #define CO_NO_TPDO            4  //(0 to 512*), number of transmit PDOs.

@@ -35,7 +35,7 @@
 *******************************************************************************/
    //Oscilator frequency, mode PLLx4 can be used (example: 32MHz frequency with 8MHz Quartz - set 32)
    #ifndef CO_OSCILATOR_FREQ
-      #define CO_OSCILATOR_FREQ     32 //(4, 8, 16, 20, 24, 32 or 40)
+      #define CO_OSCILATOR_FREQ     20 //(4, 8, 16, 20, 24, 32 or 40)
    #endif
 
    #define SET_CAN_TRIS(){    \

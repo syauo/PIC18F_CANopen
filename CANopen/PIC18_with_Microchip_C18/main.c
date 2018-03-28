@@ -27,7 +27,6 @@
 
 #include "CANopen.h"
 
-
 /* Function prototypes ********************************************************/
    //from CO_driver.c
    void CO_CANrxIsr(void);       //ISR for receiving CAN messages

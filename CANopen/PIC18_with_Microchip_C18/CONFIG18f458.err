@@ -1,7 +1,0 @@
-Error[1224] D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f458.c 21 : configuration setting 'OSCS' not recognized
-Error[1224] D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f458.c 23 : configuration setting 'BOR' not recognized
-Error[1225] D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f458.c 24 : configuration value '42' not recognized for configuration setting 'BORV'
-Error[1224] D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f458.c 27 : configuration setting 'STVR' not recognized
-Error[1224] D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f458.c 33 : configuration setting 'CP3' not recognized
-Error[1224] D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f458.c 39 : configuration setting 'WRT3' not recognized
-Error[1224] D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f458.c 46 : configuration setting 'EBTR3' not recognized
