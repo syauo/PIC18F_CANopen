@@ -31,9 +31,12 @@
 
 //CO_MAX_ENTRY_NR is maximum number of PDO and Heartbeat entries
 //defined in this file. If more entries are neeed, they can be added
+// PDO 和心跳条目的最大数量
+// 在该文件中定义，如果需要更多的条目，可以增加
 #define CO_MAX_ENTRY_NR 8
 
 //check defines
+// 检查定义
 #if CO_NO_RPDO > CO_MAX_ENTRY_NR
    #error defineCO_NO_RPDO (CO_NO_RPDO) not correct!
 #endif
@@ -54,7 +57,7 @@
 #endif
 
 /******************************************************************************/
-/*     VARIABLES      *********************************************************/
+/*     VARIABLES       变量                                                   */
 /******************************************************************************/
 #ifdef __18CXX
    #pragma romdata ODE_CO_RomVariables=0x1000 //ROM variables in PIC18fxxx must be above address 0x1000
@@ -359,6 +362,13 @@
 //       0x06090030L   Value range of parameter exceeded
 //       0x06090031L   Value of parameter written too high
 //       0x06090032L   Value of parameter written too low
+/* 验证函数
+   在被写入对象字典中之前，SDO 服务器验证新值
+   典型错误代码：
+      0x06090030L   值超出参数范围
+      0x06090031L   写的参数值过大
+      0x06090032L   写的参数值过小
+        0x */
 #ifdef CO_VERIFY_OD_WRITE
 unsigned long CO_OD_VerifyWrite(ROM CO_objectDictionaryEntry* pODE, void* data){
    unsigned int index = pODE->index;
@@ -373,6 +383,7 @@ unsigned long CO_OD_VerifyWrite(ROM CO_objectDictionaryEntry* pODE, void* data){
    case 0x1003://Pre Defined Error Field
                if(*((unsigned char*)data) > ODE_Pre_Defined_Error_Field_NoOfErrors)
                   return 0x06090031L;  //Value of parameter written too high
+                                       //写的参数值过大
                break;
    #endif
 
