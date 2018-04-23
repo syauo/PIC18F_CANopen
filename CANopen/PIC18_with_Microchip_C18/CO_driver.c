@@ -299,9 +299,19 @@ void CO_SetupCAN(void){
 /* Setup driver variables 设置驱动变量 */
    CO_IsrHighSignal = 0;
 
+//////////////////////////
+SET_CAN_TRIS();
+//TRISBbits.TRISB3 = 1;
+// TRISBbits.TRISB3 = 0;
+// LATBbits.LATB3 = 1; 
+// CANCONbits.ABAT=1;
+//////////////////////////
 /* Setup CAN bus 配置 CAN bus */
    CANCON = 0x80;       //request configuration mode
                         // 请求配置模式
+//////////////////////////
+// CANCONbits.ABAT=0;
+//////////////////////////
    while((CANSTAT & 0xE0) != 0x80); //wait until configuration mode is set
                                     // 等待，直到运行模式状态位被设置。
    // 波特率控制寄存器配置
@@ -369,6 +379,7 @@ void CO_SetupCAN(void){
 
    CANCON = 0x00;       //request normal mode
                         // 请求正常模式
+
    while((CANSTAT & 0xE0) != 0x00); //wait until normal mode is set
                         // 等待，直到正常模式状态位被设置
 

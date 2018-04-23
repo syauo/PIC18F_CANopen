@@ -36,17 +36,17 @@
    //(0 or 1), 是否使用 SYNC （生产者或消费者）
    #define CO_NO_SYNC            0  //(0 or 1), is SYNC (producer and consumer) used or not.
    //(0 or 1), 是否使用紧急消息生产者.
-   #define CO_NO_EMERGENCY       1  //(0 or 1), is Emergency message producer used or not.
+   #define CO_NO_EMERGENCY       0  //(0 or 1), is Emergency message producer used or not.
    //(0 to 512*), 接收 PDO 的个数
    #define CO_NO_RPDO            4  //(0 to 512*), number of receive PDOs.
    //(0 to 512*), 发送 PDO 的个数
    #define CO_NO_TPDO            4  //(0 to 512*), number of transmit PDOs.
    //(0 to 128*), SDO server 通道个数
-   #define CO_NO_SDO_SERVER      1  //(0 to 128*), number of SDO server channels.
+   #define CO_NO_SDO_SERVER      0  //(0 to 128*), number of SDO server channels.
    //(0 to 128*), SDO client 通道个数
    #define CO_NO_SDO_CLIENT      0  //(0 to 128*), number of SDO client channels.
    //(0 to 255*), 消费者心跳条目个数
-   #define CO_NO_CONS_HEARTBEAT  4  //(0 to 255*), number of consumer heartbeat entries.
+   #define CO_NO_CONS_HEARTBEAT  0  //(0 to 255*), number of consumer heartbeat entries.
    //(0 to ...), 用户接收 CAN 消息数量
    #define CO_NO_USR_CAN_RX      0  //(0 to ...), number of user CAN RX messages.
    //(0 to ...), 用户发送 CAN 消息数量
@@ -83,23 +83,23 @@
 /*******************************************************************************
    Device profile for Generic I/O   设备配置
 *******************************************************************************/
-   #define CO_IO_DIGITAL_INPUTS     //4 * 8 digital inputs
-   #define CO_IO_DIGITAL_OUTPUTS    //4 * 8 digital outputs
-   #define CO_IO_ANALOG_INPUTS      //8 * 16bit analog inputs
-   #define CO_IO_ANALOG_OUTPUTS     //2 * 16bit analog outputs
+//    #define CO_IO_DIGITAL_INPUTS     //4 * 8 digital inputs
+//    #define CO_IO_DIGITAL_OUTPUTS    //4 * 8 digital outputs
+//    #define CO_IO_ANALOG_INPUTS      //8 * 16bit analog inputs
+//    #define CO_IO_ANALOG_OUTPUTS     //2 * 16bit analog outputs
 
 
 /*******************************************************************************
    Default values for object dictionary 对象字典缺省值
 *******************************************************************************/
-   #define ODD_DEVICE_TYPE       0x000F0191L    /*index 0x1000, RO*/ //See standard
+   #define ODD_DEVICE_TYPE       0x000F0195L    /*index 0x1000, RO*/ //See standard
    #define ODD_SYNC_COB_ID       0x00000080L    /*index 0x1005*/     //if bit30=1, node produces SYNC
    #define ODD_COMM_CYCLE_PERIOD 0L             /*index 0x1006*/     //in micro seconds
    #define ODD_SYNCHR_WINDOW_LEN 0L             /*index 0x1007*/     //in micro seconds
    #define ODD_MANUF_DEVICE_NAME "HYPITCH"      /*index 0x1008, RO*/
    #define ODD_MANUF_HW_VERSION  "1.00"         /*index 0x1009, RO*/
    #define ODD_MANUF_SW_VERSION  "1.00"         /*index 0x100A, RO*/
-   #define ODD_INHIBIT_TIME_EMER 50             /*index 0x1015*/     //time in 100 micro seconds
+   #define ODD_INHIBIT_TIME_EMER 10             /*index 0x1015*/     //time in 100 micro seconds
                                                 /*index 0x1016*/     //see below
    #define ODD_PROD_HEARTBEAT    1000           /*index 0x1017*/     //time in ms
    #define ODD_IDENT_VENDOR_ID   0x00000000L    /*index 0x1018, RO*/ //See standard
@@ -112,7 +112,7 @@
 /* 0x1016 Heartbeat consumer **************************************************/
 /*        心跳消费者          */
    //00NNTTTT: N=NodeID, T=time in ms
-   #define ODD_CONS_HEARTBEAT_0  0x00000000L
+   #define ODD_CONS_HEARTBEAT_0  0x00000000L    
    #define ODD_CONS_HEARTBEAT_1  0x00000000L
    #define ODD_CONS_HEARTBEAT_2  0x00000000L
    #define ODD_CONS_HEARTBEAT_3  0x00000000L
@@ -147,18 +147,18 @@
    //                  OD索引               子索引         数据位长
    //DD must be byte aligned, max value 0x40 (8 bytes)
    //DD - 数据位长必须字节对齐（8*），最大值为 0x40 即 8 字节 64 位
-   #define ODD_RPDO_MAP_0_1      0x62000108L
-   #define ODD_RPDO_MAP_0_2      0x62000208L
-   #define ODD_RPDO_MAP_0_3      0x62000308L
-   #define ODD_RPDO_MAP_0_4      0x62000408L
+   #define ODD_RPDO_MAP_0_1      0xA5800110L
+   #define ODD_RPDO_MAP_0_2      0xA5800210L
+   #define ODD_RPDO_MAP_0_3      0xA5800310L
+   #define ODD_RPDO_MAP_0_4      0xA5800410L
    #define ODD_RPDO_MAP_0_5      0x00000000L
    #define ODD_RPDO_MAP_0_6      0x00000000L
    #define ODD_RPDO_MAP_0_7      0x00000000L
    #define ODD_RPDO_MAP_0_8      0x00000000L
 
-   #define ODD_RPDO_MAP_1_1      0x64110110L
-   #define ODD_RPDO_MAP_1_2      0x64110210L
-   #define ODD_RPDO_MAP_1_3      0x00000000L
+   #define ODD_RPDO_MAP_1_1      0xA5800510L
+   #define ODD_RPDO_MAP_1_2      0xA5800610L
+   #define ODD_RPDO_MAP_1_3      0xA5800710L
    #define ODD_RPDO_MAP_1_4      0x00000000L
    #define ODD_RPDO_MAP_1_5      0x00000000L
    #define ODD_RPDO_MAP_1_6      0x00000000L
@@ -271,37 +271,37 @@
    //                  对象字典索引          子索引         数据位长
    //DD must be byte aligned, max value 0x40 (8 bytes)
    //DD 必须是字节对齐的，最大值 0x40 即 8 字节 64 位。
-   #define ODD_TPDO_MAP_0_1      0x60000108L
-   #define ODD_TPDO_MAP_0_2      0x60000208L
-   #define ODD_TPDO_MAP_0_3      0x60000308L
-   #define ODD_TPDO_MAP_0_4      0x60000408L
+   #define ODD_TPDO_MAP_0_1      0xA1000110L
+   #define ODD_TPDO_MAP_0_2      0xA1000210L
+   #define ODD_TPDO_MAP_0_3      0xA1000310L
+   #define ODD_TPDO_MAP_0_4      0xA1000410L
    #define ODD_TPDO_MAP_0_5      0x00000000L
    #define ODD_TPDO_MAP_0_6      0x00000000L
    #define ODD_TPDO_MAP_0_7      0x00000000L
    #define ODD_TPDO_MAP_0_8      0x00000000L
 
-   #define ODD_TPDO_MAP_1_1      0x64010110L
-   #define ODD_TPDO_MAP_1_2      0x64010210L
-   #define ODD_TPDO_MAP_1_3      0x64010310L
-   #define ODD_TPDO_MAP_1_4      0x64010410L
+   #define ODD_TPDO_MAP_1_1      0xA1000510L
+   #define ODD_TPDO_MAP_1_2      0xA1000610L
+   #define ODD_TPDO_MAP_1_3      0xA1000710L
+   #define ODD_TPDO_MAP_1_4      0xA1000810L
    #define ODD_TPDO_MAP_1_5      0x00000000L
    #define ODD_TPDO_MAP_1_6      0x00000000L
    #define ODD_TPDO_MAP_1_7      0x00000000L
    #define ODD_TPDO_MAP_1_8      0x00000000L
 
-   #define ODD_TPDO_MAP_2_1      0x64010510L
-   #define ODD_TPDO_MAP_2_2      0x64010610L
-   #define ODD_TPDO_MAP_2_3      0x64010710L
-   #define ODD_TPDO_MAP_2_4      0x64010810L
+   #define ODD_TPDO_MAP_2_1      0xA1000910L
+   #define ODD_TPDO_MAP_2_2      0xA1000A10L
+   #define ODD_TPDO_MAP_2_3      0xA1000B10L
+   #define ODD_TPDO_MAP_2_4      0xA1000C10L
    #define ODD_TPDO_MAP_2_5      0x00000000L
    #define ODD_TPDO_MAP_2_6      0x00000000L
    #define ODD_TPDO_MAP_2_7      0x00000000L
    #define ODD_TPDO_MAP_2_8      0x00000000L
 
-   #define ODD_TPDO_MAP_3_1      0x00000040L
-   #define ODD_TPDO_MAP_3_2      0x00000000L
-   #define ODD_TPDO_MAP_3_3      0x00000000L
-   #define ODD_TPDO_MAP_3_4      0x00000000L
+   #define ODD_TPDO_MAP_3_1      0xA1000D10L
+   #define ODD_TPDO_MAP_3_2      0xA1000E10L
+   #define ODD_TPDO_MAP_3_3      0xA1000F10L
+   #define ODD_TPDO_MAP_3_4      0xA1001010L
    #define ODD_TPDO_MAP_3_5      0x00000000L
    #define ODD_TPDO_MAP_3_6      0x00000000L
    #define ODD_TPDO_MAP_3_7      0x00000000L
@@ -350,10 +350,10 @@
 *******************************************************************************/
 /*0x2101*/
    // (1 to 127), 默认节点号node ID
-   #define ODD_CANnodeID    0x06 //(1 to 127), default node ID
+   #define ODD_CANnodeID    0x08 //(1 to 127), default node ID
 /*0x2102*/
    // (0 to 7), 默认比特率
-   #define ODD_CANbitRate   3    //(0 to 7), default CAN bit rate
+   #define ODD_CANbitRate   7    //(0 to 7), default CAN bit rate
                                     // 0 = 10 kbps    1 = 20 kbps
                                     // 2 = 50 kbps    3 = 125 kbps
                                     // 4 = 250 kbps   5 = 500 kbps

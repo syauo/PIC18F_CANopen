@@ -98,7 +98,7 @@
       unsigned int  WORD[2];
       unsigned char BYTE[4];
       tData8bits    BYTEbits[4];
-      }tData4bytes;
+      }tData4bytes;//0x 12 34 56 78
 
 /* 八字节 */
    typedef union{

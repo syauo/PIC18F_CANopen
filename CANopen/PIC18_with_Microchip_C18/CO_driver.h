@@ -48,11 +48,11 @@
 
    #ifndef PCB_DISABLE_CAN_LEDS
       //Green RUN led         绿色 RUN LED
-      #define PCB_RUN_LED_INIT()    {TRISBbits.TRISB4 = 0; PORTBbits.RB4 = 0;}
-      #define PCB_RUN_LED(i)        PORTBbits.RB4 = i
+      #define PCB_RUN_LED_INIT()    {TRISBbits.TRISB1 = 0; PORTBbits.RB1 = 0;}
+      #define PCB_RUN_LED(i)        PORTBbits.RB1 = i
       //Red ERROR led         红色 ERROR LED
-      #define PCB_ERROR_LED_INIT()  {TRISBbits.TRISB5 = 0; PORTBbits.RB5 = 0;}
-      #define PCB_ERROR_LED(i)      PORTBbits.RB5 = i
+      #define PCB_ERROR_LED_INIT()  {TRISBbits.TRISB4 = 0; PORTBbits.RB4 = 0;}
+      #define PCB_ERROR_LED(i)      PORTBbits.RB4 = i
    #endif
 
 /*******************************************************************************

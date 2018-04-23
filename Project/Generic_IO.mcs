@@ -13,7 +13,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG
+DebugOptions=
 [File001]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\CO_OD.o
 Folder=Intermediary
@@ -26,7 +26,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG
+DebugOptions=
 [File002]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\user.o
 Folder=Intermediary
@@ -39,7 +39,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG
+DebugOptions=
 [File003]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\CO_driver.o
 Folder=Intermediary
@@ -52,7 +52,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG
+DebugOptions=
 [File004]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\main.o
 Folder=Intermediary
@@ -65,7 +65,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG
+DebugOptions=
 [File005]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\memcpyram2flash.o
 Folder=Intermediary
@@ -78,7 +78,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG
+DebugOptions=
 [File006]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\CONFIG18f4585.o
 Folder=Intermediary
@@ -91,7 +91,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
 TraceCmdString=
-DebugOptions=-D__DEBUG
+DebugOptions=
 [File007]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\Generic_IO.cof
 Folder=Output
@@ -104,7 +104,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(TARGETBASE).cof"
 TraceCmdString=
-DebugOptions=/z__MPLAB_DEBUG=1
+DebugOptions=
 [File008]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\Generic_IO.hex
 Folder=Output
@@ -117,7 +117,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(TARGETBASE).cof"
 TraceCmdString=
-DebugOptions=/z__MPLAB_DEBUG=1
+DebugOptions=
 [File009]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\Generic_IO.map
 Folder=Output
@@ -130,7 +130,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(TARGETBASE).cof"
 TraceCmdString=
-DebugOptions=/z__MPLAB_DEBUG=1
+DebugOptions=
 [TOOL_LOC_STAMPS]
 tool_loc{96C98149-AA1B-4CF9-B967-FAE79CAB663C}=C:\MCC18\bin\mplink.exe
 tool_loc{E56A1C86-9D32-4DF6-8C34-FE0388B1B644}=C:\MCC18\bin\mcc18.exe

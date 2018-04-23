@@ -328,26 +328,46 @@
 
 
 /***** Device profile for Generic I/O *****************************************/
-           #ifdef CO_IO_DIGITAL_INPUTS
-/*0x6000*/ ROM UNSIGNED8      ODE_Read_Digital_Input_NoOfEntries = 4;
-               tData4bytes    ODE_Read_Digital_Input;
-           #endif
+//            #ifdef CO_IO_DIGITAL_INPUTS
+// /*0x6000*/ ROM UNSIGNED8      ODE_Read_Digital_Input_NoOfEntries = 4;
+//                tData4bytes    ODE_Read_Digital_Input;
+//            #endif
 
-           #ifdef CO_IO_DIGITAL_OUTPUTS
-/*0x6200*/ ROM UNSIGNED8      ODE_Write_Digital_Output_NoOfEntries = 4;
-               tData4bytes    ODE_Write_Digital_Output;
-           #endif
+//            #ifdef CO_IO_DIGITAL_OUTPUTS
+// /*0x6200*/ ROM UNSIGNED8      ODE_Write_Digital_Output_NoOfEntries = 4;
+//                tData4bytes    ODE_Write_Digital_Output;
+//            #endif
 
-           #ifdef CO_IO_ANALOG_INPUTS
-/*0x6401*/ ROM UNSIGNED8      ODE_Read_Analog_Input_NoOfEntries = 8;
-               INTEGER16      ODE_Read_Analog_Input[8];
-           #endif
+//            #ifdef CO_IO_ANALOG_INPUTS
+// /*0x6401*/ ROM UNSIGNED8      ODE_Read_Analog_Input_NoOfEntries = 8;
+//                INTEGER16      ODE_Read_Analog_Input[8];
+//            #endif
 
-           #ifdef CO_IO_ANALOG_OUTPUTS
-/*0x6411*/ ROM UNSIGNED8      ODE_Write_Analog_Output_NoOfEntries = 2;
-               INTEGER16      ODE_Write_Analog_Output[2];
-           #endif
+//            #ifdef CO_IO_ANALOG_OUTPUTS
+// /*0x6411*/ ROM UNSIGNED8      ODE_Write_Analog_Output_NoOfEntries = 2;
+//                INTEGER16      ODE_Write_Analog_Output[2];
+//    #endif
 
+////////////////////////////////////////////////////////////////////////////////
+/*       变量定义        ------------------------------------------------------*/
+/*0xa100*/ 
+        ROM UNSIGNED8       ODE_out_NoOfEntries = 16;
+            tData2bytes     ODE_out_system_state;
+            tData2bytes     ODE_out_system_error;
+            tData2bytes     ODE_out_DI_status;
+            tData2bytes     ODE_out_DO_status;
+            INTEGER16       ODE_out_actual_position[3];
+            INTEGER16       ODE_out_LVDT_out[3];
+            INTEGER16       ODE_out_actual_pressure[3];
+            INTEGER16       ODE_out_temperature[2];
+
+
+/*0xa580*/
+        ROM UNSIGNED8       ODE_in_NoOfEntries = 8;
+            tData2bytes     ODE_in_control_word;
+            INTEGER16       ODE_in_target_position[3];
+            INTEGER16       ODE_in_speed[3];
+////////////////////////////////////////////////////////////////////////////////
 
 #ifdef __18CXX
    #pragma romdata //return to the default section
@@ -928,40 +948,74 @@ ROM CO_objectDictionaryEntry CO_OD[] = {
 
    OD_ENTRY(0x2106, 0x00, ATTR_RO, ODE_EEPROM.PowerOnCounter),
 
+////////////////////////////////////////////////////////////////////////////////
+
+    OD_ENTRY(0xA100, 0x00, ATTR_RO|ATTR_ROM, ODE_out_NoOfEntries),
+    OD_ENTRY(0xA100, 0x01, ATTR_RO, ODE_out_system_state.WORD[0]),
+    OD_ENTRY(0xA100, 0x02, ATTR_RO, ODE_out_system_error.WORD[0]),
+    OD_ENTRY(0xA100, 0x03, ATTR_RO, ODE_out_DI_status.WORD[0]),
+    OD_ENTRY(0xA100, 0x04, ATTR_RO, ODE_out_DO_status.WORD[0]),
+    OD_ENTRY(0xA100, 0x05, ATTR_RO, ODE_out_actual_position[0]),
+    OD_ENTRY(0xA100, 0x06, ATTR_RO, ODE_out_actual_position[1]),
+    OD_ENTRY(0xA100, 0x07, ATTR_RO, ODE_out_actual_position[2]),
+    OD_ENTRY(0xA100, 0x08, ATTR_RO, ODE_out_LVDT_out[0]),
+    OD_ENTRY(0xA100, 0x09, ATTR_RO, ODE_out_LVDT_out[1]),
+    OD_ENTRY(0xA100, 0x0a, ATTR_RO, ODE_out_LVDT_out[2]),
+    OD_ENTRY(0xA100, 0x0b, ATTR_RO, ODE_out_actual_pressure[0]),
+    OD_ENTRY(0xA100, 0x0c, ATTR_RO, ODE_out_actual_pressure[1]),
+    OD_ENTRY(0xA100, 0x0d, ATTR_RO, ODE_out_actual_position[2]),
+    OD_ENTRY(0xA100, 0x0e, ATTR_RO, ODE_out_temperature[0]),
+    OD_ENTRY(0xA100, 0x0f, ATTR_RO, ODE_out_temperature[1]),
+
+    OD_ENTRY(0xA580, 0x00, ATTR_RO|ATTR_ROM, ODE_in_NoOfEntries),
+    OD_ENTRY(0xA580, 0x01, ATTR_RWW, ODE_in_control_word.WORD[0]),
+    OD_ENTRY(0xA580, 0x02, ATTR_RWW, ODE_in_target_position[0]),
+    OD_ENTRY(0xA580, 0x03, ATTR_RWW, ODE_in_target_position[1]),
+    OD_ENTRY(0xA580, 0x04, ATTR_RWW, ODE_in_target_position[2]),
+    OD_ENTRY(0xA580, 0x05, ATTR_RWW, ODE_in_speed[0]),
+    OD_ENTRY(0xA580, 0x06, ATTR_RWW, ODE_in_speed[1]),
+    OD_ENTRY(0xA580, 0x07, ATTR_RWW, ODE_in_speed[2]),
+
+    
+
+////////////////////////////////////////////////////////////////////////////////
 /***** Device profile for Generic I/O *****************************************/
-   #ifdef CO_IO_DIGITAL_INPUTS
-      OD_ENTRY(0x6000, 0x00, ATTR_RO|ATTR_ROM, ODE_Read_Digital_Input_NoOfEntries),
-      OD_ENTRY(0x6000, 0x01, ATTR_RO, ODE_Read_Digital_Input.BYTE[0]),
-      OD_ENTRY(0x6000, 0x02, ATTR_RO, ODE_Read_Digital_Input.BYTE[1]),
-      OD_ENTRY(0x6000, 0x03, ATTR_RO, ODE_Read_Digital_Input.BYTE[2]),
-      OD_ENTRY(0x6000, 0x04, ATTR_RO, ODE_Read_Digital_Input.BYTE[3]),
-   #endif
+//    #ifdef CO_IO_DIGITAL_INPUTS
+//       OD_ENTRY(0x6000, 0x00, ATTR_RO|ATTR_ROM, ODE_Read_Digital_Input_NoOfEntries),
+//       OD_ENTRY(0x6000, 0x01, ATTR_RO, ODE_Read_Digital_Input.BYTE[0]),
+//       OD_ENTRY(0x6000, 0x02, ATTR_RO, ODE_Read_Digital_Input.BYTE[1]),
+//       OD_ENTRY(0x6000, 0x03, ATTR_RO, ODE_Read_Digital_Input.BYTE[2]),
+//       OD_ENTRY(0x6000, 0x04, ATTR_RO, ODE_Read_Digital_Input.BYTE[3]),
+//    #endif
 
-   #ifdef CO_IO_DIGITAL_OUTPUTS
-      OD_ENTRY(0x6200, 0x00, ATTR_RO|ATTR_ROM, ODE_Write_Digital_Output_NoOfEntries),
-      OD_ENTRY(0x6200, 0x01, ATTR_RWW, ODE_Write_Digital_Output.BYTE[0]),
-      OD_ENTRY(0x6200, 0x02, ATTR_RWW, ODE_Write_Digital_Output.BYTE[1]),
-      OD_ENTRY(0x6200, 0x03, ATTR_RWW, ODE_Write_Digital_Output.BYTE[2]),
-      OD_ENTRY(0x6200, 0x04, ATTR_RWW, ODE_Write_Digital_Output.BYTE[3]),
-   #endif
+//    #ifdef CO_IO_DIGITAL_OUTPUTS
+//       OD_ENTRY(0x6200, 0x00, ATTR_RO|ATTR_ROM, ODE_Write_Digital_Output_NoOfEntries),
+//       OD_ENTRY(0x6200, 0x01, ATTR_RWW, ODE_Write_Digital_Output.BYTE[0]),
+//       OD_ENTRY(0x6200, 0x02, ATTR_RWW, ODE_Write_Digital_Output.BYTE[1]),
+//       OD_ENTRY(0x6200, 0x03, ATTR_RWW, ODE_Write_Digital_Output.BYTE[2]),
+//       OD_ENTRY(0x6200, 0x04, ATTR_RWW, ODE_Write_Digital_Output.BYTE[3]),
+//    #endif
 
-   #ifdef CO_IO_ANALOG_INPUTS
-      OD_ENTRY(0x6401, 0x00, ATTR_RO|ATTR_ROM, ODE_Read_Analog_Input_NoOfEntries),
-      OD_ENTRY(0x6401, 0x01, ATTR_RO, ODE_Read_Analog_Input[0]),
-      OD_ENTRY(0x6401, 0x02, ATTR_RO, ODE_Read_Analog_Input[1]),
-      OD_ENTRY(0x6401, 0x03, ATTR_RO, ODE_Read_Analog_Input[2]),
-      OD_ENTRY(0x6401, 0x04, ATTR_RO, ODE_Read_Analog_Input[3]),
-      OD_ENTRY(0x6401, 0x05, ATTR_RO, ODE_Read_Analog_Input[4]),
-      OD_ENTRY(0x6401, 0x06, ATTR_RO, ODE_Read_Analog_Input[5]),
-      OD_ENTRY(0x6401, 0x07, ATTR_RO, ODE_Read_Analog_Input[6]),
-      OD_ENTRY(0x6401, 0x08, ATTR_RO, ODE_Read_Analog_Input[7]),
-   #endif
+//    #ifdef CO_IO_ANALOG_INPUTS
+//       OD_ENTRY(0x6401, 0x00, ATTR_RO|ATTR_ROM, ODE_Read_Analog_Input_NoOfEntries),
+//       OD_ENTRY(0x6401, 0x01, ATTR_RO, ODE_Read_Analog_Input[0]),
+//       OD_ENTRY(0x6401, 0x02, ATTR_RO, ODE_Read_Analog_Input[1]),
+//       OD_ENTRY(0x6401, 0x03, ATTR_RO, ODE_Read_Analog_Input[2]),
+//       OD_ENTRY(0x6401, 0x04, ATTR_RO, ODE_Read_Analog_Input[3]),
+//       OD_ENTRY(0x6401, 0x05, ATTR_RO, ODE_Read_Analog_Input[4]),
+//       OD_ENTRY(0x6401, 0x06, ATTR_RO, ODE_Read_Analog_Input[5]),
+//       OD_ENTRY(0x6401, 0x07, ATTR_RO, ODE_Read_Analog_Input[6]),
+//       OD_ENTRY(0x6401, 0x08, ATTR_RO, ODE_Read_Analog_Input[7]),
+//    #endif
 
-   #ifdef CO_IO_ANALOG_OUTPUTS
-      OD_ENTRY(0x6411, 0x00, ATTR_RO|ATTR_ROM, ODE_Write_Analog_Output_NoOfEntries),
-      OD_ENTRY(0x6411, 0x01, ATTR_RWW, ODE_Write_Analog_Output[0]),
-      OD_ENTRY(0x6411, 0x02, ATTR_RWW, ODE_Write_Analog_Output[1]),
-   #endif
+//    #ifdef CO_IO_ANALOG_OUTPUTS
+//       OD_ENTRY(0x6411, 0x00, ATTR_RO|ATTR_ROM, ODE_Write_Analog_Output_NoOfEntries),
+//       OD_ENTRY(0x6411, 0x01, ATTR_RWW, ODE_Write_Analog_Output[0]),
+//       OD_ENTRY(0x6411, 0x02, ATTR_RWW, ODE_Write_Analog_Output[1]),
+//    #endif
+
+///////////////////////////////////////////////////////////////////////
+
 
 };
 
