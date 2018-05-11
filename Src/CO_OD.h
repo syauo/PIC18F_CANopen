@@ -31,57 +31,57 @@
 #define _CO_OD_H
 
 /*******************************************************************************
-   Setup CANopen    é…ç½®
+   Setup CANopen    ÅäÖÃ
 *******************************************************************************/
-   //(0 or 1), æ˜¯å¦ä½¿ç”¨ SYNC ï¼ˆç”Ÿäº§è€…æˆ–æ¶ˆè´¹è€…ï¼‰
+   //(0 or 1), ÊÇ·ñÊ¹ÓÃ SYNC £¨Éú²úÕß»òÏû·ÑÕß£©
    #define CO_NO_SYNC            0  //(0 or 1), is SYNC (producer and consumer) used or not.
-   //(0 or 1), æ˜¯å¦ä½¿ç”¨ç´§æ€¥æ¶ˆæ¯ç”Ÿäº§è€….
+   //(0 or 1), ÊÇ·ñÊ¹ÓÃ½ô¼±ÏûÏ¢Éú²ú??
    #define CO_NO_EMERGENCY       0  //(0 or 1), is Emergency message producer used or not.
-   //(0 to 512*), æ¥æ”¶ PDO çš„ä¸ªæ•°
+   //(0 to 512*), ½ÓÊÕ PDO µÄ¸ö??
    #define CO_NO_RPDO            4  //(0 to 512*), number of receive PDOs.
-   //(0 to 512*), å‘é€ PDO çš„ä¸ªæ•°
+   //(0 to 512*), ·¢??PDO µÄ¸ö??
    #define CO_NO_TPDO            4  //(0 to 512*), number of transmit PDOs.
-   //(0 to 128*), SDO server é€šé“ä¸ªæ•°
+   //(0 to 128*), SDO server Í¨µÀ¸öÊı
    #define CO_NO_SDO_SERVER      0  //(0 to 128*), number of SDO server channels.
-   //(0 to 128*), SDO client é€šé“ä¸ªæ•°
+   //(0 to 128*), SDO client Í¨µÀ¸öÊı
    #define CO_NO_SDO_CLIENT      0  //(0 to 128*), number of SDO client channels.
-   //(0 to 255*), æ¶ˆè´¹è€…å¿ƒè·³æ¡ç›®ä¸ªæ•°
+   //(0 to 255*), Ïû·ÑÕßĞÄÌøÌõÄ¿¸ö??
    #define CO_NO_CONS_HEARTBEAT  0  //(0 to 255*), number of consumer heartbeat entries.
-   //(0 to ...), ç”¨æˆ·æ¥æ”¶ CAN æ¶ˆæ¯æ•°é‡
+   //(0 to ...), ÓÃ»§½ÓÊÕ CAN ÏûÏ¢ÊıÁ¿
    #define CO_NO_USR_CAN_RX      0  //(0 to ...), number of user CAN RX messages.
-   //(0 to ...), ç”¨æˆ·å‘é€ CAN æ¶ˆæ¯æ•°é‡
+   //(0 to ...), ÓÃ»§·¢??CAN ÏûÏ¢ÊıÁ¿
    #define CO_NO_USR_CAN_TX      0  //(0 to ...), number of user CAN TX messages.
-   //(4 to 256), å¯¹è±¡å­—å…¸ä¸­å˜é‡çš„æœ€å¤§å­—èŠ‚é•¿åº¦
+   //(4 to 256), ¶ÔÏó×ÖµäÖĞ±äÁ¿µÄ×î´ó×Ö½Ú³¤??
    #define CO_MAX_OD_ENTRY_SIZE  20 //(4 to 256), max size of variable in Object Dictionary in bytes.
-   //[in 100*ms] SDO é€šä¿¡è¶…æ—¶è®¾ç½®
+   //[in 100*ms] SDO Í¨ĞÅ³¬Ê±ÉèÖÃ
    #define CO_SDO_TIMEOUT_TIME   10 //[in 100*ms] Timeout in SDO communication.
-   //(0 to 254*), åœ¨ç´¢å¼• 0x1003 é¢„å®šä¹‰çš„é”™è¯¯åŒºå¤§å° 
+   //(0 to 254*), ÔÚË÷??0x1003 Ô¤¶¨ÒåµÄ´íÎóÇø´ó??
    #define CO_NO_ERROR_FIELD     8  //(0 to 254*), size of Pre Defined Error Fields at index 0x1003.
-   //å®šä¹‰åï¼Œå°†åœ¨å¯¹è±¡å­—å…¸ä¸­ä½¿ç”¨ PDO parameters
+   //¶¨Òåºó£¬½«ÔÚ¶ÔÏó×ÖµäÖĞÊ¹??PDO parameters
    #define CO_PDO_PARAM_IN_OD       //if defined, PDO parameters will be in Object Dictionary.
-   //å®šä¹‰åï¼Œå°†åœ¨ OD ä¸­ä½¿ç”¨ PDO æ˜ å°„ï¼›æœªå®šä¹‰ï¼Œåˆ™ PDO å¤§å°å›ºå®šä¸º 8 å­—èŠ‚
+   //¶¨Òåºó£¬½«ÔÚ OD ÖĞÊ¹??PDO Ó³Éä£»Î´¶¨Òå£¬Ôò PDO ´óĞ¡¹Ì¶¨??8 ×Ö½Ú
    #define CO_PDO_MAPPING_IN_OD     //if defined, PDO mapping will be in Object Dictionary. If not defined, PDO size will be fixed to 8 bytes.
-   //å®šä¹‰åï¼Œå°†åœ¨ TPDO å‘é€æ—¶ä½¿ç”¨æŠ‘åˆ¶å’Œäº‹ä»¶å®šæ—¶å™¨
+   //¶¨Òåºó£¬½«ÔÚ TPDO ·¢ËÍÊ±Ê¹ÓÃÒÖÖÆºÍÊÂ¼ş¶¨Ê±Æ÷
    #define CO_TPDO_INH_EV_TIMER     //if defined, Inhibit and Event timer will be used for TPDO transmission.
-   //å®šä¹‰åï¼ŒSDO å†™å¯¹è±¡å­—å…¸æ—¶å°†éªŒè¯
+   //¶¨Òåºó£¬SDO Ğ´¶ÔÏó×ÖµäÊ±½«Ñé??
    #define CO_VERIFY_OD_WRITE       //if defined, SDO write to Object Dictionary will be verified.
-   //è‹¥ CO_OD ä¸­çš„æ¡ç›®æ˜¯æ’åºçš„ï¼ˆä»æœ€ä½åˆ°æœ€é«˜ç´¢å¼•ï¼Œç„¶åæ˜¯å­ç´¢å¼•ï¼‰ï¼Œåˆ™å¯ç”¨æ­¤å®ã€‚
-   //è¿™å¯¹äºæ›´é•¿çš„å¯¹è±¡å­—å…¸æœç´¢è¦å¿«å¾—å¤šã€‚
-   //è‹¥æ²¡æœ‰æ’åºï¼Œåˆ™ç¦ç”¨æ­¤å®ã€‚
+   //??CO_OD ÖĞµÄÌõÄ¿ÊÇÅÅĞòµÄ£¨´Ó×îµÍµ½×î¸ßË÷Òı£¬È»ºóÊÇ×ÓË÷Òı£©£¬ÔòÆôÓÃ´Ëºê??
+   //Õâ¶ÔÓÚ¸ü³¤µÄ¶ÔÏó×ÖµäËÑË÷Òª¿ìµÃ¶à??
+   //ÈôÃ»ÓĞÅÅĞò£¬Ôò½ûÓÃ´Ëºê??
    #define CO_OD_IS_ORDERED         //enable this macro, if entries in CO_OD are ordered (from lowest to highest index, then subindex). For longer Object Dictionaries searching is much faster. If entries are not ordered, disable macro.
-   //å®šä¹‰åï¼Œå°†ä¿å­˜ ODE_EEPROM æ•°æ®
+   //¶¨Òåºó£¬½«±£??ODE_EEPROM Êı¾İ
    #define CO_SAVE_EEPROM           //if defined, ODE_EEPROM data will be saved.
-   //å®šä¹‰åï¼ŒROM å˜é‡å¯ä»å¤–éƒ¨å†™å…¥
+   //¶¨Òåºó£¬ROM ±äÁ¿¿É´ÓÍâ²¿Ğ´Èë
    #define CO_SAVE_ROM              //if defined, ROM variables will be writeable from outside.
 
 // * For some macros have written only 1 or up to 8 entries in CO_OD.c/CO_OD.h.
 //   If you get error message and if you need more than that, write additional entries.
 
-// * å¯¹äºä¸€äº›å®ï¼Œåœ¨ CO_OD.c / CO_OD.h ä¸­åªå†™å…¥äº† 1 æˆ– 8 ä¸ªæ¡ç›®ã€‚
-//   å¦‚æœæ”¶åˆ°é”™è¯¯æ¶ˆæ¯ï¼Œæˆ–è€…éœ€è¦æ›´å¤šçš„è¯ï¼Œå†å†™é™„åŠ æ¡ç›®ã€‚
+// * ¶ÔÓÚÒ»Ğ©ºê£¬ÔÚ CO_OD.c / CO_OD.h ÖĞÖ»Ğ´Èë??1 ??8 ¸öÌõÄ¿??
+//   Èç¹ûÊÕµ½´íÎóÏûÏ¢£¬»òÕßĞèÒª¸ü¶àµÄ»°£¬ÔÙĞ´¸½¼ÓÌõÄ¿??
 
 /*******************************************************************************
-   Device profile for Generic I/O   è®¾å¤‡é…ç½®
+   Device profile for Generic I/O   Éè±¸ÅäÖÃ
 *******************************************************************************/
 //    #define CO_IO_DIGITAL_INPUTS     //4 * 8 digital inputs
 //    #define CO_IO_DIGITAL_OUTPUTS    //4 * 8 digital outputs
@@ -90,7 +90,7 @@
 
 
 /*******************************************************************************
-   Default values for object dictionary å¯¹è±¡å­—å…¸ç¼ºçœå€¼
+   Default values for object dictionary ¶ÔÏó×ÖµäÈ±Ê¡??
 *******************************************************************************/
    #define ODD_DEVICE_TYPE       0x000F0195L    /*index 0x1000, RO*/ //See standard
    #define ODD_SYNC_COB_ID       0x00000080L    /*index 0x1005*/     //if bit30=1, node produces SYNC
@@ -106,11 +106,11 @@
    #define ODD_IDENT_PROD_CODE   0x00000000L
    #define ODD_IDENT_REVISION_NR 0x00000000L
    #define ODD_IDENT_SERIAL_NR   0x00000000L
-   #define ODD_ERROR_BEH_COMM    0x00           /*index 0x1029*/     //If Communication error is present in Operational state: 0x00-switch to pre-operational; 0x01-do nothing; 0x02-switch to stopped.
+   #define ODD_ERROR_BEH_COMM    0x01           /*index 0x1029*/     //If Communication error is present in Operational state: 0x00-switch to pre-operational; 0x01-do nothing; 0x02-switch to stopped.
    #define ODD_NMT_STARTUP       0x00000000L    /*index 0x1F80*/     //only bit2 implemented, if bit2=1, Node will NOT start operational
 
 /* 0x1016 Heartbeat consumer **************************************************/
-/*        å¿ƒè·³æ¶ˆè´¹è€…          */
+/*        ĞÄÌøÏû·Ñ??         */
    //00NNTTTT: N=NodeID, T=time in ms
    #define ODD_CONS_HEARTBEAT_0  0x00000000L    
    #define ODD_CONS_HEARTBEAT_1  0x00000000L
@@ -122,7 +122,7 @@
    #define ODD_CONS_HEARTBEAT_7  0x00000000L
 
 /* 0x1400 Receive PDO parameters **********************************************/
-/*        æ¥æ”¶ PDO å‚æ•°           */
+/*        ½ÓÊÕ PDO ²ÎÊı           */
    //COB-ID: if(bit31==1) PDO is not used; bit30=1; bits(10..0)=COB-ID;
    #define ODD_RPDO_PAR_COB_ID_0 0  //if 0, predefined value will be used (0x200+NODE-ID - read-only)
    #define ODD_RPDO_PAR_T_TYPE_0 255
@@ -142,11 +142,11 @@
    #define ODD_RPDO_PAR_T_TYPE_7 255
 
 /* 0x1600 Receive PDO mapping *************************************************/
-/*        æ¥æ”¶ PDO æ˜ å°„        */
+/*        ½ÓÊÕ PDO Ó³Éä        */
    //0xIIIISSDD IIII = index from OD, SS = subindex, DD = data length in bits
-   //                  ODç´¢å¼•               å­ç´¢å¼•         æ•°æ®ä½é•¿
+   //                  ODË÷Òı               ×ÓË÷??        Êı¾İÎ»³¤
    //DD must be byte aligned, max value 0x40 (8 bytes)
-   //DD - æ•°æ®ä½é•¿å¿…é¡»å­—èŠ‚å¯¹é½ï¼ˆ8*ï¼‰ï¼Œæœ€å¤§å€¼ä¸º 0x40 å³ 8 å­—èŠ‚ 64 ä½
+   //DD - Êı¾İÎ»³¤±ØĞë×Ö½Ú¶ÔÆë??*£©£¬×î´óÖµÎª 0x40 ??8 ×Ö½Ú 64 ??
    #define ODD_RPDO_MAP_0_1      0xA5800110L
    #define ODD_RPDO_MAP_0_2      0xA5800210L
    #define ODD_RPDO_MAP_0_3      0xA5800310L
@@ -220,18 +220,18 @@
    #define ODD_RPDO_MAP_7_8      0x00000000L
 
 /* 0x1800 Transmit PDO parameters *********************************************/
-/*        å‘é€ PDO å‚æ•°            */
+/*        ·¢??PDO ²ÎÊı            */
    //COB-ID: if(bit31==1) PDO is not used; bit30=1; bits(10..0)=COB-ID;
    //T_TYPE: 1-240...transmission after every (T_TYPE)-th SYNC object;
-   //                åœ¨æ¯ç¬¬ (T_TYPE) æ¬¡ SYNC å¯¹è±¡åå‘é€
+   //                ÔÚÃ¿??(T_TYPE) ??SYNC ¶ÔÏóºó·¢??
    //        254...manufacturer specific
-   //              åˆ¶é€ å•†è§„å®š
+   //              ÖÆÔìÉÌ¹æ¶¨
    //        255...Device Profile specific, default transmission is Change of State
-   //              è®¾å¤‡é…ç½®è§„å®šï¼Œç¼ºçœä¸ºã€ŒçŠ¶æ€æ”¹å˜ã€
-   //I_TIME: 0...65535 Inhibit time in 100Âµs is minimum time between PDO transmission
-   //                  ä»¥ 100Âµs ä¸ºå•ä½ï¼Œæ˜¯PDO å‘é€æœ€å°é—´éš”æ—¶é—´
+   //              Éè±¸ÅäÖÃ¹æ¶¨£¬È±Ê¡Îª¡¸×´Ì¬¸Ä±ä??
+   //I_TIME: 0...65535 Inhibit time in 100?s is minimum time between PDO transmission
+   //                  ??100?s Îªµ¥Î»£¬ÊÇPDO ·¢ËÍ×îĞ¡¼ä¸ôÊ±??
    //E_TIME: 0...65535 Event timer in ms - PDO is periodically transmitted (0 == disabled)
-   //                  æ—¶é—´å®šæ—¶å™¨ï¼Œå•ä½ msï¼ŒPDO å®šæ—¶å‘¨æœŸæ€§å‘é€ï¼ˆ0 = ç¦ç”¨ï¼‰
+   //                  Ê±¼ä¶¨Ê±Æ÷£¬µ¥Î» ms£¬PDO ¶¨Ê±ÖÜÆÚĞÔ·¢ËÍ£¨0 = ½ûÓÃ??
    #define ODD_TPDO_PAR_COB_ID_0 0  //if 0, predefined value will be used (0x180+NODE-ID - read-only)
    #define ODD_TPDO_PAR_T_TYPE_0 255
    #define ODD_TPDO_PAR_I_TIME_0 0
@@ -266,11 +266,11 @@
    #define ODD_TPDO_PAR_E_TIME_7 0
 
 /* 0x1A00 Transmit PDO mapping ************************************************/
-/*        å‘é€ PDO æ˜ å°„ */
+/*        ·¢??PDO Ó³Éä */
    //0xIIIISSDD IIII = index from OD, SS = subindex, DD = data length in bits
-   //                  å¯¹è±¡å­—å…¸ç´¢å¼•          å­ç´¢å¼•         æ•°æ®ä½é•¿
+   //                  ¶ÔÏó×ÖµäË÷Òı          ×ÓË÷??        Êı¾İÎ»³¤
    //DD must be byte aligned, max value 0x40 (8 bytes)
-   //DD å¿…é¡»æ˜¯å­—èŠ‚å¯¹é½çš„ï¼Œæœ€å¤§å€¼ 0x40 å³ 8 å­—èŠ‚ 64 ä½ã€‚
+   //DD ±ØĞëÊÇ×Ö½Ú¶ÔÆëµÄ£¬×î´ó??0x40 ??8 ×Ö½Ú 64 Î»??
    #define ODD_TPDO_MAP_0_1      0xA1000110L
    #define ODD_TPDO_MAP_0_2      0xA1000210L
    #define ODD_TPDO_MAP_0_3      0xA1000310L
@@ -346,14 +346,14 @@
 
 /*******************************************************************************
    Default values for user Object Dictionary Entries
-   ç”¨æˆ·å¯¹è±¡å­—å…¸æ¡ç›®çš„ç¼ºçœå€¼
+   ÓÃ»§¶ÔÏó×ÖµäÌõÄ¿µÄÈ±Ê¡??
 *******************************************************************************/
 /*0x2101*/
-   // (1 to 127), é»˜è®¤èŠ‚ç‚¹å·node ID
+   // (1 to 127), Ä¬ÈÏ½ÚµãºÅnode ID
    #define ODD_CANnodeID    0x08 //(1 to 127), default node ID
 /*0x2102*/
-   // (0 to 7), é»˜è®¤æ¯”ç‰¹ç‡
-   #define ODD_CANbitRate   7    //(0 to 7), default CAN bit rate
+   // (0 to 7), Ä¬ÈÏ±ÈÌØ??
+   #define ODD_CANbitRate   3    //(0 to 7), default CAN bit rate
                                     // 0 = 10 kbps    1 = 20 kbps
                                     // 2 = 50 kbps    3 = 125 kbps
                                     // 4 = 250 kbps   5 = 500 kbps
@@ -362,7 +362,7 @@
 
 /*******************************************************************************
    CANopen basic Data Types
-   CANopen åŸºæœ¬æ•°æ®ç±»å‹
+   CANopen »ù±¾Êı¾İÀàĞÍ
 *******************************************************************************/
    #define UNSIGNED8  unsigned char
    #define UNSIGNED16 unsigned int
@@ -374,7 +374,7 @@
 
 /*******************************************************************************
    CANopen Variables from Object Dictionary
-   å¯¹è±¡å­—å…¸ä¸­çš„ CANopen å˜é‡
+   ¶ÔÏó×ÖµäÖĞµÄ CANopen ±äÁ¿
 *******************************************************************************/
 /*0x1001*/ extern       UNSIGNED8      ODE_Error_Register;
 /*0x1002*/ extern       UNSIGNED32     ODE_Manufacturer_Status_Register;

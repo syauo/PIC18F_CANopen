@@ -31,12 +31,12 @@
 
 //CO_MAX_ENTRY_NR is maximum number of PDO and Heartbeat entries
 //defined in this file. If more entries are neeed, they can be added
-// PDO å’Œå¿ƒè·³æ¡ç›®çš„æœ€å¤§æ•°é‡
-// åœ¨è¯¥æ–‡ä»¶ä¸­å®šä¹‰ï¼Œå¦‚æœéœ€è¦æ›´å¤šçš„æ¡ç›®ï¼Œå¯ä»¥å¢åŠ 
+// PDO ºÍĞÄÌøÌõÄ¿µÄ×î´óÊıÁ¿
+// ÔÚ¸ÃÎÄ¼şÖĞ¶¨Òå£¬Èç¹ûĞèÒª¸ü¶àµÄÌõÄ¿£¬¿ÉÒÔÔö¼Ó
 #define CO_MAX_ENTRY_NR 8
 
 //check defines
-// æ£€æŸ¥å®šä¹‰
+// ¼ì²é¶¨Òå
 #if CO_NO_RPDO > CO_MAX_ENTRY_NR
    #error defineCO_NO_RPDO (CO_NO_RPDO) not correct!
 #endif
@@ -57,7 +57,7 @@
 #endif
 
 /******************************************************************************/
-/*     VARIABLES       å˜é‡                                                   */
+/*     VARIABLES       ±äÁ¿                                                   */
 /******************************************************************************/
 #ifdef __18CXX
    #pragma romdata ODE_CO_RomVariables=0x1000 //ROM variables in PIC18fxxx must be above address 0x1000
@@ -349,7 +349,7 @@
 //    #endif
 
 ////////////////////////////////////////////////////////////////////////////////
-/*       å˜é‡å®šä¹‰        ------------------------------------------------------*/
+/*       ±äÁ¿¶¨Òå        ------------------------------------------------------*/
 /*0xa100*/ 
         ROM UNSIGNED8       ODE_out_NoOfEntries = 16;
             tData2bytes     ODE_out_system_state;
@@ -382,12 +382,12 @@
 //       0x06090030L   Value range of parameter exceeded
 //       0x06090031L   Value of parameter written too high
 //       0x06090032L   Value of parameter written too low
-/* éªŒè¯å‡½æ•°
-   åœ¨è¢«å†™å…¥å¯¹è±¡å­—å…¸ä¸­ä¹‹å‰ï¼ŒSDO æœåŠ¡å™¨éªŒè¯æ–°å€¼
-   å…¸å‹é”™è¯¯ä»£ç ï¼š
-      0x06090030L   å€¼è¶…å‡ºå‚æ•°èŒƒå›´
-      0x06090031L   å†™çš„å‚æ•°å€¼è¿‡å¤§
-      0x06090032L   å†™çš„å‚æ•°å€¼è¿‡å°
+/* ÑéÖ¤º¯Êı
+   ÔÚ±»Ğ´Èë¶ÔÏó×ÖµäÖĞÖ®Ç°£¬SDO ·şÎñÆ÷ÑéÖ¤ĞÂÖµ
+   µäĞÍ´íÎó´úÂë£º
+      0x06090030L   Öµ³¬³ö²ÎÊı·¶Î§
+      0x06090031L   Ğ´µÄ²ÎÊıÖµ¹ı´ó
+      0x06090032L   Ğ´µÄ²ÎÊıÖµ¹ıĞ¡
         0x */
 #ifdef CO_VERIFY_OD_WRITE
 unsigned long CO_OD_VerifyWrite(ROM CO_objectDictionaryEntry* pODE, void* data){
@@ -403,7 +403,7 @@ unsigned long CO_OD_VerifyWrite(ROM CO_objectDictionaryEntry* pODE, void* data){
    case 0x1003://Pre Defined Error Field
                if(*((unsigned char*)data) > ODE_Pre_Defined_Error_Field_NoOfErrors)
                   return 0x06090031L;  //Value of parameter written too high
-                                       //å†™çš„å‚æ•°å€¼è¿‡å¤§
+                                       //Ğ´µÄ²ÎÊıÖµ¹ı´ó
                break;
    #endif
 

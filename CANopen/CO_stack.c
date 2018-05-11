@@ -28,7 +28,7 @@
 #include "CANopen.h"
 
 /*******************************************************************************
-   VERIFY SIZES
+   VERIFY SIZES   确认设置
 *******************************************************************************/
    #if CO_NO_SYNC != 0 && CO_NO_SYNC != 1
       #error defineCO_NO_SYNC (CO_NO_SYNC) not correct!
@@ -73,6 +73,8 @@
 
 /*******************************************************************************
    Functions, implemented by user, used in CO_stack.c
+
+   CO_stack.c 中交由用户实现的函数 声明
 *******************************************************************************/
    void User_ResetComm(void);
    void User_Process1msIsr(void);
@@ -80,26 +82,36 @@
 
 /*******************************************************************************
    Functions from CO_driver.c used in CO_stack.c
+   
+   CO_driver.c 中的函数调用声明
 *******************************************************************************/
+   // 节点号 NodeId 与比特率
    void CO_Read_NodeId_BitRate(void);  //determine NodeId and BitRate
+   // 控制器 CAN 配置
    void CO_SetupCAN(void);             //setup CAN controller
+   // MCU 特定处理代码
    void CO_ProcessDriver(void);        //process microcontroller specific code
    //object dictionary read/write functions
+   // 对象字典读写函数
    unsigned long CO_OD_Read(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char BuffMaxSize);
    unsigned long CO_OD_Write(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char dataSize);
 
 
 /*******************************************************************************
-   Variables
+   Variables  变量
 *******************************************************************************/
 //timer variables and macros (immune on overflow)
+// 定时器变量
+   // 16 位，每 1ms 自增
    volatile unsigned int CO_Timer16bit1ms = 0;   //16-bit variable, increments every 1ms
+   // 8 位，每 100ms 自增
    volatile unsigned char CO_Timer8bit100ms = 0; //8-bit variable, increments every 100ms
    #define TMR8Z(ttimerVariable)   (unsigned char) (ttimerVariable = CO_Timer8bit100ms)
    #define TMR8(ttimerVariable)    (unsigned char) (CO_Timer8bit100ms - ttimerVariable)
 
 //when CO_Timer1msIsr is executing, this variable is set to 1. This way some functions
 //distinguish between being called from mainline or timer functions
+// 当 CO_Timer1msIst 执行，该变量置1.可以区分函数是 mainline 还是定时器调用。
    volatile unsigned char CO_Timer1msIsr_executing = 0;
 
 //Status LEDs
@@ -112,6 +124,7 @@
    volatile CO_DEFAULT_TYPE CO_TXCANcount;
 
 //main variables for storing CAN messages, filled at CanInit, see CANopen.h for indexes
+// 存储 CAN 消息的变量
    #pragma udata CO_udata_RXCAN
       volatile CO_CanMessage CO_RXCAN[CO_RXCAN_NO_MSGS];
    #pragma udata
@@ -136,6 +149,7 @@
    #endif
 
 //Emergency message control and Error codes (see CO_errors.h)
+// 紧急消息控制和错误代号
    volatile struct{
       unsigned int CheckErrors     :1;
       unsigned int EmergencyToSend :1;
@@ -204,23 +218,30 @@
    Function is called after start of program and after CANopen NMT command: Reset
    Communication. It resets CAN interface and majority of CANopen variables.
    It also calls User_ResetComm() function.
+
+   复位 CAN 接口和 主要的 CANopen 变量。
 *******************************************************************************/
 void CO_ResetComm(void){
    CO_DEFAULT_SPEC CO_DEFAULT_TYPE i;
    unsigned int ii;
 
+   // 绿灯灭，NMT 初始化状态
    PCB_RUN_LED(CO_StatusLED.Off);
    CO_NMToperatingState = NMT_INITIALIZING;
-
+   
+   // 读节点号和比特率
    CO_Read_NodeId_BitRate();
 
-/* Clear arrays */
+/* Clear arrays 
+   清零接收和发送数组*/
    for(ii=0; ii<sizeof(CO_RXCAN); ii++)
       *(((unsigned char*)CO_RXCAN)+ii) = 0;
    for(ii=0; ii<sizeof(CO_TXCAN); ii++)
       *(((unsigned char*)CO_TXCAN)+ii) = 0;
 
-/* Setup variables */
+/* Setup variables 
+   设置变量        */
+
    //Sync
    #if CO_NO_SYNC > 0
       CO_SYNCperiod = (unsigned int)(ODE_Communication_Cycle_Period / 1000);
@@ -439,7 +460,8 @@ void CO_ResetComm(void){
    CO_TXCAN[CO_TXCAN_HB].Ident.WORD[0] = CO_IDENT_WRITE(CAN_ID_HEARTBEAT + CO_NodeID, 0);
    CO_TXCAN[CO_TXCAN_HB].NoOfBytes = 1;
 
-/* Setup CAN bus */
+/* Setup CAN bus 
+   CAN 总线初始化 */
    CO_SetupCAN();
 }
 
@@ -450,17 +472,23 @@ void CO_ResetComm(void){
    it marks it for sending and switch on CANTX interrupt, which will send the
    message when buffers are ready.
 
+   函数可由主线程序或定时器调用。当消息准备好时，设置发送标记并转到 CANTX 中断，在缓冲准备好时
+   中断将发送这些消息。
+
    PARAM Index:   index of CO_TXCAN array to be send
+                  要发送的 CO_TXCAN 数组索引
    RETURN:        0 = success
                   1 = error, previous message was not sent, buffer full
+                      错误，之前的消息未发送，缓冲已满
 *******************************************************************************/
 char CO_TXCANsend(unsigned int index){
    if(CO_Timer1msIsr_executing) CO_DISABLE_CANTX_TMR(); else CO_DISABLE_CANTX();
-   if(CO_TXCAN[index].NewMsg){
-      ErrorReport(ERROR_CAN_TX_OVERFLOW, index);
+   if(CO_TXCAN[index].NewMsg){      // 若之前的消息正等待发送
+      ErrorReport(ERROR_CAN_TX_OVERFLOW, index);      // 报告缓冲满错误
       if(CO_Timer1msIsr_executing) CO_ENABLE_CANTX_TMR(); else CO_ENABLE_CANTX();
-      return 1;
+      return 1;   // 返回错误 之前的消息未发送
    }
+   // 如果缓冲器及队列空闲，则直接发送消息
    if(CO_CANTX_BUFFER_FREE() && CO_TXCANcount==0){   //if buffer is free, send message directly
       #if CO_NO_SYNC > 0
          //messages with Inhibit flag set (synchronous PDOs) must be transmited inside preset window
@@ -468,8 +496,9 @@ char CO_TXCANsend(unsigned int index){
             ErrorReport(ERROR_TPDO_OUTSIDE_WINDOW, index);
          else
       #endif
-         CO_TXCAN_COPY_TO_BUFFERS(index);
+         CO_TXCAN_COPY_TO_BUFFERS(index); // 拷贝消息到缓冲器
    }
+   // 否则由中断发送
    else{                         //interrupt will send it
       CO_TXCAN[index].NewMsg = 1;
       CO_TXCANcount++;
@@ -484,7 +513,10 @@ char CO_TXCANsend(unsigned int index){
    Function can be called from mainline or timer function. it marks TPDO for
    sending. If TPDO has to be prepared, this can be done here.
 
+   函数可又主线或定时器调用。它标记需要发送的 TPDO。若 TPDO 需要准备发送，可以在这里完成。
+
    PARAM Index:   index of PDO to be send (0 = first PDO)
+                  要发送的 PDO 索引
    RETURN:        0 = success
                   1 = error, previous TPDO was not sent, buffer full
                   2 = error, TPDO was inhibited
@@ -513,6 +545,7 @@ void CO_MODIF_Timer1msIsr CO_Timer1msIsr(void){
    static unsigned int tLEDblink = 0, tLEDflash = 0;
 
 /* information for some functions (when variable = 1, timer is executing and mainline is waiting)*/
+   // 通知其他函数，为 1 时说明是定时器执行 主线等待
    CO_Timer1msIsr_executing = 1;
 
 /* Increment timer variables */
@@ -550,7 +583,8 @@ void CO_MODIF_Timer1msIsr CO_Timer1msIsr(void){
       }
    #endif
 
-/* Erase RPDOs if not operational */
+/* Erase RPDOs if not operational 
+   非 Operational 状态时，擦除 RPDO */
    #if CO_NO_RPDO > 0
       if(CO_NMToperatingState != NMT_OPERATIONAL){
          for(i=0; i<CO_NO_RPDO; i++)
@@ -626,18 +660,25 @@ void CO_MODIF_Timer1msIsr CO_Timer1msIsr(void){
    mainline or interrupt. It sets appropriate error bit and sends emergency if
    it is the first time for that bit. If critical bits are set, node will not be
    able to enter operational state. For detailed description see CO_errors.h
+
+   函数用来报告程序中发生的任何错误。可由主线程序或中断使用。它置位适当的错误位，若该位为首次
+   出现则发送紧急消息。如关键的位被置位，则节点将不能进入操作状态。细节描述见 CO_errors.h
+
    PARAM ErrorBit: specific error bit, use defined constants
+                   特定的错误位，使用预定义
    PARAM Code: informative value, send as 4-th and 5-th byte in Emergency message
+               错误代码值，作为紧急消息的第 4 和 5 字节发送
 *******************************************************************************/
 void ErrorReport(unsigned char ErrorBit, unsigned int Code){
-   unsigned char index = ErrorBit >> 3;
-   unsigned char bitmask = 1 << (ErrorBit & 0x7);
+   unsigned char index = ErrorBit >> 3;               // ErrorBit 的 bit5&4 是 ErrorStatusBits[] 的索引
+   unsigned char bitmask = 1 << (ErrorBit & 0x7);     // ErrorBit 的 bit1-3 是 ErrorStatusBits[] 的内容
 
    //if ErrorBit value not supported, set ERROR_ErrorReport_ParametersNotSupp
+   // 若 ErrorBit 值为未定义值，则设置 ERROR_ErrorReport_ParametersNotSupp (0x01, 按照上面两行 index = 0, bitmask = 2)
    if(index > (ERROR_NO_OF_BYTES-1)){
       index = 0; bitmask = 2;
    }
-   if((CO_ErrorStatusBits[index]&bitmask) == 0){
+   if((CO_ErrorStatusBits[index]&bitmask) == 0){      // 若对应错误为首次设置
       if(ErrorBit) CO_ErrorStatusBits[index] |= bitmask; //set bit, if NO_ERROR just send emergency
       ErrorControl.CheckErrors = 1;
       if(!ErrorControl.EmergencyToSend){  //free
@@ -655,9 +696,14 @@ void ErrorReport(unsigned char ErrorBit, unsigned int Code){
    Function is used to report any if error condition is no more present. It can
    be used from mainline or interrupt function. It resets appropriate error bit
    and sends emergency 'no error'.
+
+   用来报告错误条件不再存在。可由主线和中断程序调用。复位相应错误位并发送『no error』
+
    For detailed description see CO_errors.h
    PARAM ErrorBit: specific error bit, use defined constants
+                   特定错误位，使用预定义
    PARAM Code: informative value, send as 4-th and 5-th byte in Emergency message
+               错误代码值，作为紧急消息的第 4 和 5 字节发送
 *******************************************************************************/
 void ErrorReset(unsigned char ErrorBit, unsigned int Code){
    unsigned char index = ErrorBit >> 3;
@@ -695,8 +741,12 @@ void ErrorReset(unsigned char ErrorBit, unsigned int Code){
    poiner to entry. It is usually called from SDO server.
    If Object Dictionary exist in multiple arrays, this function must search all.
 
+   用以搜索对象字典特定索引和子索引的条目。从头到尾搜索 OD，若匹配则返回条目指针。常由 SDO server 调用。
+
    PARAM index, subindex: address of entry in object dictionary
+                          对象字典条目地址
    RETURN: if found, pointer to entry, othervise 0
+           若找到，条目指针，否则 0
 *******************************************************************************/
 ROM CO_objectDictionaryEntry* CO_FindEntryInOD(unsigned int index, unsigned char subindex){
    CO_DEFAULT_SPEC  unsigned int Index;
@@ -714,7 +764,7 @@ ROM CO_objectDictionaryEntry* CO_FindEntryInOD(unsigned int index, unsigned char
          cur = (min + max) / 2;
          CurIndex = CO_OD[cur].index;
          CurSubIndex = CO_OD[cur].subindex;
-         if(Index == CurIndex && SubIndex == CurSubIndex)
+         if(Index == CurIndex && SubIndex == CurSubIndex)   // 若匹配 返回条目指针
             return &CO_OD[cur];
          else if(Index < CurIndex || (Index == CurIndex && SubIndex < CurSubIndex)){
             max = cur;
@@ -1299,20 +1349,25 @@ char CO_SDOclientUpload_wait(unsigned char NODE_ID_of_SDO_Server, unsigned int i
    CO_ProcessMain - PROCESS CANOPEN MAINLINE
    This function is cyclycally called from main(). It is non blocking function.
    It is asynchronous. Here is longer and time consuming code.
+
+   由 main() 函数循环调用。非阻塞函数。异步的。
 *******************************************************************************/
 void CO_ProcessMain(void){
 
 /* variables */
    //multipurpose usage
+   // 复用变量
    CO_DEFAULT_SPEC CO_DEFAULT_TYPE i, j;
    //SDO server
    #if CO_NO_SDO_SERVER > 1
       static unsigned char SDOserverChannel = 0;
    #endif
    //Heartbeat producer timer variable
+   // 心跳生产者定时器变量
    static unsigned int tProducerHeartbeatTime = 0;
 
-/* 16 bit mainline timer variable */
+/* 16 bit mainline timer variable 
+   16 位主线定时器变量 */
    unsigned int CO_Timer16bit1msCopy;
    CO_DISABLE_TMR();
    CO_Timer16bit1msCopy = CO_Timer16bit1ms;
@@ -1753,8 +1808,11 @@ void CO_ProcessMain(void){
    #endif
    else if( ERROR_BIT_READ(ERROR_CAN_TX_BUS_PASSIVE)
          || ERROR_BIT_READ(ERROR_CAN_RX_BUS_PASSIVE)
-         || ERROR_BIT_READ(ERROR_CAN_BUS_WARNING))    PCB_ERROR_LED(CO_StatusLED.SingleFlash);
-   else if(ODE_Error_Register)                        PCB_ERROR_LED(CO_StatusLED.Blinking);//not in CiA standard
-   else                                               PCB_ERROR_LED(CO_StatusLED.Off);
+         || ERROR_BIT_READ(ERROR_CAN_BUS_WARNING))    
+            PCB_ERROR_LED(CO_StatusLED.SingleFlash);
+   else if(ODE_Error_Register)                        
+            PCB_ERROR_LED(CO_StatusLED.Blinking);//not in CiA standard
+   else                                               
+            PCB_ERROR_LED(CO_StatusLED.Off);
 
 }

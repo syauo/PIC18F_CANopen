@@ -29,91 +29,91 @@
    Status Bit Emergency message is sent. If critical bits are set, node will not
    be able to enter operational state.
 
-   é”™è¯¯çŠ¶æ€ä½æŒ‡ç¤ºç¨‹åºä¸­å‘ç”Ÿçš„ä»»ä½•é”™è¯¯ã€‚å½“ç¨‹åºå‡ºçŽ°é”™è¯¯æ—¶ ErrorReport() å‡½æ•°è®¾ç½®ç‰¹å®šå¯¹åº”
-   ä½ã€‚å¦‚æžœé”™è¯¯å¾—åˆ°è§£å†³ï¼Œä¹Ÿå¯ä»¥é€šè¿‡ ErrorReset() å‡½æ•°å¤ä½ã€‚ä»»ä½•é”™è¯¯çŠ¶æ€ä½çš„æ¯æ¬¡æ›´æ”¹éƒ½
-   ä¼šå‘é€ç´§æ€¥æ¶ˆæ¯ã€‚å¦‚æžœé‡è¦ä½è¢«ç½®ä½ï¼ŒèŠ‚ç‚¹å°†ä¸èƒ½è¿›å…¥è¿è¡ŒçŠ¶æ€ã€‚
+   ´íÎó×´Ì¬Î»Ö¸Ê¾³ÌÐòÖÐ·¢ÉúµÄÈÎºÎ´íÎó¡£µ±³ÌÐò³öÏÖ´íÎóÊ± ErrorReport() º¯ÊýÉèÖÃÌØ¶¨¶ÔÓ¦
+   Î»¡£Èç¹û´íÎóµÃµ½½â¾ö£¬Ò²¿ÉÒÔÍ¨¹ý ErrorReset() º¯Êý¸´Î»¡£ÈÎºÎ´íÎó×´Ì¬Î»µÄÃ¿´Î¸ü¸Ä¶¼
+   »á·¢ËÍ½ô¼±ÏûÏ¢¡£Èç¹ûÖØÒªÎ»±»ÖÃÎ»£¬½Úµã½«²»ÄÜ½øÈëÔËÐÐ×´Ì¬¡£
 
 ****** standards ***************************************************************
-         æ ‡å‡†
+         ±ê×¼
 
-   é”™è¯¯å¯„å­˜å™¨
+   ´íÎó¼Ä´æÆ÷
    Error register 0x1001 (ds-301):
    bit      mandatory/opt      description
    -----------------------------------------------------------------------------
-   0        M                  generic error    é€šç”¨é”™è¯¯
-   1        O                  current          ç”µæµ
-   2        O                  voltage          ç”µåŽ‹      
-   3        O                  temperature      æ¸©åº¦
-   4        O                  communication error (overrun, error state) é€šä¿¡é”™è¯¯
-   5        O                  device profile specific      å…·ä½“è®¾å¤‡ç‰¹å®šé…ç½®
-   6        O                  Reserved (always 0)          ä¿ç•™
-   7        O                  manufacturer specific        åˆ¶é€ å•†ç‰¹å®šé…ç½®
+   0        M                  generic error    Í¨ÓÃ´íÎó
+   1        O                  current          µçÁ÷
+   2        O                  voltage          µçÑ¹      
+   3        O                  temperature      ÎÂ¶È
+   4        O                  communication error (overrun, error state) Í¨ÐÅ´íÎó
+   5        O                  device profile specific      ¾ßÌåÉè±¸ÌØ¶¨ÅäÖÃ
+   6        O                  Reserved (always 0)          ±£Áô
+   7        O                  manufacturer specific        ÖÆÔìÉÌÌØ¶¨ÅäÖÃ
 
-   ç´§æ€¥é”™è¯¯ä»£ç  ds-301
+   ½ô¼±´íÎó´úÂë ds-301
    Emergency error codes (ds-301):
    error code       description
    -----------------------------------------------------------------------------
-   00xx             Error Reset or No Error     é”™è¯¯å¤ä½æˆ–æ²¡æœ‰é”™è¯¯
-   10xx             Generic Error               é€šç”¨é”™è¯¯
-   20xx             Current                     ç”µæµ
-   21xx             Current, device input side  è®¾å¤‡è¾“å…¥ä¾§ç”µæµ
-   22xx             Current inside the device   è®¾å¤‡å†…éƒ¨ç”µæµ
-   23xx             Current, device output side è®¾å¤‡å¤–éƒ¨ç”µæµ
-   30xx             Voltage                     ç”µåŽ‹
-   31xx             Mains Voltage               ä¸»å›žè·¯ç”µåŽ‹
-   32xx             Voltage inside the device   è®¾å¤‡å†…éƒ¨ç”µåŽ‹
-   33xx             Output Voltage              è¾“å‡ºç”µåŽ‹
-   40xx             Temperature                 æ¸©åº¦
-   41xx             Ambient Temperature         çŽ¯å¢ƒæ¸©åº¦
-   42xx             Device Temperature          è®¾å¤‡æ¸©åº¦
-   50xx             Device Hardware             è®¾å¤‡ç¡¬ä»¶
-   60xx             Device Software             è®¾å¤‡è½¯ä»¶
-   61xx             Internal Software           å†…éƒ¨è½¯ä»¶
-   62xx             User Software               ç”¨æˆ·è½¯ä»¶
-   63xx             Data Set                    æ•°æ®è®¾ç½®
-   70xx             Additional Modules          é™„åŠ æ¨¡å—
-   80xx             Monitoring                  ç›‘æŽ§
-   81xx             Communication               é€šä¿¡
-   8110             CAN Overrun (Objects lost)  CAN è¿‡è½½
-   8120             CAN in Error Passive Mode   CAN é”™è¯¯è¢«åŠ¨æ¨¡å¼
-   8130             Life Guard Error or Heartbeat Error     å¿ƒè·³ç›‘æŽ§é”™è¯¯
-   8140             recovered from bus off      ä»Žæ€»çº¿å…³é—­æ¢å¤
-   8150             Transmit COB-ID collision   å‘é€ COB-ID å†²çª
-   82xx             Protocol Error              åè®®é”™è¯¯
-   8210             PDO not processed due to length error   å› é•¿åº¦é”™è¯¯ PDO æœªå¤„ç†
-   8220             PDO length exceeded         PDO è¶…é•¿
-   90xx             External Error              å¤–éƒ¨é”™è¯¯
-   F0xx             Additional Functions        é™„åŠ åŠŸèƒ½
-   FFxx             Device specific             è®¾å¤‡è§„å®š
+   00xx             Error Reset or No Error     ´íÎó¸´Î»»òÃ»ÓÐ´íÎó
+   10xx             Generic Error               Í¨ÓÃ´íÎó
+   20xx             Current                     µçÁ÷
+   21xx             Current, device input side  Éè±¸ÊäÈë²àµçÁ÷
+   22xx             Current inside the device   Éè±¸ÄÚ²¿µçÁ÷
+   23xx             Current, device output side Éè±¸Íâ²¿µçÁ÷
+   30xx             Voltage                     µçÑ¹
+   31xx             Mains Voltage               Ö÷»ØÂ·µçÑ¹
+   32xx             Voltage inside the device   Éè±¸ÄÚ²¿µçÑ¹
+   33xx             Output Voltage              Êä³öµçÑ¹
+   40xx             Temperature                 ÎÂ¶È
+   41xx             Ambient Temperature         »·¾³ÎÂ¶È
+   42xx             Device Temperature          Éè±¸ÎÂ¶È
+   50xx             Device Hardware             Éè±¸Ó²¼þ
+   60xx             Device Software             Éè±¸Èí¼þ
+   61xx             Internal Software           ÄÚ²¿Èí¼þ
+   62xx             User Software               ÓÃ»§Èí¼þ
+   63xx             Data Set                    Êý¾ÝÉèÖÃ
+   70xx             Additional Modules          ¸½¼ÓÄ£¿é
+   80xx             Monitoring                  ¼à¿Ø
+   81xx             Communication               Í¨ÐÅ
+   8110             CAN Overrun (Objects lost)  CAN ¹ýÔØ
+   8120             CAN in Error Passive Mode   CAN ´íÎó±»¶¯Ä£Ê½
+   8130             Life Guard Error or Heartbeat Error     ÐÄÌø¼à¿Ø´íÎó
+   8140             recovered from bus off      ´Ó×ÜÏß¹Ø±Õ»Ö¸´
+   8150             Transmit COB-ID collision   ·¢ËÍ COB-ID ³åÍ»
+   82xx             Protocol Error              Ð­Òé´íÎó
+   8210             PDO not processed due to length error   Òò³¤¶È´íÎó PDO Î´´¦Àí
+   8220             PDO length exceeded         PDO ³¬³¤
+   90xx             External Error              Íâ²¿´íÎó
+   F0xx             Additional Functions        ¸½¼Ó¹¦ÄÜ
+   FFxx             Device specific             Éè±¸¹æ¶¨
 
    
-   ç´§æ€¥é”™è¯¯ä»£ç  ds-401
+   ½ô¼±´íÎó´úÂë ds-401
    Emergency error codes (ds-401):
    error code       description
    -----------------------------------------------------------------------------
-   2310             Current at outputs too high (overload)  è¾“å‡ºç”µæµè¿‡å¤§ï¼ˆè¿‡è½½ï¼‰
-   2320             Short circuit at outputs    è¾“å‡ºçŸ­è·¯
-   2330             Load dump at outputs        è¾“å‡ºè´Ÿè½½çªé™/ç©ºè½½
-   3110             Input voltage too high      è¾“å…¥ç”µåŽ‹è¿‡é«˜
-   3120             Input voltage too low       è¾“å…¥ç”µåŽ‹è¿‡ä½Ž
-   3210             Internal voltage too high   å†…éƒ¨ç”µåŽ‹è¿‡é«˜
-   3220             Internal voltage too low    å†…éƒ¨ç”µåŽ‹è¿‡ä½Ž
-   3310             Output voltage too high     è¾“å‡ºç”µåŽ‹è¿‡é«˜
-   3320             Output voltage too low      è¾“å‡ºç”µåŽ‹è¿‡ä½Ž
+   2310             Current at outputs too high (overload)  Êä³öµçÁ÷¹ý´ó£¨¹ýÔØ£©
+   2320             Short circuit at outputs    Êä³ö¶ÌÂ·
+   2330             Load dump at outputs        Êä³ö¸ºÔØÍ»½µ/¿ÕÔØ
+   3110             Input voltage too high      ÊäÈëµçÑ¹¹ý¸ß
+   3120             Input voltage too low       ÊäÈëµçÑ¹¹ýµÍ
+   3210             Internal voltage too high   ÄÚ²¿µçÑ¹¹ý¸ß
+   3220             Internal voltage too low    ÄÚ²¿µçÑ¹¹ýµÍ
+   3310             Output voltage too high     Êä³öµçÑ¹¹ý¸ß
+   3320             Output voltage too low      Êä³öµçÑ¹¹ýµÍ
 
-   ç´§æ€¥æ¶ˆæ¯çš„ç»„æˆ
+   ½ô¼±ÏûÏ¢µÄ×é³É
    Contents of Emergency message (COB-ID = 0x80 + Node-ID):
    byte no.         description
    -----------------------------------------------------------------------------
-   byte 0..1        Error code      é”™è¯¯ä»£ç 
-   byte 2           Error Register (ODE_Error_Register, OD index 1001)  é”™è¯¯å¯„å­˜å™¨
-   byte 3..7        Manufacturer specific:      åˆ¶é€ å•†è§„å®š
+   byte 0..1        Error code      ´íÎó´úÂë
+   byte 2           Error Register (ODE_Error_Register, OD index 1001)  ´íÎó¼Ä´æÆ÷
+   byte 3..7        Manufacturer specific:      ÖÆÔìÉÌ¹æ¶¨
    byte 3              ErrorControl.ErrorBit (see definitions of specific error bits)
    byte 4..5           ErrorControl.CodeVal  (code argument to ErrorReport() or ErrorReset())
    byte 6              ERROR_EMERGENCY_BYTE6 (see below)
    byte 7              ERROR_EMERGENCY_BYTE7 (see below)
    
-   é¢„å®šä¹‰é”™è¯¯åŒºçš„ç»„æˆ
+   Ô¤¶¨Òå´íÎóÇøµÄ×é³É
    Contents of Pre Defined Error Field (Index 1003):
    byte no.         description
    -----------------------------------------------------------------------------
@@ -129,9 +129,9 @@
 
 
 /***** Table of standard error codes (DS 301) *********************************/
-/*     æ ‡å‡†é”™è¯¯ä»£ç è¡¨  */
+/*     ±ê×¼´íÎó´úÂë±í  */
    //Each error code value corresponds one error bit
-   // æ²¡ä¸ªé”™è¯¯ä»£ç å¯¹åº”ä¸€ä¸ªé”™è¯¯ä½
+   // Ã¿¸ö´íÎó´úÂë¶ÔÓ¦Ò»¸ö´íÎóÎ»
    #define ERROR_CODES {                                                   \
          0x0000, 0x6100, 0x6110, 0x6120, 0x6000, 0x6300, 0     , 0     ,   \
          0x8110, 0x8140, 0x8120, 0x8120, 0x8110, 0x8100, 0x8130, 0x8100,   \
@@ -140,10 +140,10 @@
 
 
 /***** definitions for Error Status Bits **************************************/
-/*     é”™è¯¯çŠ¶æ€ä½çš„å®šä¹‰ */
+/*     ´íÎó×´Ì¬Î»µÄ¶¨Òå */
 
    //byte 0, important generic errors
-   //å­—èŠ‚ 0ï¼Œé‡è¦çš„é€šç”¨é”™è¯¯
+   //×Ö½Ú 0£¬ÖØÒªµÄÍ¨ÓÃ´íÎó
    #define ERROR_NO_ERROR                             0x00
    #define ERROR_ErrorReport_ParametersNotSupp        0x01
    #define ERROR_isr_low_WrongInterrupt               0x02
@@ -152,7 +152,7 @@
    #define ERROR_WrongNodeIDorBitRate                 0x05
 
    //byte 1, important communication errors
-   //å­—èŠ‚ 1ï¼Œé‡è¦çš„é€šä¿¡é”™è¯¯
+   //×Ö½Ú 1£¬ÖØÒªµÄÍ¨ÐÅ´íÎó
    #define ERROR_CAN_RXB_OVERFLOW                     0x08
    #define ERROR_CAN_TX_BUS_OFF                       0x09
    #define ERROR_CAN_TX_BUS_PASSIVE                   0x0A
@@ -163,7 +163,7 @@
    #define ERROR_SYNC_TIME_OUT                        0x0F
 
    //byte 2, important or unimpotrant user defined errors
-   //å­—èŠ‚ 2ï¼Œé‡è¦æˆ–éžé‡è¦çš„ç”¨æˆ·å®šä¹‰é”™è¯¯
+   //×Ö½Ú 2£¬ÖØÒª»ò·ÇÖØÒªµÄÓÃ»§¶¨Òå´íÎó
    #define ERROR_USER_0_IMPORTANT                     0x10
    #define ERROR_USER_1_IMPORTANT                     0x11
    #define ERROR_USER_2_IMPORTANT                     0x12
@@ -174,7 +174,7 @@
    #define ERROR_USER_7                               0x17
 
    //byte 3, protocol errors, not important
-   //å­—èŠ‚ 3ï¼Œéžé‡è¦çš„ï¼Œåè®®é”™è¯¯
+   //×Ö½Ú 3£¬·ÇÖØÒªµÄ£¬Ð­Òé´íÎó
    #define ERROR_CO_RXMSG_PDOlength                   0x18
    #define ERROR_CO_RXMSG_Length                      0x19
    #define ERROR_CO_RXMSG_NMTcmd                      0x1A
@@ -184,7 +184,7 @@
    #define ERROR_CANRXTX_INT                          0x1E
 
 /***** calculation of Error register 0x1001 ***********************************/
-/*     é”™è¯¯å¯„å­˜å™¨çš„è®¡ç®— */
+/*     ´íÎó¼Ä´æÆ÷µÄ¼ÆËã */
 
    //generic error
    #define ERROR_REGISTER_BIT0_CONDITION (CO_ErrorStatusBits[0] & 0xFE)
@@ -202,12 +202,12 @@
    #define ERROR_REGISTER_BIT7_CONDITION (CO_ErrorStatusBits[2] & 0x0F)
 
 /***** other defines **********************************************************/
-/*     å…¶å®ƒå®šä¹‰ */
+/*     ÆäËü¶¨Òå */
    extern unsigned char CO_ErrorStatusBits[];
    #define ERROR_BIT_READ(error_bit)   (CO_ErrorStatusBits[error_bit>>3] & (1<<(error_bit & 0x07)))
 
    //Defines for bytes 6 and 7 in emergency message
-   //ç´§æ€¥æ¶ˆæ¯ä¸­çš„ç¬¬ 6 å’Œç¬¬ 7 å­—èŠ‚å®šä¹‰
+   //½ô¼±ÏûÏ¢ÖÐµÄµÚ 6 ºÍµÚ 7 ×Ö½Ú¶¨Òå
    #define ERROR_EMERGENCY_BYTE6    CO_ErrorStatusBits[0]
    #define ERROR_EMERGENCY_BYTE7    CO_ErrorStatusBits[1]
 
@@ -218,14 +218,14 @@
    it is the first time for that bit. If critical bits are set, node will not be
    able to enter operational state.
 
-   ErrorReport - æŠ¥å‘Šé”™è¯¯çŠ¶å†µ
-   å‡½æ•°ç”¨äºŽæŠ¥å‘Šç¨‹åºä¸­å‘ç”Ÿçš„ä»»ä½•é”™è¯¯ã€‚å®ƒå¯ä»¥ä»Žä¸»çº¿æˆ–ä¸­æ–­ä½¿ç”¨ã€‚å®ƒè®¾ç½®é€‚å½“çš„é”™è¯¯ä½ï¼Œå¹¶åœ¨è¯¥
-   ä½ç¬¬ä¸€æ¬¡è¢«è®¾ç½®æ—¶å‘é€ç´§æ€¥æ¶ˆæ¯ã€‚å¦‚æžœå…³é”®ä½è¢«è®¾ç½®ï¼Œåˆ™èŠ‚ç‚¹å°†ä¸èƒ½è¿›å…¥è¿è¡ŒçŠ¶æ€ã€‚
+   ErrorReport - ±¨¸æ´íÎó×´¿ö
+   º¯ÊýÓÃÓÚ±¨¸æ³ÌÐòÖÐ·¢ÉúµÄÈÎºÎ´íÎó¡£Ëü¿ÉÒÔ´ÓÖ÷Ïß»òÖÐ¶ÏÊ¹ÓÃ¡£ËüÉèÖÃÊÊµ±µÄ´íÎóÎ»£¬²¢ÔÚ¸Ã
+   Î»µÚÒ»´Î±»ÉèÖÃÊ±·¢ËÍ½ô¼±ÏûÏ¢¡£Èç¹û¹Ø¼üÎ»±»ÉèÖÃ£¬Ôò½Úµã½«²»ÄÜ½øÈëÔËÐÐ×´Ì¬¡£
 
    PARAM ErrorBit: specific error bit, use defined constants
-                   ç‰¹å®šçš„é”™è¯¯ä½ï¼Œä½¿ç”¨å®šä¹‰çš„å¸¸é‡
+                   ÌØ¶¨µÄ´íÎóÎ»£¬Ê¹ÓÃ¶¨ÒåµÄ³£Á¿
    PARAM Code: informative value, send as 4-th and 5-th byte in Emergency message
-               ä¿¡æ¯å€¼ï¼Œåœ¨ç´§æ€¥æ¶ˆæ¯ä¸­ä½œä¸ºç¬¬ 4 å’Œç¬¬ 5 å­—èŠ‚å‘é€
+               ÐÅÏ¢Öµ£¬ÔÚ½ô¼±ÏûÏ¢ÖÐ×÷ÎªµÚ 4 ºÍµÚ 5 ×Ö½Ú·¢ËÍ
 *******************************************************************************/
    void ErrorReport(unsigned char ErrorBit, unsigned int Code);
 
@@ -235,9 +235,9 @@
    be used from mainline or interrupt function. It resets appropriate error bit
    and sends emergency 'no error'. Parameters are same as above.
 
-   ErrorReset - å¤ä½é”™è¯¯çŠ¶æ€
-   å‡½æ•°ç”¨äºŽæŠ¥å‘Šä»»ä½•é”™è¯¯æƒ…å†µæ˜¯å¦ä¸å†å­˜åœ¨ã€‚å®ƒå¯ä»¥ä»Žä¸»çº¿æˆ–ä¸­æ–­åŠŸèƒ½ä½¿ç”¨ã€‚å®ƒå°†å¤ä½é€‚å½“çš„é”™è¯¯
-   ä½å¹¶å‘é€ã€Žæ— é”™è¯¯ã€ç´§æ€¥æ¶ˆæ¯ã€‚ å‚æ•°ä¸Žä¸Šé¢ç›¸åŒã€‚
+   ErrorReset - ¸´Î»´íÎó×´Ì¬
+   º¯ÊýÓÃÓÚ±¨¸æÈÎºÎ´íÎóÇé¿öÊÇ·ñ²»ÔÙ´æÔÚ¡£Ëü¿ÉÒÔ´ÓÖ÷Ïß»òÖÐ¶Ï¹¦ÄÜÊ¹ÓÃ¡£Ëü½«¸´Î»ÊÊµ±µÄ´íÎó
+   Î»²¢·¢ËÍ¡ºÎÞ´íÎó¡»½ô¼±ÏûÏ¢¡£ ²ÎÊýÓëÉÏÃæÏàÍ¬¡£
 *******************************************************************************/
    void ErrorReset(unsigned char ErrorBit, unsigned int Code);
 

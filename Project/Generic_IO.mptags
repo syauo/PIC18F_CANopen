@@ -17,20 +17,20 @@ ATTR_RW::0x00	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	141;"	d	line
 ATTR_RWR::0x04	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	145;"	d	line:145
 ATTR_RWW::0x05	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	146;"	d	line:146
 ATTR_WO::0x01	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	142;"	d	line:142
-AbortCode	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	645;"	l	line:645
+AbortCode	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	657;"	l	line:657
 BRP	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	80;"	m	line:80	file:
-BUFF	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1668;"	d	line:1668	file:
-BUFF::CO_SDOserverVar[0].Buff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1427;"	d	line:1427	file:
-BUFF::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1435;"	d	line:1435	file:
-BUFFMAX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1287;"	d	line:1287	file:
-BUFFMAX::CO_SDOclientVar[0].BuffMaxSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	784;"	d	line:784	file:
-BUFFMAX::CO_SDOclientVar[channel].BuffM	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	793;"	d	line:793	file:
-BUFFSIZE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1288;"	d	line:1288	file:
-BUFFSIZE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1669;"	d	line:1669	file:
-BUFFSIZE::CO_SDOclientVar[0].BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	785;"	d	line:785	file:
-BUFFSIZE::CO_SDOclientVar[channel].BuffS	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	794;"	d	line:794	file:
-BUFFSIZE::CO_SDOserverVar[0].BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1428;"	d	line:1428	file:
-BUFFSIZE::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1436;"	d	line:1436	file:
+BUFF	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1689;"	d	line:1689	file:
+BUFF::CO_SDOserverVar[0].Buff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1448;"	d	line:1448	file:
+BUFF::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1456;"	d	line:1456	file:
+BUFFMAX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1308;"	d	line:1308	file:
+BUFFMAX::CO_SDOclientVar[0].BuffMaxSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	805;"	d	line:805	file:
+BUFFMAX::CO_SDOclientVar[channel].BuffM	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	814;"	d	line:814	file:
+BUFFSIZE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1309;"	d	line:1309	file:
+BUFFSIZE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1690;"	d	line:1690	file:
+BUFFSIZE::CO_SDOclientVar[0].BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	806;"	d	line:806	file:
+BUFFSIZE::CO_SDOclientVar[channel].BuffS	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	815;"	d	line:815	file:
+BUFFSIZE::CO_SDOserverVar[0].BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1449;"	d	line:1449	file:
+BUFFSIZE::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1457;"	d	line:1457	file:
 BYTE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	107;"	m	line:107
 BYTE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	84;"	m	line:84
 BYTE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	91;"	m	line:91
@@ -40,10 +40,10 @@ BYTEbits	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	108;"	m	line:108
 BYTEbits	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	85;"	m	line:85
 BYTEbits	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	92;"	m	line:92
 Blinking	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	119;"	m	line:119
-Buff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	158;"	m	line:158	file:
-BuffMaxSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	175;"	m	line:175	file:
-BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	159;"	m	line:159	file:
-BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	176;"	m	line:176	file:
+Buff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	172;"	m	line:172	file:
+BuffMaxSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	189;"	m	line:189	file:
+BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	173;"	m	line:173	file:
+BuffSize	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	190;"	m	line:190	file:
 CAN_ID_EMERGENCY::0x080	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	53;"	d	line:53
 CAN_ID_HEARTBEAT::0x700	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	65;"	d	line:65
 CAN_ID_NMT_SERVICE::0x000	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	51;"	d	line:51
@@ -59,9 +59,9 @@ CAN_ID_TPDO1::0x280	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	57;"	d
 CAN_ID_TPDO2::0x380	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	59;"	d	line:59
 CAN_ID_TPDO3::0x480	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	61;"	d	line:61
 CAN_ID_TSDO::0x580	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	63;"	d	line:63
-CLI_PARAM	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1290;"	d	line:1290	file:
-CLI_PARAM::ODE_Client_SDO_Parameter[0]	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	787;"	d	line:787	file:
-CLI_PARAM::ODE_Client_SDO_Parameter[chann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	796;"	d	line:796	file:
+CLI_PARAM	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1311;"	d	line:1311	file:
+CLI_PARAM::ODE_Client_SDO_Parameter[0]	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	808;"	d	line:808	file:
+CLI_PARAM::ODE_Client_SDO_Parameter[chann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	817;"	d	line:817	file:
 COB_ID	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	428;"	m	line:428
 COB_ID	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	439;"	m	line:439
 COB_ID_Client_to_Server	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	412;"	m	line:412
@@ -70,9 +70,9 @@ COMSTATold	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\
 CO_BitRate	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	57;"	v	line:57
 CO_BitRateData	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	85;"	v	line:85
 CO_CANTX_BUFFER_FREE::(TXB0CONbits.TXREQ==0)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	127;"	d	line:127
-CO_CANrxIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	392;"	f	line:392	signature:(void)
+CO_CANrxIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	404;"	f	line:404	signature:(void)
 CO_CANrxIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	32;"	p	line:32	file:	signature:(void)
-CO_CANtxIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	561;"	f	line:561	signature:(void)
+CO_CANtxIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	573;"	f	line:573	signature:(void)
 CO_CANtxIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	33;"	p	line:33	file:	signature:(void)
 CO_CanMessage	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	178;"	t	line:178
 CO_DEFAULT_SPEC::static	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	78;"	d	line:78
@@ -94,15 +94,15 @@ CO_ENABLE_CANRX_TMR::INTCONbits.GIEH=1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANop
 CO_ENABLE_CANTX::INTCONbits.GIEL=1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	110;"	d	line:110
 CO_ENABLE_CANTX_TMR::	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	115;"	d	line:115
 CO_ENABLE_TMR::INTCONbits.GIEL=1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	106;"	d	line:106
-CO_ErrorStatusBits	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	146;"	v	line:146
+CO_ErrorStatusBits	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	160;"	v	line:160
 CO_FindEntryInOD	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	160;"	p	line:160	signature:(unsigned int index, unsigned char subindex)
-CO_FindEntryInOD	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	701;"	f	line:701	signature:(unsigned int index, unsigned char subindex)
-CO_HBcons_AllMonitoredOperational	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	193;"	v	line:193
-CO_HBcons_AllMonitoredOperationalCpy	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	194;"	v	line:194
-CO_HBcons_MonStarted::(i)CO_RXCAN[CO_RXCAN_CONS_HB+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	198;"	d	line:198	file:
+CO_FindEntryInOD	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	722;"	f	line:722	signature:(unsigned int index, unsigned char subindex)
+CO_HBcons_AllMonitoredOperational	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	207;"	v	line:207
+CO_HBcons_AllMonitoredOperationalCpy	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	208;"	v	line:208
+CO_HBcons_MonStarted::(i)CO_RXCAN[CO_RXCAN_CONS_HB+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	212;"	d	line:212	file:
 CO_HBcons_NMTstate::(i)CO_RXCAN[CO_RXCAN_CONS_HB+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	238;"	d	line:238
-CO_HBcons_TimerValue	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1688;"	p	line:1688	file:
-CO_HBcons_TimerValue::(i)CO_RXCAN[CO_RXCAN_CONS_HB+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	197;"	d	line:197	file:
+CO_HBcons_TimerValue	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1709;"	p	line:1709	file:
+CO_HBcons_TimerValue::(i)CO_RXCAN[CO_RXCAN_CONS_HB+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	211;"	d	line:211	file:
 CO_IDENT_READ_COB::(CanMessage_Ident)((CanMessage	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	89;"	d	line:89
 CO_IDENT_READ_RTR::(CanMessage_Ident)(CanMessage_	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	91;"	d	line:91
 CO_IDENT_WRITE::(CobId,RTR)(((CobId)<<5)|((RTR	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	87;"	d	line:87
@@ -112,8 +112,8 @@ CO_IsrHighSignal	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchi
 CO_MAX_ENTRY_NR::8	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	36;"	d	line:36	file:
 CO_MAX_OD_ENTRY_SIZE::20	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	55;"	d	line:55
 CO_MODIF_Timer1msIsr::	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	81;"	d	line:81
-CO_NMToperatingState	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	124;"	v	line:124
-CO_NO_CONS_HEARTBEAT::1	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	49;"	d	line:49
+CO_NMToperatingState	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	137;"	v	line:137
+CO_NO_CONS_HEARTBEAT::0	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	49;"	d	line:49
 CO_NO_EMERGENCY::0	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	39;"	d	line:39
 CO_NO_ERROR_FIELD::8	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	59;"	d	line:59
 CO_NO_RPDO::4	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	41;"	d	line:41
@@ -127,22 +127,22 @@ CO_NodeID	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\C
 CO_OD	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	524;"	v	line:524
 CO_OD_IS_ORDERED::	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	71;"	d	line:71
 CO_OD_NoOfElements	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	1023;"	v	line:1023
-CO_OD_Read	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	88;"	p	line:88	file:	signature:(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char BuffMaxSize)
-CO_OD_Read	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	602;"	f	line:602	signature:(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char sizeOfBuff)
+CO_OD_Read	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	96;"	p	line:96	file:	signature:(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char BuffMaxSize)
+CO_OD_Read	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	614;"	f	line:614	signature:(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char sizeOfBuff)
 CO_OD_VerifyWrite	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	67;"	p	line:67	file:	signature:(ROM CO_objectDictionaryEntry* pODE, void* data)
 CO_OD_VerifyWrite	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	393;"	f	line:393	signature:(ROM CO_objectDictionaryEntry* pODE, void* data)
-CO_OD_Write	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	89;"	p	line:89	file:	signature:(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char dataSize)
-CO_OD_Write	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	643;"	f	line:643	signature:(ROM CO_objectDictionaryEntry* pODE, void* data, unsigned char length)
+CO_OD_Write	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	97;"	p	line:97	file:	signature:(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char dataSize)
+CO_OD_Write	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	655;"	f	line:655	signature:(ROM CO_objectDictionaryEntry* pODE, void* data, unsigned char length)
 CO_OSCILATOR_FREQ::20	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	41;"	d	line:41
 CO_PDO_MAPPING_IN_OD::	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	63;"	d	line:63
 CO_PDO_PARAM_IN_OD::	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	61;"	d	line:61
-CO_ProcessDriver	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	86;"	p	line:86	file:	signature:(void)
+CO_ProcessDriver	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	93;"	p	line:93	file:	signature:(void)
 CO_ProcessDriver	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	190;"	f	line:190	signature:(void)
-CO_ProcessMain	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1303;"	f	line:1303	signature:(void)
+CO_ProcessMain	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1324;"	f	line:1324	signature:(void)
 CO_ProcessMain	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	38;"	p	line:38	file:	signature:(void)
 CO_RPDO::(i)CO_RXCAN[CO_RXCAN_RPDO+i].D	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	224;"	d	line:224
 CO_RPDO_New::(i)CO_RXCAN[CO_RXCAN_RPDO+i].N	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	225;"	d	line:225
-CO_RXCAN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	116;"	v	line:116
+CO_RXCAN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	129;"	v	line:129
 CO_RXCAN_CONS_HB::(CO_RXCAN_SDO_CLI+CO_NO_SDO_CL	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	189;"	d	line:189
 CO_RXCAN_NMT::0	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	184;"	d	line:184
 CO_RXCAN_NO_MSGS::(1+CO_NO_SYNC+CO_NO_RPDO+CO_NO	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	203;"	d	line:203
@@ -151,49 +151,49 @@ CO_RXCAN_SDO_CLI::(CO_RXCAN_SDO_SRV+CO_NO_SDO_SE	D:\_WorkSpace\GitHub\PIC18F_CAN
 CO_RXCAN_SDO_SRV::(CO_RXCAN_RPDO+CO_NO_RPDO)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	187;"	d	line:187
 CO_RXCAN_SYNC::1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	185;"	d	line:185
 CO_RXCAN_USER::(CO_RXCAN_CONS_HB+CO_NO_CONS_H	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	190;"	d	line:190
-CO_Read_NodeId_BitRate	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	84;"	p	line:84	file:	signature:(void)
+CO_Read_NodeId_BitRate	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	89;"	p	line:89	file:	signature:(void)
 CO_Read_NodeId_BitRate	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	275;"	f	line:275	signature:(void)
 CO_Reset::Reset	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	95;"	d	line:95
-CO_ResetComm	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	208;"	f	line:208	signature:(void)
+CO_ResetComm	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	224;"	f	line:224	signature:(void)
 CO_ResetComm	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	36;"	p	line:36	file:	signature:(void)
 CO_SAVE_EEPROM::	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	73;"	d	line:73
 CO_SAVE_ROM::	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	75;"	d	line:75
 CO_SDO_TIMEOUT_TIME::10	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	57;"	d	line:57
 CO_SDOclientDownload	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	268;"	p	line:268	signature:(unsigned char channel, unsigned long* pSDOabortCode)
-CO_SDOclientDownload	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	919;"	f	line:919	signature:(unsigned char channel, unsigned long* pSDOabortCode)
+CO_SDOclientDownload	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	940;"	f	line:940	signature:(unsigned char channel, unsigned long* pSDOabortCode)
 CO_SDOclientDownload_init	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	266;"	p	line:266	signature:(unsigned char channel, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char dataSize)
-CO_SDOclientDownload_init	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	870;"	f	line:870	signature:(unsigned char channel, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char dataSize)
+CO_SDOclientDownload_init	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	891;"	f	line:891	signature:(unsigned char channel, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char dataSize)
 CO_SDOclientDownload_wait	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	274;"	p	line:274	signature:(unsigned char NODE_ID_of_SDO_Server, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char BuffMaxSize, unsigned long* pSDOabortCode)
-CO_SDOclientDownload_wait	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1241;"	f	line:1241	signature:(unsigned char NODE_ID_of_SDO_Server, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char dataSize, unsigned long* pSDOabortCode)
+CO_SDOclientDownload_wait	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1262;"	f	line:1262	signature:(unsigned char NODE_ID_of_SDO_Server, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char dataSize, unsigned long* pSDOabortCode)
 CO_SDOclientUpload	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	272;"	p	line:272	signature:(unsigned char channel, unsigned long* pSDOabortCode, unsigned char* dataSize)
-CO_SDOclientUpload	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1089;"	f	line:1089	signature:(unsigned char channel, unsigned long* pSDOabortCode, unsigned char* pDataSize)
+CO_SDOclientUpload	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1110;"	f	line:1110	signature:(unsigned char channel, unsigned long* pSDOabortCode, unsigned char* pDataSize)
 CO_SDOclientUpload_init	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	270;"	p	line:270	signature:(unsigned char channel, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char BuffMaxSize)
-CO_SDOclientUpload_init	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1050;"	f	line:1050	signature:(unsigned char channel, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char BuffMaxSize)
+CO_SDOclientUpload_init	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1071;"	f	line:1071	signature:(unsigned char channel, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char BuffMaxSize)
 CO_SDOclientUpload_wait	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	276;"	p	line:276	signature:(unsigned char NODE_ID_of_SDO_Server, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char BuffMaxSize, unsigned char* dataSize, unsigned long* pSDOabortCode)
-CO_SDOclientUpload_wait	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1272;"	f	line:1272	signature:(unsigned char NODE_ID_of_SDO_Server, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char BuffMaxSize, unsigned char* pDataSize, unsigned long* pSDOabortCode)
-CO_SDOclientVar	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	178;"	v	line:178
+CO_SDOclientUpload_wait	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1293;"	f	line:1293	signature:(unsigned char NODE_ID_of_SDO_Server, unsigned int index, unsigned char subindex, unsigned char* pBuff, unsigned char BuffMaxSize, unsigned char* pDataSize, unsigned long* pSDOabortCode)
+CO_SDOclientVar	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	192;"	v	line:192
 CO_SDOclient_setup	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	263;"	p	line:263	signature:(unsigned char channel, unsigned long COB_ID_Client_to_Server, unsigned long COB_ID_Server_to_Client, unsigned char NODE_ID_of_SDO_Server)
-CO_SDOclient_setup	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	821;"	f	line:821	signature:(unsigned char channel, unsigned long COB_ID_Client_to_Server, unsigned long COB_ID_Server_to_Client, unsigned char NODE_ID_of_SDO_Server)
-CO_SDOserverVar	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	162;"	v	line:162
-CO_SYNCcounter	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	128;"	v	line:128
-CO_SYNCperiod::CO_RXCAN[CO_RXCAN_SYNC].Data.W	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	132;"	d	line:132	file:
-CO_SYNCperiodEarly::CO_RXCAN[CO_RXCAN_SYNC].Data.W	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	134;"	d	line:134	file:
-CO_SYNCperiodTimeout::CO_RXCAN[CO_RXCAN_SYNC].Data.W	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	133;"	d	line:133	file:
-CO_SYNCproducer::CO_RXCAN[CO_RXCAN_SYNC].Data.B	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	135;"	d	line:135	file:
-CO_SYNCtime	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	129;"	v	line:129
-CO_SYNCwindow	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	130;"	v	line:130
-CO_SetupCAN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	85;"	p	line:85	file:	signature:(void)
+CO_SDOclient_setup	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	842;"	f	line:842	signature:(unsigned char channel, unsigned long COB_ID_Client_to_Server, unsigned long COB_ID_Server_to_Client, unsigned char NODE_ID_of_SDO_Server)
+CO_SDOserverVar	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	176;"	v	line:176
+CO_SYNCcounter	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	141;"	v	line:141
+CO_SYNCperiod::CO_RXCAN[CO_RXCAN_SYNC].Data.W	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	145;"	d	line:145	file:
+CO_SYNCperiodEarly::CO_RXCAN[CO_RXCAN_SYNC].Data.W	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	147;"	d	line:147	file:
+CO_SYNCperiodTimeout::CO_RXCAN[CO_RXCAN_SYNC].Data.W	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	146;"	d	line:146	file:
+CO_SYNCproducer::CO_RXCAN[CO_RXCAN_SYNC].Data.B	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	148;"	d	line:148	file:
+CO_SYNCtime	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	142;"	v	line:142
+CO_SYNCwindow	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	143;"	v	line:143
+CO_SetupCAN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	91;"	p	line:91	file:	signature:(void)
 CO_SetupCAN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	297;"	f	line:297	signature:(void)
-CO_StatusLED	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	106;"	v	line:106
+CO_StatusLED	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	118;"	v	line:118
 CO_StatusLED_struct	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	123;"	t	line:123
 CO_TPDO::(i)CO_TXCAN[CO_TXCAN_TPDO+i].D	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	230;"	d	line:230
-CO_TPDO_EventTimer	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	188;"	v	line:188
+CO_TPDO_EventTimer	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	202;"	v	line:202
 CO_TPDO_INH_EV_TIMER::	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	65;"	d	line:65
-CO_TPDO_InhibitTimer	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	187;"	v	line:187
-CO_TPDO_SyncTimer	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	184;"	v	line:184
+CO_TPDO_InhibitTimer	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	201;"	v	line:201
+CO_TPDO_SyncTimer	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	198;"	v	line:198
 CO_TPDOsend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	257;"	p	line:257	signature:(unsigned int index)
-CO_TPDOsend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	492;"	f	line:492	signature:(unsigned int index)
-CO_TXCAN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	120;"	v	line:120
+CO_TPDOsend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	513;"	f	line:513	signature:(unsigned int index)
+CO_TXCAN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	133;"	v	line:133
 CO_TXCAN_COPY_TO_BUFFERS::(INDEX){	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	143;"	d	line:143
 CO_TXCAN_EMERG::(CO_TXCAN_SYNC+CO_NO_SYNC)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	194;"	d	line:194
 CO_TXCAN_HB::(CO_TXCAN_SDO_CLI+CO_NO_SDO_CL	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	198;"	d	line:198
@@ -203,25 +203,25 @@ CO_TXCAN_SDO_SRV::(CO_TXCAN_TPDO+CO_NO_TPDO)	D:\_WorkSpace\GitHub\PIC18F_CANopen
 CO_TXCAN_SYNC::0	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	193;"	d	line:193
 CO_TXCAN_TPDO::(CO_TXCAN_EMERG+CO_NO_EMERGENC	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	195;"	d	line:195
 CO_TXCAN_USER::(CO_TXCAN_HB+1)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	199;"	d	line:199
-CO_TXCANcount	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	112;"	v	line:112
+CO_TXCANcount	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	124;"	v	line:124
 CO_TXCANsend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	250;"	p	line:250	signature:(unsigned int index)
-CO_TXCANsend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	457;"	f	line:457	signature:(unsigned int index)
-CO_Timer16bit1ms	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	96;"	v	line:96
-CO_Timer16bit1msCopy	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1316;"	l	line:1316
-CO_Timer1msIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	508;"	f	line:508	signature:(void)
+CO_TXCANsend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	478;"	f	line:478	signature:(unsigned int index)
+CO_Timer16bit1ms	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	106;"	v	line:106
+CO_Timer16bit1msCopy	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1337;"	l	line:1337
+CO_Timer1msIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	529;"	f	line:529	signature:(void)
 CO_Timer1msIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	37;"	p	line:37	file:	signature:(void)
-CO_Timer1msIsr_executing	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	103;"	v	line:103
-CO_Timer8bit100ms	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	97;"	v	line:97
+CO_Timer1msIsr_executing	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	115;"	v	line:115
+CO_Timer8bit100ms	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	108;"	v	line:108
 CO_VERIFY_OD_WRITE::	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	67;"	d	line:67
 CO_objectDictionaryEntry	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	137;"	t	line:137
 CO_sRPDO_param	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	430;"	t	line:430
 CO_sSDO_Param	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	415;"	t	line:415
 CO_sTPDO_param	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	444;"	t	line:444
-CheckErrors	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	140;"	m	line:140	file:
-CodeVal	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	144;"	m	line:144	file:
+CheckErrors	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	154;"	m	line:154	file:
+CodeVal	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	158;"	m	line:158	file:
 Communication_Error	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	406;"	m	line:406
-CurIndex	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	707;"	l	line:707
-CurSubIndex	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	708;"	l	line:708
+CurIndex	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	728;"	l	line:728
+CurSubIndex	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	729;"	l	line:729
 DWORD	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	105;"	m	line:105
 DWORD	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	97;"	m	line:97
 Data	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	177;"	m	line:177
@@ -268,15 +268,15 @@ ERROR_WrongNodeIDorBitRate::0x05	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_
 ERROR_isr_low_WrongInterrupt::0x02	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_errors.h	149;"	d	line:149
 ERROR_isr_timer_overflow::0x04	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_errors.h	151;"	d	line:151
 ERROR_wrong_PDO_mapping::0x03	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_errors.h	150;"	d	line:150
-EmergencyErrorCode	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	142;"	m	line:142	file:
-EmergencyToSend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	141;"	m	line:141	file:
-ErrorBit	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	143;"	m	line:143	file:
-ErrorCodesTable	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	147;"	v	line:147
-ErrorControl	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	145;"	v	line:145
+EmergencyErrorCode	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	156;"	m	line:156	file:
+EmergencyToSend	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	155;"	m	line:155	file:
+ErrorBit	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	157;"	m	line:157	file:
+ErrorCodesTable	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	161;"	v	line:161
+ErrorControl	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	159;"	v	line:159
 ErrorReport	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_errors.h	230;"	p	line:230	signature:(unsigned char ErrorBit, unsigned int Code)
-ErrorReport	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	632;"	f	line:632	signature:(unsigned char ErrorBit, unsigned int Code)
+ErrorReport	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	653;"	f	line:653	signature:(unsigned char ErrorBit, unsigned int Code)
 ErrorReset	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_errors.h	242;"	p	line:242	signature:(unsigned char ErrorBit, unsigned int Code)
-ErrorReset	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	662;"	f	line:662	signature:(unsigned char ErrorBit, unsigned int Code)
+ErrorReset	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	683;"	f	line:683	signature:(unsigned char ErrorBit, unsigned int Code)
 Event_Timer	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	443;"	m	line:443
 Flickering	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	118;"	m	line:118
 GIEold	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c	48;"	l	line:48
@@ -284,7 +284,7 @@ INTEGER16::int	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	371;"	d	line:371
 INTEGER32::long	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	372;"	d	line:372
 INTEGER8::char	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	370;"	d	line:370
 Ident	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	166;"	m	line:166
-Index	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	702;"	l	line:702
+Index	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	723;"	l	line:723
 Inhibit	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	174;"	m	line:174
 Inhibit_Time	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	441;"	m	line:441
 IsrLow	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	84;"	f	line:84	signature:(void)
@@ -304,10 +304,10 @@ NewMsg	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	173;"	m	line:173
 NoOfBytes	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	172;"	m	line:172
 NoOfEntries	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	120;"	m	line:120	file:
 NoOfEntries	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	405;"	m	line:405
-ODD_CANbitRate::7	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	356;"	d	line:356
+ODD_CANbitRate::3	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	356;"	d	line:356
 ODD_CANnodeID::0x08	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	353;"	d	line:353
 ODD_COMM_CYCLE_PERIOD::0L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	97;"	d	line:97
-ODD_CONS_HEARTBEAT_0::0x000405DCL	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	115;"	d	line:115
+ODD_CONS_HEARTBEAT_0::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	115;"	d	line:115
 ODD_CONS_HEARTBEAT_1::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	116;"	d	line:116
 ODD_CONS_HEARTBEAT_2::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	117;"	d	line:117
 ODD_CONS_HEARTBEAT_3::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	118;"	d	line:118
@@ -316,7 +316,7 @@ ODD_CONS_HEARTBEAT_5::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.
 ODD_CONS_HEARTBEAT_6::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	121;"	d	line:121
 ODD_CONS_HEARTBEAT_7::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	122;"	d	line:122
 ODD_DEVICE_TYPE::0x000F0195L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	95;"	d	line:95
-ODD_ERROR_BEH_COMM::0x00	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	109;"	d	line:109
+ODD_ERROR_BEH_COMM::0x01	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	109;"	d	line:109
 ODD_IDENT_PROD_CODE::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	106;"	d	line:106
 ODD_IDENT_REVISION_NR::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	107;"	d	line:107
 ODD_IDENT_SERIAL_NR::0x00000000L	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	108;"	d	line:108
@@ -610,42 +610,42 @@ ODEs_Error_Behavior	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	407;"	t	line
 OD_ENTRY::(Index,Subindex,Attribute,Vari	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	522;"	d	line:522	file:
 Off	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	117;"	m	line:117
 On	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	116;"	m	line:116
-PCB_ERROR_LED::(i)PORTBbits.RB4=i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	55;"	d	line:55
-PCB_ERROR_LED_INIT::{TRISBbits.TRISB4=0;PORTBbits.	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	54;"	d	line:54
-PCB_RUN_LED::(i)PORTBbits.RB1=i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	52;"	d	line:52
-PCB_RUN_LED_INIT::{TRISBbits.TRISB1=0;PORTBbits.	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	51;"	d	line:51
+PCB_ERROR_LED::(i)LATBbits.LATB4=i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	55;"	d	line:55
+PCB_ERROR_LED_INIT::{TRISBbits.TRISB4=0;LATBbits.L	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	54;"	d	line:54
+PCB_RUN_LED::(i)LATBbits.LATB1=i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	52;"	d	line:52
+PCB_RUN_LED_INIT::{TRISBbits.TRISB1=0;LATBbits.L	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	51;"	d	line:51
 PROP	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	82;"	m	line:82	file:
 PhSeg1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	83;"	m	line:83	file:
 PhSeg2	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	84;"	m	line:84	file:
 PowerOnCounter	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	461;"	m	line:461
 Product_Code	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	122;"	m	line:122	file:
-RETURN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1293;"	d	line:1293	file:
-RETURN::(code)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	806;"	d	line:806	file:
+RETURN	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1314;"	d	line:1314	file:
+RETURN::(code)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	827;"	d	line:827	file:
 ROM::rom	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	74;"	d	line:74
-RXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1291;"	d	line:1291	file:
-RXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1671;"	d	line:1671	file:
-RXC_INDEX::(CO_RXCAN_SDO_CLI+channel)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	797;"	d	line:797	file:
-RXC_INDEX::(CO_RXCAN_SDO_SRV+SDOserverCha	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1438;"	d	line:1438	file:
-RXC_INDEX::CO_RXCAN_SDO_CLI	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	788;"	d	line:788	file:
-RXC_INDEX::CO_RXCAN_SDO_SRV	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1430;"	d	line:1430	file:
+RXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1312;"	d	line:1312	file:
+RXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1692;"	d	line:1692	file:
+RXC_INDEX::(CO_RXCAN_SDO_CLI+channel)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	818;"	d	line:818	file:
+RXC_INDEX::(CO_RXCAN_SDO_SRV+SDOserverCha	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1459;"	d	line:1459	file:
+RXC_INDEX::CO_RXCAN_SDO_CLI	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	809;"	d	line:809	file:
+RXC_INDEX::CO_RXCAN_SDO_SRV	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1451;"	d	line:1451	file:
 Revision_Number	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	123;"	m	line:123	file:
-SDO_ABORT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1579;"	f	line:1579
-SDO_ABORT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1594;"	f	line:1594
-SDO_ABORT::(Code){	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1453;"	d	line:1453	file:
-SDOserverChannel	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1310;"	l	line:1310	file:
+SDO_ABORT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1600;"	f	line:1600
+SDO_ABORT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1615;"	f	line:1615
+SDO_ABORT::(Code){	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1474;"	d	line:1474	file:
+SDOserverChannel	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1331;"	l	line:1331	file:
 SET_CAN_TRIS::{	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.h	47;"	d	line:47
 SJW	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	81;"	m	line:81	file:
-STATE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1285;"	d	line:1285	file:
-STATE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1667;"	d	line:1667	file:
-STATE::CO_SDOclientVar[0].State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	782;"	d	line:782	file:
-STATE::CO_SDOclientVar[channel].State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	791;"	d	line:791	file:
-STATE::CO_SDOserverVar[0].State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1426;"	d	line:1426	file:
-STATE::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1434;"	d	line:1434	file:
+STATE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1306;"	d	line:1306	file:
+STATE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1688;"	d	line:1688	file:
+STATE::CO_SDOclientVar[0].State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	803;"	d	line:803	file:
+STATE::CO_SDOclientVar[channel].State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	812;"	d	line:812	file:
+STATE::CO_SDOserverVar[0].State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1447;"	d	line:1447	file:
+STATE::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1455;"	d	line:1455	file:
 Serial_Number	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	124;"	m	line:124	file:
 SingleFlash	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	120;"	m	line:120
-State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	153;"	m	line:153	file:
-State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	168;"	m	line:168	file:
-SubIndex	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	703;"	l	line:703
+State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	167;"	m	line:167	file:
+State	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	182;"	m	line:182	file:
+SubIndex	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	724;"	l	line:724
 SwitchOffNode	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	175;"	f	line:175	signature:(void)
 TIMER2POSTSCALE::10	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	52;"	d	line:52	file:
 TIMER2POSTSCALE::10	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	64;"	d	line:64	file:
@@ -668,18 +668,18 @@ TIMER2PRESCALE::1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microch
 TIMER2PRESCALE::1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	67;"	d	line:67	file:
 TIMER2PRESCALE::1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	71;"	d	line:71	file:
 TIMER2PRESCALE::1	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	75;"	d	line:75	file:
-TMR16::(ttimerVariable)(unsignedint)(	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1321;"	d	line:1321	file:
-TMR16Z::(ttimerVariable)(unsignedint)(	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1320;"	d	line:1320	file:
-TMR8::(ttimerVariable)(unsignedchar)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	99;"	d	line:99	file:
-TMR8Z::(ttimerVariable)(unsignedchar)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	98;"	d	line:98	file:
+TMR16::(ttimerVariable)(unsignedint)(	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1342;"	d	line:1342	file:
+TMR16Z::(ttimerVariable)(unsignedint)(	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1341;"	d	line:1341	file:
+TMR8::(ttimerVariable)(unsignedchar)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	110;"	d	line:110	file:
+TMR8Z::(ttimerVariable)(unsignedchar)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	109;"	d	line:109	file:
 TRIS_DI::TRISC|=0x1F;TRISA|=0x13;TRISB|	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	39;"	d	line:39	file:
-TRIS_DO::TRISD&=0x10;TRISE&=0xE9	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	27;"	d	line:27	file:
-TXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1292;"	d	line:1292	file:
-TXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1672;"	d	line:1672	file:
-TXC_INDEX::(CO_TXCAN_SDO_CLI+channel)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	798;"	d	line:798	file:
-TXC_INDEX::(CO_TXCAN_SDO_SRV+SDOserverCha	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1439;"	d	line:1439	file:
-TXC_INDEX::CO_TXCAN_SDO_CLI	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	789;"	d	line:789	file:
-TXC_INDEX::CO_TXCAN_SDO_SRV	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1431;"	d	line:1431	file:
+TRIS_DO::TRISD&=0x10;TRISE&=0xF9	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	27;"	d	line:27	file:
+TXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1313;"	d	line:1313	file:
+TXC_INDEX	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1693;"	d	line:1693	file:
+TXC_INDEX::(CO_TXCAN_SDO_CLI+channel)	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	819;"	d	line:819	file:
+TXC_INDEX::(CO_TXCAN_SDO_SRV+SDOserverCha	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1460;"	d	line:1460	file:
+TXC_INDEX::CO_TXCAN_SDO_CLI	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	810;"	d	line:810	file:
+TXC_INDEX::CO_TXCAN_SDO_SRV	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1452;"	d	line:1452	file:
 Transmission_type	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	429;"	m	line:429
 Transmission_type	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	440;"	m	line:440
 TripleFlash	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	122;"	m	line:122
@@ -690,12 +690,12 @@ User_Init	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\m
 User_Init	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	217;"	f	line:217	signature:(void)
 User_IsrHigh	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	43;"	p	line:43	file:	signature:(void)
 User_IsrLow	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	46;"	p	line:46	file:	signature:(void)
-User_Process1msIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	78;"	p	line:78	file:	signature:(void)
+User_Process1msIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	80;"	p	line:80	file:	signature:(void)
 User_Process1msIsr	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	345;"	f	line:345	signature:(void)
 User_ProcessMain	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	41;"	p	line:41	file:	signature:(void)
 User_ProcessMain	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	305;"	f	line:305	signature:(void)
 User_Remove	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	275;"	f	line:275	signature:(void)
-User_ResetComm	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	77;"	p	line:77	file:	signature:(void)
+User_ResetComm	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	79;"	p	line:79	file:	signature:(void)
 User_ResetComm	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	288;"	f	line:288	signature:(void)
 Vendor_ID	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	121;"	m	line:121	file:
 WORD	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	106;"	m	line:106
@@ -715,8 +715,8 @@ bit4	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	76;"	m	line:76
 bit5	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	77;"	m	line:77
 bit6	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	78;"	m	line:78
 bit7	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	79;"	m	line:79
-bitmask	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	634;"	l	line:634
-bitmask	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	664;"	l	line:664
+bitmask	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	655;"	l	line:655
+bitmask	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	685;"	l	line:685
 can_in_control_word::CO_RPDO(0).WORD[0]	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	145;"	d	line:145	file:
 can_in_speed_1::CO_RPDO(1).WORD[0]	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	150;"	d	line:150	file:
 can_in_speed_2::CO_RPDO(1).WORD[1]	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	151;"	d	line:151	file:
@@ -739,7 +739,7 @@ can_out_cab_temperature::CO_TPDO(3).WORD[1]	D:\_WorkSpace\GitHub\PIC18F_CANopen\
 can_out_hub_temperature::CO_TPDO(3).WORD[2]	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	95;"	d	line:95	file:
 can_out_system_error::CO_TPDO(0).WORD[1]	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	79;"	d	line:79	file:
 can_out_system_state::CO_TPDO(0).WORD[0]	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	78;"	d	line:78	file:
-cur	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	707;"	l	line:707
+cur	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	728;"	l	line:728
 di_port_MAIN_SC_OK::PORTBbits.RB0	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	38;"	d	line:38	file:
 di_port_MANUAL_0D_X1::PORTBbits.RB5	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	34;"	d	line:34	file:
 di_port_MANUAL_90D_X1::PORTBbits.RB6	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	35;"	d	line:35	file:
@@ -758,53 +758,53 @@ do_port_VALVE_22_23_X1::LATDbits.LATD0	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\u
 do_port_VALVE_30_X1::LATDbits.LATD2	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	20;"	d	line:20	file:
 do_port_VALVE_31_33_X1::LATDbits.LATD1	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	19;"	d	line:19	file:
 do_port_VALVE_PDR::LATDbits.LATD3	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c	21;"	d	line:21	file:
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1090;"	l	line:1090
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1307;"	l	line:1307
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	209;"	l	line:209
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	509;"	l	line:509
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	735;"	l	line:735
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	891;"	l	line:891
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	920;"	l	line:920
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1111;"	l	line:1111
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1328;"	l	line:1328
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	225;"	l	line:225
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	530;"	l	line:530
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	756;"	l	line:756
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	912;"	l	line:912
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	941;"	l	line:941
 i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	161;"	l	line:161
-i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	564;"	l	line:564
+i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c	576;"	l	line:576
 i	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c	47;"	l	line:47	file:
 i	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	400;"	l	line:400
-ii	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	210;"	l	line:210
+ii	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	226;"	l	line:226
 index	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	132;"	m	line:132
-index	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	633;"	l	line:633
-index	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	663;"	l	line:663
+index	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	654;"	l	line:654
+index	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	684;"	l	line:684
 index	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c	394;"	l	line:394
 interrupt_high	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	99;"	f	line:99	signature:(void)
 interrupt_low	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	118;"	f	line:118	signature:(void)
-j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1307;"	l	line:1307
-j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	288;"	l	line:288
-j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	374;"	l	line:374
-j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	920;"	l	line:920
+j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1328;"	l	line:1328
+j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	309;"	l	line:309
+j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	395;"	l	line:395
+j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	941;"	l	line:941
 j	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c	47;"	l	line:47	file:
 length	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	135;"	m	line:135
-length	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	286;"	l	line:286
-length	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	372;"	l	line:372
+length	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	307;"	l	line:307
+length	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	393;"	l	line:393
 main	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c	129;"	f	line:129	signature:(void)
-max	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	707;"	l	line:707
+max	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	728;"	l	line:728
 memcpyram2flash	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c	45;"	f	line:45	signature:(rom void* dest, void* src, unsigned int memsize)
 memcpyram2flash	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.h	29;"	p	line:29	signature:(rom void* dest, void* src, unsigned int memsize)
-min	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	707;"	l	line:707
-pBUFF	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1286;"	d	line:1286	file:
-pBUFF::CO_SDOclientVar[0].pBuff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	783;"	d	line:783	file:
-pBUFF::CO_SDOclientVar[channel].pBuff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	792;"	d	line:792	file:
-pBuff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	174;"	m	line:174	file:
+min	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	728;"	l	line:728
+pBUFF	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1307;"	d	line:1307	file:
+pBUFF::CO_SDOclientVar[0].pBuff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	804;"	d	line:804	file:
+pBUFF::CO_SDOclientVar[channel].pBuff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	813;"	d	line:813	file:
+pBuff	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	188;"	m	line:188	file:
 pData	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	136;"	m	line:136
-pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1099;"	l	line:1099
-pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	152;"	m	line:152	file:
-pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1666;"	d	line:1666	file:
-pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	736;"	l	line:736
-pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	929;"	l	line:929
-pODE::CO_SDOserverVar[0].pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1425;"	d	line:1425	file:
-pODE::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1433;"	d	line:1433	file:
-ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1243;"	l	line:1243
-ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1274;"	l	line:1274
-ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1576;"	l	line:1576
-ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1591;"	l	line:1591
+pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1120;"	l	line:1120
+pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	166;"	m	line:166	file:
+pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1687;"	d	line:1687	file:
+pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	757;"	l	line:757
+pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	950;"	l	line:950
+pODE::CO_SDOserverVar[0].pODE	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1446;"	d	line:1446	file:
+pODE::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1454;"	d	line:1454	file:
+ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1264;"	l	line:1264
+ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1295;"	l	line:1295
+ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1597;"	l	line:1597
+ret	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1612;"	l	line:1612
 romTemp	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c	46;"	l	line:46
 sODE_EEPROM	D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.h	464;"	t	line:464
 subindex	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	133;"	m	line:133
@@ -813,18 +813,18 @@ tData2bytes	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	93;"	t	line:93
 tData4bytes	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	101;"	t	line:101
 tData8bits	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	80;"	t	line:80
 tData8bytes	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CANopen.h	109;"	t	line:109
-tInhibitEmergency	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1374;"	l	line:1374	file:
-tLEDblink	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	513;"	l	line:513	file:
-tLEDflash	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	513;"	l	line:513	file:
-tLEDflicker	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	512;"	l	line:512	file:
-tProducerHeartbeatTime	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1313;"	l	line:1313	file:
-tSYNCperiod	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	542;"	l	line:542	file:
-tTIMEOUT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1289;"	d	line:1289	file:
-tTIMEOUT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1670;"	d	line:1670	file:
-tTIMEOUT::CO_SDOclientVar[0].tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	786;"	d	line:786	file:
-tTIMEOUT::CO_SDOclientVar[channel].tTime	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	795;"	d	line:795	file:
-tTIMEOUT::CO_SDOserverVar[0].tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1429;"	d	line:1429	file:
-tTIMEOUT::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1437;"	d	line:1437	file:
-tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	160;"	m	line:160	file:
-tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	177;"	m	line:177	file:
-timer100ms	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	510;"	l	line:510	file:
+tInhibitEmergency	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1395;"	l	line:1395	file:
+tLEDblink	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	534;"	l	line:534	file:
+tLEDflash	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	534;"	l	line:534	file:
+tLEDflicker	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	533;"	l	line:533	file:
+tProducerHeartbeatTime	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1334;"	l	line:1334	file:
+tSYNCperiod	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	563;"	l	line:563	file:
+tTIMEOUT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1310;"	d	line:1310	file:
+tTIMEOUT	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1691;"	d	line:1691	file:
+tTIMEOUT::CO_SDOclientVar[0].tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	807;"	d	line:807	file:
+tTIMEOUT::CO_SDOclientVar[channel].tTime	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	816;"	d	line:816	file:
+tTIMEOUT::CO_SDOserverVar[0].tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1450;"	d	line:1450	file:
+tTIMEOUT::CO_SDOserverVar[SDOserverChann	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	1458;"	d	line:1458	file:
+tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	174;"	m	line:174	file:
+tTimeout	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	191;"	m	line:191	file:
+timer100ms	D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c	531;"	l	line:531	file:

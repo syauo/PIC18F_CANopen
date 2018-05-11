@@ -7,3 +7,6 @@
 - Frame: CANopenNode V1.1
 
 ODD_CANnodeID    0x20
+
+
+CO_DriverInit(void)

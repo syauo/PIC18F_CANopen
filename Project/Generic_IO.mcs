@@ -11,9 +11,9 @@ LanguageToolLocation=C:\MCC18\bin\mcc18.exe
 PPAD=$(BINDIR)|../Out||$(TMPDIR)|../Out||$(AINDIR)||$(INCDIR)|C:\mcc18\h;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18;D:\_WorkSpace\GitHub\PIC18F_CANopen\Src||$(LIBDIR)|C:\mcc18\lib||$(LKRDIR)|C:\mcc18\lkr||
 SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f4585.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4585.lkr||
 SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
+ToolArgsString=-mL -Ls
 TraceCmdString=
-DebugOptions=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File001]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\CO_OD.o
 Folder=Intermediary
@@ -24,9 +24,9 @@ LanguageToolLocation=C:\MCC18\bin\mcc18.exe
 PPAD=$(BINDIR)|../Out||$(TMPDIR)|../Out||$(AINDIR)||$(INCDIR)|C:\mcc18\h;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18;D:\_WorkSpace\GitHub\PIC18F_CANopen\Src||$(LIBDIR)|C:\mcc18\lib||$(LKRDIR)|C:\mcc18\lkr||
 SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f4585.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4585.lkr||
 SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
+ToolArgsString=-mL -Ls
 TraceCmdString=
-DebugOptions=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File002]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\user.o
 Folder=Intermediary
@@ -37,9 +37,9 @@ LanguageToolLocation=C:\MCC18\bin\mcc18.exe
 PPAD=$(BINDIR)|../Out||$(TMPDIR)|../Out||$(AINDIR)||$(INCDIR)|C:\mcc18\h;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18;D:\_WorkSpace\GitHub\PIC18F_CANopen\Src||$(LIBDIR)|C:\mcc18\lib||$(LKRDIR)|C:\mcc18\lkr||
 SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f4585.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4585.lkr||
 SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
+ToolArgsString=-mL -Ls
 TraceCmdString=
-DebugOptions=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File003]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\CO_driver.o
 Folder=Intermediary
@@ -50,9 +50,9 @@ LanguageToolLocation=C:\MCC18\bin\mcc18.exe
 PPAD=$(BINDIR)|../Out||$(TMPDIR)|../Out||$(AINDIR)||$(INCDIR)|C:\mcc18\h;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18;D:\_WorkSpace\GitHub\PIC18F_CANopen\Src||$(LIBDIR)|C:\mcc18\lib||$(LKRDIR)|C:\mcc18\lkr||
 SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f4585.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4585.lkr||
 SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
+ToolArgsString=-mL -Ls
 TraceCmdString=
-DebugOptions=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File004]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\main.o
 Folder=Intermediary
@@ -63,9 +63,9 @@ LanguageToolLocation=C:\MCC18\bin\mcc18.exe
 PPAD=$(BINDIR)|../Out||$(TMPDIR)|../Out||$(AINDIR)||$(INCDIR)|C:\mcc18\h;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18;D:\_WorkSpace\GitHub\PIC18F_CANopen\Src||$(LIBDIR)|C:\mcc18\lib||$(LKRDIR)|C:\mcc18\lkr||
 SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f4585.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4585.lkr||
 SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
+ToolArgsString=-mL -Ls
 TraceCmdString=
-DebugOptions=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File005]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\memcpyram2flash.o
 Folder=Intermediary
@@ -76,9 +76,9 @@ LanguageToolLocation=C:\MCC18\bin\mcc18.exe
 PPAD=$(BINDIR)|../Out||$(TMPDIR)|../Out||$(AINDIR)||$(INCDIR)|C:\mcc18\h;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18;D:\_WorkSpace\GitHub\PIC18F_CANopen\Src||$(LIBDIR)|C:\mcc18\lib||$(LKRDIR)|C:\mcc18\lkr||
 SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f4585.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4585.lkr||
 SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
+ToolArgsString=-mL -Ls
 TraceCmdString=
-DebugOptions=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File006]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\Out\CONFIG18f4585.o
 Folder=Intermediary
@@ -89,9 +89,9 @@ LanguageToolLocation=C:\MCC18\bin\mcc18.exe
 PPAD=$(BINDIR)|../Out||$(TMPDIR)|../Out||$(AINDIR)||$(INCDIR)|C:\mcc18\h;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen;D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18;D:\_WorkSpace\GitHub\PIC18F_CANopen\Src||$(LIBDIR)|C:\mcc18\lib||$(LKRDIR)|C:\mcc18\lkr||
 SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\CO_OD.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\Src\user.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CO_driver.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\main.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\memcpyram2flash.c|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\PIC18_with_Microchip_C18\CONFIG18f4585.c||<obj>||<lib>||<lkr>|C:\MCC18\lkr\18f4585.lkr||
 SuiteArgsString=
-ToolArgsString=-Ou- -Ot- -Ob- -Op- -Or- -Od- -Opa-
+ToolArgsString=-mL -Ls
 TraceCmdString=
-DebugOptions=
+DebugOptions=-D__DEBUG -D__MPLAB_DEBUGGER_PK3=1
 [File007]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\Generic_IO.cof
 Folder=Output
@@ -104,7 +104,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(TARGETBASE).cof"
 TraceCmdString=
-DebugOptions=
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_PK3=1 /z__ICD2RAM=1
 [File008]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\Generic_IO.hex
 Folder=Output
@@ -117,7 +117,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(TARGETBASE).cof"
 TraceCmdString=
-DebugOptions=
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_PK3=1 /z__ICD2RAM=1
 [File009]
 Location=D:\_WorkSpace\GitHub\PIC18F_CANopen\Out\Generic_IO.map
 Folder=Output
@@ -130,7 +130,7 @@ SOLK=<src>|D:\_WorkSpace\GitHub\PIC18F_CANopen\CANopen\CO_stack.c|D:\_WorkSpace\
 SuiteArgsString=
 ToolArgsString=/m"$(BINDIR_)$(TARGETBASE).map" /w /o"$(TARGETBASE).cof"
 TraceCmdString=
-DebugOptions=
+DebugOptions=/z__MPLAB_DEBUG=1 /z__MPLAB_DEBUGGER_PK3=1 /z__ICD2RAM=1
 [TOOL_LOC_STAMPS]
 tool_loc{96C98149-AA1B-4CF9-B967-FAE79CAB663C}=C:\MCC18\bin\mplink.exe
 tool_loc{E56A1C86-9D32-4DF6-8C34-FE0388B1B644}=C:\MCC18\bin\mcc18.exe

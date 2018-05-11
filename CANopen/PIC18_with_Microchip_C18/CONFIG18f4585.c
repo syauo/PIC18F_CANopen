@@ -5,13 +5,14 @@
     * @brief configuration bits
     * 
     */
-   #pragma config OSC       = HS         // Oscillator Selection
+   #pragma config OSC       = IRCIO67 //HS         // Oscillator Selection
+   //#pragma config OSC       = HS         // Oscillator Selection
    #pragma config IESO      = OFF        // Osc. Switch Enable
-   #pragma config PWRT      = ON         // Power Up Timer
-   #pragma config BOREN     = SBORENCTRL        // Brown Out Reset
+   #pragma config PWRT      = OFF//ON         // Power Up Timer
+   #pragma config BOREN     = OFF//SBORENCTRL        // Brown Out Reset
    #pragma config BORV      = 1          // Brown Out Voltage   (4.2V)
    #pragma config WDT       = ON        // Watchdog Timer
-   #pragma config WDTPS     = 1024         // Watchdog Postscaler (1:64)
+   #pragma config WDTPS     = 64         // Watchdog Postscaler (1:64)
    #pragma config MCLRE     = ON         //<< MCLR Pin Enable bit
    #pragma config PBADEN    = OFF        //<< PORTB Pins Configured for A/D
    #pragma config STVREN    = ON         // Stack Overflow Reset

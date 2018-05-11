@@ -33,25 +33,25 @@
 #endif
 
 /*******************************************************************************
-   Variables and functions      å˜é‡å’Œå‡½æ•°
+   Variables and functions      ±äÁ¿ºÍº¯Êı
 *******************************************************************************/
    //Variables used in inline assembly
-   //å†…è”æ±‡ç¼–ï¼ˆåµŒå…¥ï¼‰ä¸­ä½¿ç”¨çš„å˜é‡
+   //ÄÚÁª»ã±à£¨Ç¶Èë£©ÖĞÊ¹ÓÃµÄ±äÁ¿
    #pragma udata access CO_udata_Assembly
       //variables used in CO_CANrxIsr inline assembly
-      // åŒ¹é… CANid çš„ç´¢å¼•
+      // Æ¥Åä CANid µÄË÷Òı
       volatile near CO_DEFAULT_TYPE CO_IsrHighIndex;        //index of matched CANid
-      // IsrHigh ä»¥é”™è¯¯çš„é•¿åº¦å†™å…¥æ”¶åˆ°çš„æ¶ˆæ¯çš„ç´¢å¼•
+      // IsrHigh ÒÔ´íÎóµÄ³¤¶ÈĞ´ÈëÊÕµ½µÄÏûÏ¢µÄË÷Òı
       volatile near CO_DEFAULT_TYPE CO_IsrHighErrorIndex;   //IsrHigh writes index of received message with wrong length
       volatile near unsigned char CO_IsrHighSignal;         //temp variable and IsrHigh signals to ProcessMain:
-                                                            // IsrHigh åˆ° ProcessMain çš„ä¿¡å·ï¼Œä¸´æ—¶å˜é‡   
+                                                            // IsrHigh µ½ ProcessMain µÄĞÅºÅ£¬ÁÙÊ±±äÁ¿   
                                                                //0xFF: Error in length of received message, index is stored
-                                                               //      æ¥æ”¶æ¶ˆæ¯é•¿åº¦é”™è¯¯ï¼Œç´¢å¼•å·²ä¿å­˜
+                                                               //      ½ÓÊÕÏûÏ¢³¤¶È´íÎó£¬Ë÷ÒıÒÑ±£´æ
                                                                //0xFE: Error - message arrives, but is inhibited
-                                                               //      é”™è¯¯ - æ¶ˆæ¯å·²åˆ°è¾¾ï¼Œä½†æ˜¯è¢«æŠ‘åˆ¶
+                                                               //      ´íÎó - ÏûÏ¢ÒÑµ½´ï£¬µ«ÊÇ±»ÒÖÖÆ
    #pragma udata
    
-   // å˜é‡å¿…é¡»åœ¨è¿™é‡Œåˆå§‹åŒ–
+   // ±äÁ¿±ØĞëÔÚÕâÀï³õÊ¼»¯
    //Node-ID
    unsigned char CO_NodeID;                                 //Variable must be intialized here
    unsigned char CO_BitRate;                                //Variable must be intialized here
@@ -63,7 +63,7 @@
    #endif
 
    //function for verifying values at write to Object Dictionary
-   //å‡½æ•°åœ¨å†™å…¥å¯¹è±¡å­—å…¸æ—¶éªŒè¯å€¼
+   //º¯ÊıÔÚĞ´Èë¶ÔÏó×ÖµäÊ±ÑéÖ¤Öµ
    unsigned long CO_OD_VerifyWrite(ROM CO_objectDictionaryEntry* pODE, void* data);
 
    //other
@@ -74,11 +74,11 @@
 
 /*******************************************************************************
    CAN bit rates - Registers setup
-   CAN æ¯”ç‰¹ç‡ - å¯„å­˜å™¨é…ç½®
+   CAN ±ÈÌØÂÊ - ¼Ä´æÆ÷ÅäÖÃ
 *******************************************************************************/
 ROM struct{
-   unsigned char BRP;         //(1...64)Baud Rate Prescaler - æ³¢ç‰¹ç‡é¢„åˆ†é¢‘ (2n)/Fosc
-   unsigned char SJW;         //(1...4) SJW time - åŒæ­¥è·³è½¬å®½åº¦ä½ nxTQ
+   unsigned char BRP;         //(1...64)Baud Rate Prescaler - ²¨ÌØÂÊÔ¤·ÖÆµ (2n)/Fosc
+   unsigned char SJW;         //(1...4) SJW time - Í¬²½Ìø×ª¿í¶ÈÎ» nxTQ
    unsigned char PROP;        //(1...8) PROP time - Propagation Time Select bits
    unsigned char PhSeg1;      //(1...8) Phase Segment 1 time
    unsigned char PhSeg2;      //(1...8) Phase Segment 2 time
@@ -154,20 +154,20 @@ ROM struct{
    CO_DriverInit - CANopenNode DRIVER INITIALIZATION
    This is mainline function and is called only in the startup of the program.
 
-   CO_DriverInit - CANopenNode é©±åŠ¨åˆå§‹åŒ–
-   å±äºä¸»çº¿ç¨‹åºï¼Œåœ¨ç¨‹åºå¯åŠ¨æ—¶è°ƒç”¨
+   CO_DriverInit - CANopenNode Çı¶¯³õÊ¼»¯
+   ÊôÓÚÖ÷Ïß³ÌĞò£¬ÔÚ³ÌĞòÆô¶¯Ê±µ÷ÓÃ
 *******************************************************************************/
 void CO_DriverInit(void){
    CO_DEFAULT_SPEC unsigned int i;
 
    //Init Printed Board
-   // åˆå§‹åŒ–çŠ¶æ€æ˜¾ç¤ºï¼ˆLEDï¼‰
+   // ³õÊ¼»¯×´Ì¬ÏÔÊ¾£¨LED£©
    PCB_RUN_LED_INIT();
    PCB_ERROR_LED_INIT();
 
    #ifdef CO_SAVE_EEPROM
       //Initialize Eeprom variables. Variables are copied from EEPROM to RAM.
-      // åˆå§‹åŒ– EEPROM å˜é‡ï¼Œå°†å˜é‡ä» EEPROM å¤åˆ¶åˆ° RAMã€‚
+      // ³õÊ¼»¯ EEPROM ±äÁ¿£¬½«±äÁ¿´Ó EEPROM ¸´ÖÆµ½ RAM¡£
       EECON1bits.EEPGD = 0;
       EECON1bits.CFGS = 0;
       i=CO_EEPROM_size;
@@ -184,48 +184,48 @@ void CO_DriverInit(void){
    CO_ProcessDriver - PROCESS MICROCONTROLLER SPECIFIC CODE
    This is mainline function and is called cyclically from CO_ProcessMain().
 
-   CO_ProcessDriver - å¤„ç† MCU ç‰¹å®šä»£ç 
-   å±äºä¸»çº¿ç¨‹åºï¼Œä» CO_ProcessMain() ä¸­å¾ªç¯è°ƒç”¨ã€‚
+   CO_ProcessDriver - ´¦Àí MCU ÌØ¶¨´úÂë
+   ÊôÓÚÖ÷Ïß³ÌĞò£¬´Ó CO_ProcessMain() ÖĞÑ­»·µ÷ÓÃ¡£
 *******************************************************************************/
 void CO_ProcessDriver(void){
    static unsigned char COMSTATold = 0;
    static unsigned int EEPROM_index = 0;
 
    /* Verify CAN Errors *****************/
-   /* ç¡®è®¤ CAN é”™è¯¯       */
-   if(COMSTAT != COMSTATold){   // é€šä¿¡çŠ¶æ€å¯„å­˜å™¨ï¼ˆCOMSTATï¼‰ä¸æ—§å€¼æ¯”è¾ƒï¼Œæ˜¯å¦å˜åŒ–
-      if(COMSTAT & 0xC0){       // æ¥æ”¶ç¼“å†²æº¢å‡º
+   /* È·ÈÏ CAN ´íÎó       */
+   if(COMSTAT != COMSTATold){   // Í¨ĞÅ×´Ì¬¼Ä´æÆ÷£¨COMSTAT£©Óë¾ÉÖµ±È½Ï£¬ÊÇ·ñ±ä»¯
+      if(COMSTAT & 0xC0){       // ½ÓÊÕ»º³åÒç³ö
          ErrorReport(ERROR_CAN_RXB_OVERFLOW, COMSTAT);
-         COMSTAT &= 0x3F;       // æ¸…é›¶æœ€é«˜ä½
+         COMSTAT &= 0x3F;       // ÇåÁã×î¸ßÎ»
       }
 
-      if(COMSTATbits.TXBO)      // å‘é€é”™è¯¯è®¡æ•°å™¨ > 255, Bus-Off ç½®ä½
-         ErrorReport(ERROR_CAN_TX_BUS_OFF, COMSTAT);  // æŠ¥é”™
+      if(COMSTATbits.TXBO)      // ·¢ËÍ´íÎó¼ÆÊıÆ÷ > 255, Bus-Off ÖÃÎ»
+         ErrorReport(ERROR_CAN_TX_BUS_OFF, COMSTAT);  // ±¨´í
       else if(ERROR_BIT_READ(ERROR_CAN_TX_BUS_OFF))
-         ErrorReset(ERROR_CAN_TX_BUS_OFF, COMSTAT);   // å¤ä½
+         ErrorReset(ERROR_CAN_TX_BUS_OFF, COMSTAT);   // ¸´Î»
 
-      if(COMSTATbits.TXBP)      // å‘é€é”™è¯¯è®¡æ•°å™¨ > 127, Bus Passive ç½®ä½
-         ErrorReport(ERROR_CAN_TX_BUS_PASSIVE, COMSTAT);  // æŠ¥é”™
+      if(COMSTATbits.TXBP)      // ·¢ËÍ´íÎó¼ÆÊıÆ÷ > 127, Bus Passive ÖÃÎ»
+         ErrorReport(ERROR_CAN_TX_BUS_PASSIVE, COMSTAT);  // ±¨´í
       else if(ERROR_BIT_READ(ERROR_CAN_TX_BUS_PASSIVE)){
-         ErrorReset(ERROR_CAN_TX_BUS_PASSIVE, COMSTAT);   // å¤ä½
+         ErrorReset(ERROR_CAN_TX_BUS_PASSIVE, COMSTAT);   // ¸´Î»
          ErrorReset(ERROR_CAN_TX_OVERFLOW, 0);
          }
 
-      if(COMSTATbits.RXBP)      // æ¥æ”¶é”™è¯¯è®¡æ•°å™¨ > 127, Bus Passive ç½®ä½
-         ErrorReport(ERROR_CAN_RX_BUS_PASSIVE, COMSTAT);  // æŠ¥é”™
+      if(COMSTATbits.RXBP)      // ½ÓÊÕ´íÎó¼ÆÊıÆ÷ > 127, Bus Passive ÖÃÎ»
+         ErrorReport(ERROR_CAN_RX_BUS_PASSIVE, COMSTAT);  // ±¨´í
       else if(ERROR_BIT_READ(ERROR_CAN_RX_BUS_PASSIVE))
-         ErrorReset(ERROR_CAN_RX_BUS_PASSIVE, COMSTAT);   // å¤ä½
+         ErrorReset(ERROR_CAN_RX_BUS_PASSIVE, COMSTAT);   // ¸´Î»
 
-      if(COMSTAT & 0x07)        // å‘é€ã€æ¥æ”¶ã€é”™è¯¯è­¦å‘Šä½æ˜¯å¦ç½®ä½
-         ErrorReport(ERROR_CAN_BUS_WARNING, COMSTAT);   // æŠ¥é”™
+      if(COMSTAT & 0x07)        // ·¢ËÍ¡¢½ÓÊÕ¡¢´íÎó¾¯¸æÎ»ÊÇ·ñÖÃÎ»
+         ErrorReport(ERROR_CAN_BUS_WARNING, COMSTAT);   // ±¨´í
       else if(ERROR_BIT_READ(ERROR_CAN_BUS_WARNING)) 
-         ErrorReset(ERROR_CAN_BUS_WARNING, COMSTAT);    // ç½®ä½
+         ErrorReset(ERROR_CAN_BUS_WARNING, COMSTAT);    // ÖÃÎ»
 
       COMSTATold = COMSTAT;
    }
 
    //verify errors from IsrHigh
-   // ç¡®è®¤ä» IsrHigh ä¼ è¿‡æ¥çš„é”™è¯¯ä¿¡æ¯
+   // È·ÈÏ´Ó IsrHigh ´«¹ıÀ´µÄ´íÎóĞÅÏ¢
    if(CO_IsrHighSignal == 0xFF){
       if(CO_IsrHighErrorIndex >= CO_RXCAN_RPDO && CO_IsrHighErrorIndex < (CO_RXCAN_RPDO+CO_NO_RPDO))
            ErrorReport(ERROR_CO_RXMSG_PDOlength, CO_IsrHighErrorIndex - CO_RXCAN_RPDO);
@@ -238,27 +238,27 @@ void CO_ProcessDriver(void){
    }
 
    /* Update EEprom variables ***********/
-   /* åˆ·æ–° EEprom å˜é‡              */
+   /* Ë¢ĞÂ EEprom ±äÁ¿              */
    #ifdef CO_SAVE_EEPROM
-      //update one byte at a cycle æ¯ä¸ªå¾ªç¯æ›´æ–°ä¸€ä¸ªå­—èŠ‚
-      if(EECON1bits.WR == 0){ //write is not in progress  ä¸Šæ¬¡å†™å…¥å®Œæˆ
+      //update one byte at a cycle Ã¿¸öÑ­»·¸üĞÂÒ»¸ö×Ö½Ú
+      if(EECON1bits.WR == 0){ //write is not in progress  ÉÏ´ÎĞ´ÈëÍê³É
          if(EEPROM_index == 0) EEPROM_index = CO_EEPROM_size;
          EEPROM_index--;
          //read eeprom
          EEADR = EEPROM_index;
-         EECON1bits.EEPGD = 0;  // è®¿é—® EEPROM å­˜å‚¨å™¨
-         EECON1bits.CFGS = 0;   // è®¿é—® EEPROM æˆ– Flash å­˜å‚¨å™¨
-         EECON1bits.RD = 1;     // è¯»æ§åˆ¶
+         EECON1bits.EEPGD = 0;  // ·ÃÎÊ EEPROM ´æ´¢Æ÷
+         EECON1bits.CFGS = 0;   // ·ÃÎÊ EEPROM »ò Flash ´æ´¢Æ÷
+         EECON1bits.RD = 1;     // ¶Á¿ØÖÆ
          if(EEDATA != *(CO_EEPROM_pointer + EEPROM_index)){
             //write to EEPROM
             EEDATA = *(CO_EEPROM_pointer + EEPROM_index);
-            EECON1bits.WREN = 1;  // å†™ä½¿èƒ½
-            CO_DISABLE_ALL();     // å…³ä¸­æ–­
+            EECON1bits.WREN = 1;  // Ğ´Ê¹ÄÜ
+            CO_DISABLE_ALL();     // ¹ØÖĞ¶Ï
             EECON2 = 0x55;
             EECON2 = 0xAA;
             EECON1bits.WR = 1;
-            CO_ENABLE_ALL();      // å¼€ä¸­æ–­
-            EECON1bits.WREN = 0;  // å†™å¤±èƒ½
+            CO_ENABLE_ALL();      // ¿ªÖĞ¶Ï
+            EECON1bits.WREN = 0;  // Ğ´Ê§ÄÜ
          }
       }
    #endif
@@ -269,8 +269,8 @@ void CO_ProcessDriver(void){
    This is mainline function and is called from Communication reset. Usually
    NodeID and BitRate are read from DIP switches.
 
-   CO_Read_NodeId_BitRate - è¯» NODE-ID å’Œ CAN æ¯”ç‰¹ç‡
-   å±äºä¸»çº¿ç¨‹åºï¼Œåœ¨å¤ä½é€šä¿¡æ—¶è°ƒç”¨ã€‚é€šå¸¸ NODE-ID å’Œæ¯”ç‰¹ç‡ä» DIP å¼€å…³è¯»å–ã€‚
+   CO_Read_NodeId_BitRate - ¶Á NODE-ID ºÍ CAN ±ÈÌØÂÊ
+   ÊôÓÚÖ÷Ïß³ÌĞò£¬ÔÚ¸´Î»Í¨ĞÅÊ±µ÷ÓÃ¡£Í¨³£ NODE-ID ºÍ±ÈÌØÂÊ´Ó DIP ¿ª¹Ø¶ÁÈ¡¡£
 *******************************************************************************/
 void CO_Read_NodeId_BitRate(void){
    CO_NodeID = ODE_CANnodeID;    //range 1 to 127
@@ -291,12 +291,12 @@ void CO_Read_NodeId_BitRate(void){
    CO_SetupCAN - INIT CAN controller interface
    This is mainline function and is called from Communication reset.
 
-   CO_SetupCAN - åˆå§‹åŒ– CAN æ§åˆ¶å™¨æ¥å£
-   å±äºä¸»çº¿ç¨‹åºï¼Œåœ¨å¤ä½é€šä¿¡æ—¶è°ƒç”¨
+   CO_SetupCAN - ³õÊ¼»¯ CAN ¿ØÖÆÆ÷½Ó¿Ú
+   ÊôÓÚÖ÷Ïß³ÌĞò£¬ÔÚ¸´Î»Í¨ĞÅÊ±µ÷ÓÃ
 *******************************************************************************/
 void CO_SetupCAN(void){
 
-/* Setup driver variables è®¾ç½®é©±åŠ¨å˜é‡ */
+/* Setup driver variables ÉèÖÃÇı¶¯±äÁ¿ */
    CO_IsrHighSignal = 0;
 
 //////////////////////////
@@ -306,45 +306,45 @@ SET_CAN_TRIS();
 // LATBbits.LATB3 = 1; 
 // CANCONbits.ABAT=1;
 //////////////////////////
-/* Setup CAN bus é…ç½® CAN bus */
+/* Setup CAN bus ÅäÖÃ CAN bus */
    CANCON = 0x80;       //request configuration mode
-                        // è¯·æ±‚é…ç½®æ¨¡å¼
+                        // ÇëÇóÅäÖÃÄ£Ê½
 //////////////////////////
 // CANCONbits.ABAT=0;
 //////////////////////////
    while((CANSTAT & 0xE0) != 0x80); //wait until configuration mode is set
-                                    // ç­‰å¾…ï¼Œç›´åˆ°è¿è¡Œæ¨¡å¼çŠ¶æ€ä½è¢«è®¾ç½®ã€‚
-   // æ³¢ç‰¹ç‡æ§åˆ¶å¯„å­˜å™¨é…ç½®
+                                    // µÈ´ı£¬Ö±µ½ÔËĞĞÄ£Ê½×´Ì¬Î»±»ÉèÖÃ¡£
+   // ²¨ÌØÂÊ¿ØÖÆ¼Ä´æÆ÷ÅäÖÃ
    BRGCON1 = ((CO_BitRateData[CO_BitRate].SJW-1) <<6 ) | (CO_BitRateData[CO_BitRate].BRP-1);
    BRGCON2 = 0x80 | ((CO_BitRateData[CO_BitRate].PhSeg1-1)<<3) | (CO_BitRateData[CO_BitRate].PROP-1);
    BRGCON3 = (CO_BitRateData[CO_BitRate].PhSeg2-1);
 
-   // å¼•è„šè®¾ç½®
+   // Òı½ÅÉèÖÃ
    SET_CAN_TRIS();
 
-   // æ¥æ”¶ã€å‘é€ç¼“å†²æ¸…é›¶
+   // ½ÓÊÕ¡¢·¢ËÍ»º³åÇåÁã
    RXB0CONbits.RXFUL = 0;  //clear rx and tx buffers
-   RXB1CONbits.RXFUL = 0;   // æ¥æ”¶ç¼“å†²æ‰“å¼€ä»¥æ¥æ”¶æ–°æ¶ˆæ¯
-   TXB0CONbits.TXREQ = 0;   // å‘é€è¯·æ±‚çŠ¶æ€ä½ï¼Œæ¶ˆæ¯æˆåŠŸå‘é€åè‡ªåŠ¨æ¸…é›¶
+   RXB1CONbits.RXFUL = 0;   // ½ÓÊÕ»º³å´ò¿ªÒÔ½ÓÊÕĞÂÏûÏ¢
+   TXB0CONbits.TXREQ = 0;   // ·¢ËÍÇëÇó×´Ì¬Î»£¬ÏûÏ¢³É¹¦·¢ËÍºó×Ô¶¯ÇåÁã
    TXB1CONbits.TXREQ = 0;
    TXB2CONbits.TXREQ = 0;
 
-   PIE3 = 0;            //CAN interrupts disable          ä¸­æ–­å¤±èƒ½
-   PIR3 = 0;            //CAN interrupts flags clear      ä¸­æ–­æ ‡å¿—ä½æ¸…é›¶
-   IPR3 = 0;            //CAN interrupts low priority set ä½ä¼˜å…ˆçº§
-   CIOCON = 0x20;       //can I/O control register        CAN IO æ§åˆ¶å¯„å­˜å™¨
-                        // bit 5: ENDRHI - 1ï¼ŒCANTX å¼•è„šåœ¨ recessive æ—¶ä¸º VDD
-                        // bit 4: CANCAP - 0ï¼ŒCAN æ•æ‰ç¦ç”¨ï¼ŒRC2/CCP1 è¾“å…¥ ä¸º CCP1 æ¨¡å¼
-   // æ¥æ”¶ç¼“å†²æ§åˆ¶å¯„å­˜å™¨
+   PIE3 = 0;            //CAN interrupts disable          ÖĞ¶ÏÊ§ÄÜ
+   PIR3 = 0;            //CAN interrupts flags clear      ÖĞ¶Ï±êÖ¾Î»ÇåÁã
+   IPR3 = 0;            //CAN interrupts low priority set µÍÓÅÏÈ¼¶
+   CIOCON = 0x20;       //can I/O control register        CAN IO ¿ØÖÆ¼Ä´æÆ÷
+                        // bit 5: ENDRHI - 1£¬CANTX Òı½ÅÔÚ recessive Ê±Îª VDD
+                        // bit 4: CANCAP - 0£¬CAN ²¶×½½ûÓÃ£¬RC2/CCP1 ÊäÈë Îª CCP1 Ä£Ê½
+   // ½ÓÊÕ»º³å¿ØÖÆ¼Ä´æÆ÷
    RXB0CON = 0x24;      //receive valid messages with standard identifier, if overflow, move to buffer1
-                        // bit 6-5: RXM1-0: 01 = ä»…æ¥æ”¶æ ‡å‡†è¿‡æ»¤å™¨çš„æœ‰æ•ˆæ¶ˆæ¯
-                        // bit 2: RXB0DBEN: 1  = æ¥æ”¶ç¼“å†² 0 æº¢å‡ºåˆ™å†™å…¥æ¥æ”¶ç¼“å†² 1
+                        // bit 6-5: RXM1-0: 01 = ½ö½ÓÊÕ±ê×¼¹ıÂËÆ÷µÄÓĞĞ§ÏûÏ¢
+                        // bit 2: RXB0DBEN: 1  = ½ÓÊÕ»º³å 0 Òç³öÔòĞ´Èë½ÓÊÕ»º³å 1
    RXB1CON = 0x20;      //receive valid messages with standard identifier
-                        // bit 6-5: RXM1-0: 01 = ä»…æ¥æ”¶æ ‡å‡†è¿‡æ»¤å™¨çš„æœ‰æ•ˆæ¶ˆæ¯ï¼ŒRXFnSIDL ä¸­çš„ EXIDEN ä½å¿…é¡»ä¸º 0
+                        // bit 6-5: RXM1-0: 01 = ½ö½ÓÊÕ±ê×¼¹ıÂËÆ÷µÄÓĞĞ§ÏûÏ¢£¬RXFnSIDL ÖĞµÄ EXIDEN Î»±ØĞëÎª 0
    
 
    //set filters
-   // é…ç½®è¿‡æ»¤å™¨
+   // ÅäÖÃ¹ıÂËÆ÷
    RXF0SIDH = 0; RXF0SIDL = 0;
    RXF1SIDH = 0; RXF1SIDL = 0;
    RXF2SIDH = 0; RXF2SIDL = 0;
@@ -377,16 +377,17 @@ SET_CAN_TRIS();
       RXM1SIDH = 0; RXM1SIDL = 0;
    #endif
 
+
    CANCON = 0x00;       //request normal mode
-                        // è¯·æ±‚æ­£å¸¸æ¨¡å¼
+                        // ÇëÇóÕı³£Ä£Ê½
 
    while((CANSTAT & 0xE0) != 0x00); //wait until normal mode is set
-                        // ç­‰å¾…ï¼Œç›´åˆ°æ­£å¸¸æ¨¡å¼çŠ¶æ€ä½è¢«è®¾ç½®
+                        // µÈ´ı£¬Ö±µ½Õı³£Ä£Ê½×´Ì¬Î»±»ÉèÖÃ
 
    PIE3 = 0x07;         //enable two receive interrupts and TX0 interrupt
-                        // ä½¿èƒ½ TXB0IE,RXB1IE, RXB0IE,ä¸¤ä¸ªæ¥æ”¶ä¸­æ–­å’Œä¸€ä¸ªå‘é€ä¸­æ–­
+                        // Ê¹ÄÜ TXB0IE,RXB1IE, RXB0IE,Á½¸ö½ÓÊÕÖĞ¶ÏºÍÒ»¸ö·¢ËÍÖĞ¶Ï
    IPR3 = 0x03;         //receive interrupts are high priority
-                        // ä½¿èƒ½ RXB1IP,RXB0IP, æ¥æ”¶ä¸­æ–­é«˜ä¼˜å…ˆçº§
+                        // Ê¹ÄÜ RXB1IP,RXB0IP, ½ÓÊÕÖĞ¶Ï¸ßÓÅÏÈ¼¶
 }
 
  /*******************************************************************************
@@ -395,42 +396,42 @@ SET_CAN_TRIS();
    network. It searches CO_RXCAN[] array and compares COB-ID. If found, copy data
    to appropriate buffer.
 
-   CO_CANrxIsr - CAN æ¥æ”¶ä¸­æ–­å¤„ç†å‡½æ•°
-   å½“ä»ç½‘ç»œæ¥æ”¶åˆ°æ–°çš„ CAN æ¶ˆæ¯æ—¶ï¼Œè¯¥å‡½æ•°è¢«ä¸­æ–­å‡½æ•°è°ƒç”¨ã€‚å®ƒæŸ¥æ‰¾ CO_RXCAN[] æ•°ç»„å¹¶æ¯”è¾ƒ
-   COB-IDï¼Œå¦‚æœæ‰¾åˆ°ï¼Œåˆ™å¤åˆ¶æ•°æ®åˆ°é€‚å½“çš„ç¼“å†²å™¨ã€‚
+   CO_CANrxIsr - CAN ½ÓÊÕÖĞ¶Ï´¦Àíº¯Êı
+   µ±´ÓÍøÂç½ÓÊÕµ½ĞÂµÄ CAN ÏûÏ¢Ê±£¬¸Ãº¯Êı±»ÖĞ¶Ïº¯Êıµ÷ÓÃ¡£Ëü²éÕÒ CO_RXCAN[] Êı×é²¢±È½Ï
+   COB-ID£¬Èç¹ûÕÒµ½£¬Ôò¸´ÖÆÊı¾İµ½ÊÊµ±µÄ»º³åÆ÷¡£
 *******************************************************************************/
 #pragma interrupt CO_CANrxIsr save = CANCON
 void CO_CANrxIsr(void){
-   if(PIR3bits.RXB0IF){ //RXB0 occurred    æ¥æ”¶ä¸­æ–­ 0 äº§ç”Ÿ
+   if(PIR3bits.RXB0IF){ //RXB0 occurred    ½ÓÊÕÖĞ¶Ï 0 ²úÉú
       PIR3bits.RXB0IF = 0;
       CANCONbits.WIN2 = 1; CANCONbits.WIN1 = 1; CANCONbits.WIN0 = 0;//set RXB0 to access memory
-                                                                    // è®¾ç½®æ¥æ”¶ç¼“å†² 0 è®¿é—®å­˜å‚¨å™¨
+                                                                    // ÉèÖÃ½ÓÊÕ»º³å 0 ·ÃÎÊ´æ´¢Æ÷
    }
    else{ //RXB1 occurred
       PIR3bits.RXB1IF = 0;
       CANCONbits.WIN2 = 1; CANCONbits.WIN1 = 0; CANCONbits.WIN0 = 1;//set RXB1 to access memory
-                                                                    // è®¾ç½®æ¥æ”¶ç¼“å†² 1 è®¿é—®å­˜å‚¨å™¨   
+                                                                    // ÉèÖÃ½ÓÊÕ»º³å 1 ·ÃÎÊ´æ´¢Æ÷   
    }
 
   /* Equivalent code in C:
-   // ç­‰æ•ˆ C ä»£ç ï¼š
+   // µÈĞ§ C ´úÂë£º
    //search entry in CO_RXCAN[] array with matched COB_ID
-   // æŸ¥æ‰¾ CO_RXCAN[] æ•°ç»„ä¸­çš„æ¡ç›®ï¼Œæ˜¯å¦æœ‰åŒ¹é…çš„ COB-ID
+   // ²éÕÒ CO_RXCAN[] Êı×éÖĞµÄÌõÄ¿£¬ÊÇ·ñÓĞÆ¥ÅäµÄ COB-ID
    for(CO_IsrHighIndex=0; CO_IsrHighIndex<CO_RXCAN_NO_MSGS; CO_IsrHighIndex++)
       if(CO_RXCAN[CO_IsrHighIndex].Ident.BYTE[0] == RXB0SIDL &&
          CO_RXCAN[CO_IsrHighIndex].Ident.BYTE[1] == RXB0SIDH) break;
    //Verify, if message is matched
-   // éªŒè¯ï¼Œå¦‚æœæ¶ˆæ¯åŒ¹é…
+   // ÑéÖ¤£¬Èç¹ûÏûÏ¢Æ¥Åä
    if(CO_IsrHighIndex < CO_RXCAN_NO_MSGS){
       //Verify length
-      // éªŒè¯é•¿åº¦
+      // ÑéÖ¤³¤¶È
       if((CO_RXCAN[CO_IsrHighIndex].NoOfBytes <= 8) &&
          (CO_RXCAN[CO_IsrHighIndex].NoOfBytes != (RXB0DLC&0x0F))){
          CO_IsrHighSignal = 0xFF;
          CO_IsrHighErrorIndex = CO_IsrHighIndex;
       }
       //Verify inhibit
-      // éªŒè¯æŠ‘åˆ¶
+      // ÑéÖ¤ÒÖÖÆ
       else if(CO_RXCAN[CO_IsrHighIndex].NewMsg &&
               CO_RXCAN[CO_IsrHighIndex].Inhibit){
          CO_IsrHighSignal = 0xFE;
@@ -438,24 +439,24 @@ void CO_CANrxIsr(void){
       }
       else{
          //Set flag and copy data
-         // è®¾ç½®æ ‡å¿—ä½å¹¶å¤åˆ¶æ•°æ®
+         // ÉèÖÃ±êÖ¾Î»²¢¸´ÖÆÊı¾İ
          CO_RXCAN[CO_IsrHighIndex].NewMsg = 1;
          memcpy((void*)&CO_RXCAN[CO_IsrHighIndex].Data, (void*)&RXB0D0, RXB0DLC&0x0F);
       }
    }
    //release receive buffer
-   // é‡Šæ”¾æ¥æ”¶ç¼“å†²
+   // ÊÍ·Å½ÓÊÕ»º³å
    RXB0CONbits.RXFUL = 0;
   */
 
    //CO_CanMessage structure must not be changed
    _asm
       //search entry in CO_RXCAN[] array with matched COB_ID
-      // æŸ¥æ‰¾ CO_RXCAN[] æ•°ç»„ä¸­çš„æ¡ç›®ï¼Œæ˜¯å¦æœ‰åŒ¹é…çš„ COB-ID
+      // ²éÕÒ CO_RXCAN[] Êı×éÖĞµÄÌõÄ¿£¬ÊÇ·ñÓĞÆ¥ÅäµÄ COB-ID
          LFSR     0, CO_RXCAN
          CLRF     CO_IsrHighIndex, 0
       CO_IH_1:
-         //compare  æ¯”è¾ƒ
+         //compare  ±È½Ï
          MOVF     POSTINC0, 0, ACCESS
          SUBWF    RXB0SIDL, 0, ACCESS
          BNZ      CO_IH_2
@@ -467,27 +468,27 @@ void CO_CANrxIsr(void){
          BRA      CO_IH_3
       CO_IH_2:
          //increment indexes for next entry
-         // ç´¢å¼•è‡ªå¢ï¼Œä¸‹ä¸€æ¡ç›®
+         // Ë÷Òı×ÔÔö£¬ÏÂÒ»ÌõÄ¿
          MOVLW    0x0A
          ADDWF    FSR0L, 1, ACCESS
          MOVLW    0
          ADDWFC   FSR0H, 1, ACCESS
          INCF     CO_IsrHighIndex, 1, ACCESS
          //end of array?
-         // æ•°ç»„å°¾ï¼Ÿ
+         // Êı×éÎ²£¿
          MOVLW    CO_RXCAN_NO_MSGS
          SUBWF    CO_IsrHighIndex, 0, ACCESS
          BNZ      CO_IH_1
       CO_IH_3:
       //Verify, if message is matched
-      // éªŒè¯ï¼Œå¦‚æœæ¶ˆæ¯åŒ¹é…  
+      // ÑéÖ¤£¬Èç¹ûÏûÏ¢Æ¥Åä  
          MOVLW    CO_RXCAN_NO_MSGS
          SUBWF    CO_IsrHighIndex, 0, ACCESS
          BNC      CO_IH_10
          BRA      CO_IH_END
       CO_IH_10:
       //Verify length
-      // éªŒè¯é•¿åº¦
+      // ÑéÖ¤³¤¶È
          MOVLW    0x0F
          ANDWF    PREINC0, 0, ACCESS         //FSR0 now points to CO_RXCAN[CO_IsrHighIndex].NoOfBytes (complete byte)
          MOVWF    CO_IsrHighSignal, ACCESS   //store length temporary
@@ -564,9 +565,9 @@ void CO_CANrxIsr(void){
    successfully sent. It searches CO_TXCAN[] array
    and finds which message has to be sent. Then copies data to CAN buffer.
 
-   CO_CANtxIsr - CAN å‘é€ä¸­æ–­å¤„ç†å‡½æ•°
-   å½“ä¹‹å‰çš„æ¶ˆæ¯æˆåŠŸå‘é€åï¼Œè¯¥å‡½æ•°è¢«ä¸­æ–­å‡½æ•°è°ƒç”¨ã€‚å®ƒæŸ¥è¯¢ CO_TXCAN[] æ•°ç»„å¹¶æ‰¾å‡ºè¦å‘é€é‚£æ¡
-   æ¶ˆæ¯ï¼Œç„¶åå°†æ•°æ®å¤åˆ¶åˆ°ç¼“å†²å™¨ã€‚
+   CO_CANtxIsr - CAN ·¢ËÍÖĞ¶Ï´¦Àíº¯Êı
+   µ±Ö®Ç°µÄÏûÏ¢³É¹¦·¢ËÍºó£¬¸Ãº¯Êı±»ÖĞ¶Ïº¯Êıµ÷ÓÃ¡£Ëü²éÑ¯ CO_TXCAN[] Êı×é²¢ÕÒ³öÒª·¢ËÍÄÇÌõ
+   ÏûÏ¢£¬È»ºó½«Êı¾İ¸´ÖÆµ½»º³åÆ÷¡£
 *******************************************************************************/
 #pragma interruptlow CO_CANtxIsr
 void CO_CANtxIsr(void){
@@ -597,26 +598,26 @@ void CO_CANtxIsr(void){
    object dictionary. Since object dictionary variables can use many types of
    memory, some code is processor specific.
 
-   CO_OD_Read - è¯»å–å¯¹è±¡å­—å…¸
-   å±äºä¸»çº¿ç¨‹åºã€‚è¢« SDO æœåŠ¡å™¨è°ƒç”¨ï¼Œä»å¯¹è±¡å­—å…¸ä¸­è¯»å–æ•°æ®ã€‚å› ä¸ºå¯¹è±¡å­—å…¸å˜é‡å¯ä»¥ä½¿ç”¨å¤šç§
-   å­˜å‚¨ç±»å‹ï¼Œæ•…ä»£ç æ˜¯å¤„ç†å™¨ç‰¹å®šçš„ã€‚
+   CO_OD_Read - ¶ÁÈ¡¶ÔÏó×Öµä
+   ÊôÓÚÖ÷Ïß³ÌĞò¡£±» SDO ·şÎñÆ÷µ÷ÓÃ£¬´Ó¶ÔÏó×ÖµäÖĞ¶ÁÈ¡Êı¾İ¡£ÒòÎª¶ÔÏó×Öµä±äÁ¿¿ÉÒÔÊ¹ÓÃ¶àÖÖ
+   ´æ´¢ÀàĞÍ£¬¹Ê´úÂëÊÇ´¦ÀíÆ÷ÌØ¶¨µÄ¡£
 
    PARAM pODE: pointer to object dictionary entry, found by CO_FindEntryInOD().
-               æŒ‡å‘å¯¹è±¡å­—å…¸æ¡ç›®çš„æŒ‡é’ˆ
+               Ö¸Ïò¶ÔÏó×ÖµäÌõÄ¿µÄÖ¸Õë
    PARAM pBuff: pointer to buffer where data will be written.
-                æŒ‡å‘æ•°æ®å†™å…¥ç¼“å†²ä½ç½®çš„æŒ‡é’ˆ
+                Ö¸ÏòÊı¾İĞ´Èë»º³åÎ»ÖÃµÄÖ¸Õë
    PARAM BuffMaxSize: Size of buffer (to prevent overflow).
-                      ç¼“å†²é•¿åº¦ï¼Œä¸ºé˜²æ­¢æº¢å‡º
+                      »º³å³¤¶È£¬Îª·ÀÖ¹Òç³ö
    RETURN: 0 if success, otherwise abort code
-   è¿”å›å€¼ï¼š0 = æˆåŠŸï¼Œå¦åˆ™è¿”å›ç»ˆæ­¢ä»£ç 
+   ·µ»ØÖµ£º0 = ³É¹¦£¬·ñÔò·µ»ØÖÕÖ¹´úÂë
 *******************************************************************************/
 unsigned long CO_OD_Read(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsigned char sizeOfBuff){
    if(pODE->length > sizeOfBuff) return 0x05040005L;  //Out of memory
-                                                      // è¶…å‡ºå­˜å‚¨èŒƒå›´
+                                                      // ³¬³ö´æ´¢·¶Î§
    if((pODE->attribute&0x07) == ATTR_WO) return 0x06010001L;  //attempt to read a write-only object
-                                                              // æ‰€è¯»å¯¹è±¡ä¸ºåªå†™å±æ€§
+                                                              // Ëù¶Á¶ÔÏóÎªÖ»Ğ´ÊôĞÔ
    //read data from memory (processor specific code)
-   // ä»å­˜å‚¨å™¨è¯»æ•°æ®ï¼ˆæ§åˆ¶å™¨ç‰¹å®šä»£ç ï¼‰
+   // ´Ó´æ´¢Æ÷¶ÁÊı¾İ£¨¿ØÖÆÆ÷ÌØ¶¨´úÂë£©
    if((unsigned int)pODE->pData>=0x1000 && (pODE->attribute&ATTR_ROM)){
       CO_DISABLE_ALL();
       memcpypgm2ram(pBuff, pODE->pData, pODE->length);
@@ -628,7 +629,7 @@ unsigned long CO_OD_Read(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsign
       CO_ENABLE_ALL();
    }
    else return 0x06040047L;  //General internal incompatibility in the device
-                              // è®¾å¤‡å†…éƒ¨ä¸å…¼å®¹
+                              // Éè±¸ÄÚ²¿²»¼æÈİ
    return 0;
 }
 
@@ -638,36 +639,36 @@ unsigned long CO_OD_Read(ROM CO_objectDictionaryEntry* pODE, void* pBuff, unsign
    object dictionary. Since object dictionary variables can use many types of
    memory, some code is processor specific.
 
-   CO_OD_Write - å†™å…¥å¯¹è±¡å­—å…¸
-   å±äºä¸»çº¿ç¨‹åºã€‚è¢« SDO æœåŠ¡å™¨è°ƒç”¨ï¼Œå‘å¯¹è±¡å­—å…¸å†™å…¥æ•°æ®ã€‚å› ä¸ºå¯¹è±¡å­—å…¸å˜é‡å¯ä»¥ä½¿ç”¨å¤šç§
-   å­˜å‚¨ç±»å‹ï¼Œæ•…ä»£ç æ˜¯å¤„ç†å™¨ç‰¹å®šçš„ã€‚
+   CO_OD_Write - Ğ´Èë¶ÔÏó×Öµä
+   ÊôÓÚÖ÷Ïß³ÌĞò¡£±» SDO ·şÎñÆ÷µ÷ÓÃ£¬Ïò¶ÔÏó×ÖµäĞ´ÈëÊı¾İ¡£ÒòÎª¶ÔÏó×Öµä±äÁ¿¿ÉÒÔÊ¹ÓÃ¶àÖÖ
+   ´æ´¢ÀàĞÍ£¬¹Ê´úÂëÊÇ´¦ÀíÆ÷ÌØ¶¨µÄ¡£
 
    PARAM pODE: pointer to object dictionary entry, found by CO_FindEntryInOD().
-               æŒ‡å‘å¯¹è±¡å­—å…¸æ¡ç›®çš„æŒ‡é’ˆ
+               Ö¸Ïò¶ÔÏó×ÖµäÌõÄ¿µÄÖ¸Õë
    PARAM pBuff: pointer to buffer which contains data to be written.
-                æŒ‡å‘è¢«å†™å…¥æ•°æ®ç¼“å­˜çš„æŒ‡é’ˆ
+                Ö¸Ïò±»Ğ´ÈëÊı¾İ»º´æµÄÖ¸Õë
    PARAM dataSize: Size of data in buffer.
-                   ç¼“å­˜é•¿åº¦
+                   »º´æ³¤¶È
    RETURN: 0 if success, otherwise abort code
-   è¿”å›å€¼ï¼š 0 = æˆåŠŸï¼Œå¦åˆ™è¿”å›ç»ˆæ­¢ä»£ç 
+   ·µ»ØÖµ£º 0 = ³É¹¦£¬·ñÔò·µ»ØÖÕÖ¹´úÂë
 *******************************************************************************/
 unsigned long CO_OD_Write(ROM CO_objectDictionaryEntry* pODE, void* data, unsigned char length){
    #ifdef CO_VERIFY_OD_WRITE
       unsigned long AbortCode;
    #endif
    if((pODE->attribute&0x07) == ATTR_RO || (pODE->attribute&0x07) == ATTR_CO) return 0x06010002L;   //attempt to write a read-only object
-                                                                                                    //å°è¯•å†™å…¥ä¸€ä¸ªåªè¯»å¯¹è±¡
+                                                                                                    //³¢ÊÔĞ´ÈëÒ»¸öÖ»¶Á¶ÔÏó
    if(length != pODE->length) return 0x06070010L;   //Length of service parameter does not match
-                                                    // æœåŠ¡å‚æ•°é•¿åº¦ä¸åŒ¹é…
+                                                    // ·şÎñ²ÎÊı³¤¶È²»Æ¥Åä
    #ifdef CO_VERIFY_OD_WRITE
       //verify value
-      // éªŒè¯å€¼
+      // ÑéÖ¤Öµ
       AbortCode = CO_OD_VerifyWrite(pODE, data);
       if(AbortCode) return AbortCode;
    #endif
 
    //write data to memory (processor specific code)
-   // æƒ³å­˜å‚¨å™¨å†™å…¥æ•°æ®ï¼ˆå¤„ç†å™¨ç‰¹å®šä»£ç ï¼‰
+   // Ïë´æ´¢Æ÷Ğ´ÈëÊı¾İ£¨´¦ÀíÆ÷ÌØ¶¨´úÂë£©
    //RAM data
    if((unsigned int)pODE->pData<0x1000 && (pODE->attribute&ATTR_ROM) == 0){
       CO_DISABLE_ALL();
@@ -679,16 +680,16 @@ unsigned long CO_OD_Write(ROM CO_objectDictionaryEntry* pODE, void* data, unsign
       #ifdef CO_SAVE_ROM
          CO_DISABLE_ALL();
          //following function takes ~32 miliseconds (1ms timer does not count them)
-         // ä¸‹é¢çš„å‡½æ•°éœ€è¦å ç”¨çº¦ 32 æ¯«ç§’ï¼ˆ1 ms å®šæ—¶å™¨ä¸è®¡å…¥å®ƒä»¬ï¼‰
+         // ÏÂÃæµÄº¯ÊıĞèÒªÕ¼ÓÃÔ¼ 32 ºÁÃë£¨1 ms ¶¨Ê±Æ÷²»¼ÆÈëËüÃÇ£©
          memcpyram2flash((rom void*)pODE->pData, data, length);
          CO_ENABLE_ALL();
       #else
          return 0x06010002L;     //Attempt to write a read only object
-                                 // å°è¯•å†™å…¥ä¸€ä¸ªåªè¯»å¯¹è±¡
+                                 // ³¢ÊÔĞ´ÈëÒ»¸öÖ»¶Á¶ÔÏó
       #endif
    }
    else return 0x06040047L;  //General internal incompatibility in the device
-                              // è®¾å¤‡å†…éƒ¨ä¸å…¼å®¹
+                              // Éè±¸ÄÚ²¿²»¼æÈİ
    return 0;
 }
 

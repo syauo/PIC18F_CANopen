@@ -29,14 +29,14 @@
 #define _CO_DRIVER_H
 
 #include <p18cxxx.h>       //processor header file
-                           //å¤„ç†å™¨å¤´æ–‡ä»¶
+                           //´¦ÀíÆ÷Í·ÎÄ¼ş
 
 /*******************************************************************************
    Processor specific hardware macros
-   å¤„ç†å™¨ç‰¹å®šçš„ç¡¬ä»¶é…ç½®å®
+   ´¦ÀíÆ÷ÌØ¶¨µÄÓ²¼şÅäÖÃ??
 *******************************************************************************/
    //Oscilator frequency, mode PLLx4 can be used (example: 32MHz frequency with 8MHz Quartz - set 32)
-   //æ™¶æŒ¯é¢‘ç‡ï¼Œå¯ä»¥ä½¿ç”¨PLLx4æ¨¡å¼ï¼ˆå¦‚ï¼š8MHz æ™¶æŒ¯è®¾ç½® PLLx4 åå¾—åˆ° 32MHzï¼‰
+   //¾§ÕñÆµÂÊ£¬¿ÉÒÔÊ¹ÓÃPLLx4Ä£Ê½£¨Èç??MHz ¾§ÕñÉèÖÃ PLLx4 ºóµÃ??32MHz??
    #ifndef CO_OSCILATOR_FREQ
       #define CO_OSCILATOR_FREQ     20 //(4, 8, 16, 20, 24, 32 or 40)
    #endif
@@ -47,17 +47,17 @@
    }
 
    #ifndef PCB_DISABLE_CAN_LEDS
-      //Green RUN led         ç»¿è‰² RUN LED
-      #define PCB_RUN_LED_INIT()    {TRISBbits.TRISB1 = 0; PORTBbits.RB1 = 0;}
-      #define PCB_RUN_LED(i)        PORTBbits.RB1 = i
-      //Red ERROR led         çº¢è‰² ERROR LED
-      #define PCB_ERROR_LED_INIT()  {TRISBbits.TRISB4 = 0; PORTBbits.RB4 = 0;}
-      #define PCB_ERROR_LED(i)      PORTBbits.RB4 = i
+      //Green RUN led         ÂÌÉ« RUN LED
+      #define PCB_RUN_LED_INIT()    {TRISBbits.TRISB1 = 0; LATBbits.LATB1 = 0;}
+      #define PCB_RUN_LED(i)        LATBbits.LATB1 = i //PORTEbits.RE1 = i
+      //Red ERROR led         ºìÉ« ERROR LED
+      #define PCB_ERROR_LED_INIT()  {TRISBbits.TRISB4 = 0; LATBbits.LATB4 = 0;}
+      #define PCB_ERROR_LED(i)      LATBbits.LATB4 = i //PORTEbits.RE2 = i
    #endif
 
 /*******************************************************************************
    Processor specific software macros
-   å¤„ç†å™¨ç‰¹å®šçš„è½¯ä»¶é…ç½®å®
+   ´¦ÀíÆ÷ÌØ¶¨µÄÈí¼şÅäÖÃ??
 *******************************************************************************/
    //qualifier for variables located in read-only memory (C18 compiler put those variables in
    //flash memory space (rom qualifier). If located in RAM, 'const' should be used instead of 'rom')
@@ -65,16 +65,16 @@
    //base attribute is ATTR_RW or ATTR_WO, variable can be changed via CAN network (with
    //writing to flash memory space in PIC18Fxxx microcontroller)
    /**
-    * ä½äºåªè¯»å­˜å‚¨å™¨ä¸­çš„å˜é‡çš„é™å®šç¬¦ï¼ˆC18 ç¼–è¯‘å™¨å°†è¿™äº›å˜é‡æ”¾åœ¨ flash ç©ºé—´ä¸­ï¼ˆrom é™å®šç¬¦ï¼‰ï¼Œ
-    * å¦‚æœä½äºRAMä¸­ï¼Œåº”ä½¿ç”¨'const'æ¥ä»£æ›¿'rom'ï¼‰ã€‚å¯¹è±¡å­—å…¸ä¸­çš„ ROM å˜é‡å¿…é¡»è¿½åŠ  ATTR_ROM å±æ€§ã€‚
-    * å¦‚æœ base å±æ€§ä¸º ATTR_RW æˆ– ATTR_WOï¼Œåˆ™å¯é€šè¿‡ CAN ç½‘ç»œæ›´æ”¹å˜é‡ï¼ˆå†™å…¥ PIC18Fxxx å¾®æ§åˆ¶å™¨
-    * ä¸­çš„é—ªå­˜ç©ºé—´ï¼‰
+    * Î»ÓÚÖ»¶Á´æ´¢Æ÷ÖĞµÄ±äÁ¿µÄÏŞ¶¨·û£¨C18 ±àÒëÆ÷½«ÕâĞ©±äÁ¿·ÅÔÚ flash ¿Õ¼äÖĞ£¨rom ÏŞ¶¨·û£©??
+    * Èç¹ûÎ»ÓÚRAMÖĞ£¬Ó¦Ê¹??const'À´´ú??rom'£©¡£¶ÔÏó×ÖµäÖĞ??ROM ±äÁ¿±ØĞë×·¼Ó ATTR_ROM ÊôĞÔ??
+    * Èç¹û base ÊôĞÔÎª ATTR_RW ??ATTR_WO£¬Ôò¿ÉÍ¨¹ı CAN ÍøÂç¸ü¸Ä±äÁ¿£¨Ğ´??PIC18Fxxx Î¢¿ØÖÆÆ÷
+    * ÖĞµÄÉÁ´æ¿Õ¼ä??
     */
    
    #define ROM             rom
 
-   //default qualifiers and types   é»˜è®¤çš„é™å®šç¬¦å’Œç±»å‹
-   // åœ¨ PIC18F ä¸Šï¼Œæœ¬åœ°å˜é‡å¦‚æœæ˜¯é™æ€çš„è¯æ›´å¿«
+   //default qualifiers and types   Ä¬ÈÏµÄÏŞ¶¨·ûºÍÀà??
+   // ??PIC18F ÉÏ£¬±¾µØ±äÁ¿Èç¹ûÊÇ¾²Ì¬µÄ»°¸ü??
    #define CO_DEFAULT_SPEC static         //on PIC18F local variables are faster if static
    #define CO_DEFAULT_TYPE unsigned char  //for 8-bit microcontroller, for 16-bit use unsigned int
    #define CO_DEFAULT_TYPE_SIZE 0xFF      //for 8-bit microcontroller, for 16-bit use 0xFFFF
@@ -82,51 +82,51 @@
 
    //Macro is used for writing CAN-ID and RTR bit into the identifier in CO_TXCAN or CO_RXCAN array.
    //Identifier is aligned with hardware registers. RTR must be 0 or 1.
-   // ç”¨ä»¥å°† CAN-ID å’Œ RTR ä½å†™å…¥ä½äº CO_TXCAN æˆ– CO_RXCAN æ•°ç»„çš„æ ‡è¯†ç¬¦å†…
-   // æ ‡è¯†ç¬¦ä¸ç¡¬ä»¶å¯„å­˜å™¨å¯¹é½ï¼ŒRTR ä½å¿…é¡»ä¸º 0 æˆ– 1
+   // ÓÃÒÔ??CAN-ID ??RTR Î»Ğ´ÈëÎ»??CO_TXCAN ??CO_RXCAN Êı×éµÄ±êÊ¶·û??
+   // ±êÊ¶·ûÓëÓ²¼ş¼Ä´æÆ÷¶ÔÆë£¬RTR Î»±ØĞëÎª 0 ??1
    #define CO_IDENT_WRITE(CobId, RTR)            (((CobId)<<5) | ((RTR)<<4))
-   // åå‡½æ•° ç”¨ä»¥è¯»å– COB-ID
+   // ·´º¯??ÓÃÒÔ¶ÁÈ¡ COB-ID
    #define CO_IDENT_READ_COB(CanMessage_Ident)   ((CanMessage_Ident.WORD[0]) >> 5)  //inverse function, read COB-ID
-   // åå‡½æ•° ç”¨ä»¥è¯»å– RTR ä½
+   // ·´º¯??ÓÃÒÔ¶ÁÈ¡ RTR ??
    #define CO_IDENT_READ_RTR(CanMessage_Ident)   (CanMessage_Ident.BYTEbits[0].bit3)//inverse function, read RTR
 
    //reset microcontroller
-   // å¤ä½æ§åˆ¶å™¨
+   // ¸´Î»¿ØÖÆ??
    #define CO_Reset()  Reset()
 
    //enable, disable interrupts - VERY IMPORTANT SECTION
-   //ä½¿èƒ½ã€å¤±èƒ½ä¸­æ–­ â€”â€” éå¸¸é‡è¦
+   //Ê¹ÄÜ¡¢Ê§ÄÜÖĞ??¡ª??·Ç³£ÖØÒª
       //disable/enable all interrupts from mainline procedure
-      // å¤±èƒ½ã€ä½¿èƒ½æ‰€æœ‰ä¸­æ–­ï¼Œä»ä¸»çº¿ç¨‹åºä¸­
+      // Ê§ÄÜ¡¢Ê¹ÄÜËùÓĞÖĞ¶Ï£¬´ÓÖ÷Ïß³ÌĞòÖĞ
       #define CO_DISABLE_ALL()            INTCONbits.GIEH = 0
       #define CO_ENABLE_ALL()             INTCONbits.GIEH = 1
       //disable/enable timer interrupt from mainline procedure
-      // å¤±èƒ½ã€ä½¿èƒ½å®šæ—¶å™¨ä¸­æ–­ï¼Œä»ä¸»çº¿ç¨‹åºä¸­
+      // Ê§ÄÜ¡¢Ê¹ÄÜ¶¨Ê±Æ÷ÖĞ¶Ï£¬´ÓÖ÷Ïß³ÌĞò??
       #define CO_DISABLE_TMR()            INTCONbits.GIEL = 0
       #define CO_ENABLE_TMR()             INTCONbits.GIEL = 1
       //disable/enable CANtx interrupt from mainline procedure
-      // å¤±èƒ½ã€ä½¿èƒ½CANå‘é€ä¸­æ–­ï¼Œä»ä¸»çº¿ç¨‹åºä¸­
+      // Ê§ÄÜ¡¢Ê¹ÄÜCAN·¢ËÍÖĞ¶Ï£¬´ÓÖ÷Ïß³ÌĞòÖĞ
       #define CO_DISABLE_CANTX()          INTCONbits.GIEL = 0
       #define CO_ENABLE_CANTX()           INTCONbits.GIEL = 1
       //disable/enable CANtx interrupt from timer procedure
-      // å¤±èƒ½ã€ä½¿èƒ½CANå‘é€ä¸­æ–­ï¼Œä»å®šæ—¶å™¨ç¨‹åºä¸­
-      // å› ä¸ºå‘é€ä¸­æ–­ä¸å®šæ—¶å™¨ä¸­æ–­ä½¿ç”¨ç›¸åŒçš„ç­‰çº§ï¼Œæ‰€ä»¥è¿™é‡Œæ˜¯ç©ºçš„
+      // Ê§ÄÜ¡¢Ê¹ÄÜCAN·¢ËÍÖĞ¶Ï£¬´Ó¶¨Ê±Æ÷³ÌĞò??
+      // ÒòÎª·¢ËÍÖĞ¶ÏÓë¶¨Ê±Æ÷ÖĞ¶ÏÊ¹ÓÃÏàÍ¬µÄµÈ¼¶£¬ËùÒÔÕâÀïÊÇ¿ÕµÄ
       #define CO_DISABLE_CANTX_TMR()      //nothing, beacuse same level interrupt is used for timer and CANtx
       #define CO_ENABLE_CANTX_TMR()
       //disable/enable CANrx interrupt from mainline procedure
-      // å¤±èƒ½ã€ä½¿èƒ½CANæ¥æ”¶ä¸­æ–­ï¼Œä»ä¸»çº¿ç¨‹åºä¸­
+      // Ê§ÄÜ¡¢Ê¹ÄÜCAN½ÓÊÕÖĞ¶Ï£¬´ÓÖ÷Ïß³ÌĞò??
       #define CO_DISABLE_CANRX()          INTCONbits.GIEH = 0
       #define CO_ENABLE_CANRX()           INTCONbits.GIEH = 1
       //disable/enable CANrx interrupt from timer procedure
-      // ä½¿èƒ½ã€ä½¿èƒ½CANæ¥æ”¶ä¸­æ–­ï¼Œä»å®šæ—¶å™¨ç¨‹åºä¸­
+      // Ê¹ÄÜ¡¢Ê¹ÄÜCAN½ÓÊÕÖĞ¶Ï£¬´Ó¶¨Ê±Æ÷³ÌĞòÖĞ
       #define CO_DISABLE_CANRX_TMR()      INTCONbits.GIEH = 0
       #define CO_ENABLE_CANRX_TMR()       INTCONbits.GIEH = 1
 
    //Read Transmit Buffer Status
-   // è¯»å–å‘é€ç¼“å†²çŠ¶æ€
+   // ¶ÁÈ¡·¢ËÍ»º³å×´??
       #define CO_CANTX_BUFFER_FREE()      (TXB0CONbits.TXREQ == 0)
    //Copy message to CAN buffers
-   // å¤åˆ¶æ¶ˆæ¯åˆ° CAN å‘é€ç¼“å†²å™¨
+   // ¸´ÖÆÏûÏ¢??CAN ·¢ËÍ»º³åÆ÷
       #define CO_TXCAN_COPY_TO_BUFFERS(INDEX){                                         \
          /*put address in buffers, set standard identifier*/                           \
          TXB0SIDL = CO_TXCAN[INDEX].Ident.BYTE[0];                                     \

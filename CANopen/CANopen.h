@@ -31,22 +31,22 @@
 #include "CO_errors.h"
 
 /*******************************************************************************
-   CANopen NMT constants    NMT å¸¸é‡
+   CANopen NMT constants    NMT ³£Á¿
 *******************************************************************************/
-   //States   çŠ¶æ€
-   #define NMT_INITIALIZING    0      // åˆå§‹åŒ–
-   #define NMT_PRE_OPERATIONAL 127    // é¢„è¿è¡Œ
-   #define NMT_OPERATIONAL     5      // è¿è¡Œ
-   #define NMT_STOPPED         4      // åœæ­¢
-   //commands å‘½ä»¤
-   #define NMT_ENTER_OPERATIONAL       1    // è¿›å…¥è¿è¡ŒçŠ¶æ€å‘½ä»¤
-   #define NMT_ENTER_STOPPED           2    // åœæ­¢å‘½ä»¤
-   #define NMT_ENTER_PRE_OPERATIONAL   128  // è¿›å…¥é¢„è¿è¡ŒçŠ¶æ€
-   #define NMT_RESET_NODE              129  // å¤ä½èŠ‚ç‚¹
-   #define NMT_RESET_COMMUNICATION     130  // å¤ä½é€šä¿¡
+   //States   ×´Ì¬
+   #define NMT_INITIALIZING    0      // ³õÊ¼»¯
+   #define NMT_PRE_OPERATIONAL 127    // Ô¤ÔËĞĞ
+   #define NMT_OPERATIONAL     5      // ÔËĞĞ
+   #define NMT_STOPPED         4      // Í£Ö¹
+   //commands ÃüÁî
+   #define NMT_ENTER_OPERATIONAL       1    // ½øÈëÔËĞĞ×´Ì¬ÃüÁî
+   #define NMT_ENTER_STOPPED           2    // Í£Ö¹ÃüÁî
+   #define NMT_ENTER_PRE_OPERATIONAL   128  // ½øÈëÔ¤ÔËĞĞ×´Ì¬
+   #define NMT_RESET_NODE              129  // ¸´Î»½Úµã
+   #define NMT_RESET_COMMUNICATION     130  // ¸´Î»Í¨ĞÅ
 
 /*******************************************************************************
-   COB-IDs in CANopen   é€šä¿¡å¯¹è±¡ID é¢„å®šä¹‰è¿æ¥é›†
+   COB-IDs in CANopen   Í¨ĞÅ¶ÔÏóID Ô¤¶¨ÒåÁ¬½Ó¼¯
 *******************************************************************************/
    #define CAN_ID_NMT_SERVICE  0x000
    #define CAN_ID_SYNC         0x080
@@ -65,9 +65,9 @@
    #define CAN_ID_HEARTBEAT    0x700   // + NODE ID
 
 /*******************************************************************************
-   Universal structures and Macros for data access  ç”¨äºæ•°æ®è®¿é—®çš„é€šç”¨ç»“æ„ä½“å’Œå®
+   Universal structures and Macros for data access  ÓÃÓÚÊı¾İ·ÃÎÊµÄÍ¨ÓÃ½á¹¹ÌåºÍºê
 *******************************************************************************/
-/* å…«ä½ */
+/* °ËÎ» */
    typedef struct{
       unsigned int bit0 :1;
       unsigned int bit1 :1;
@@ -79,20 +79,20 @@
       unsigned int bit7 :1;
       }tData8bits;
 
-/* å•å­—èŠ‚ */
+/* µ¥×Ö½Ú */
    typedef union{
       unsigned char BYTE[1];
       tData8bits    BYTEbits[1];
       }tData1byte;
 
-/* åŒå­—èŠ‚ */
+/* Ë«×Ö½Ú */
    typedef union{
       unsigned int  WORD[1];
       unsigned char BYTE[2];
       tData8bits    BYTEbits[2];
       }tData2bytes;
 
-/* å››å­—èŠ‚ */
+/* ËÄ×Ö½Ú */
    typedef union{
       unsigned long DWORD[1];
       unsigned int  WORD[2];
@@ -100,7 +100,7 @@
       tData8bits    BYTEbits[4];
       }tData4bytes;//0x 12 34 56 78
 
-/* å…«å­—èŠ‚ */
+/* °Ë×Ö½Ú */
    typedef union{
       unsigned long DWORD[2];
       unsigned int  WORD[4];
@@ -110,7 +110,7 @@
 
 /*******************************************************************************
    Usefull bits for implementation status leds (variable can be read)
-   å®ç°ledçŠ¶æ€çš„ä½ï¼ˆå¯ä»¥è¯»å–å˜é‡ï¼‰
+   ÊµÏÖled×´Ì¬µÄÎ»£¨¿ÉÒÔ¶ÁÈ¡±äÁ¿£©
 *******************************************************************************/
    typedef struct {
       unsigned int On          :1;
@@ -124,20 +124,20 @@
    extern volatile CO_StatusLED_struct CO_StatusLED;
 
 /*******************************************************************************
-   Object Dictionary      å¯¹è±¡å­—å…¸
+   Object Dictionary      ¶ÔÏó×Öµä
 *******************************************************************************/
    //One entry in Object Dictionary
-   // å¯¹è±¡å­—å…¸ä¸­çš„ä¸€ä¸ªæ¡ç›®
+   // ¶ÔÏó×ÖµäÖĞµÄÒ»¸öÌõÄ¿
    typedef struct {
-      unsigned int   index;               // Index of OD entry    ODæ¡ç›®ç´¢å¼•
-      unsigned char  subindex;            // Subindex of OD entry ODæ¡ç›®å­ç´¢å¼•
-      unsigned char  attribute;           // Attributes           å±æ€§
-      unsigned char  length;              // Data length in bytes æ•°æ®é•¿åº¦nå­—èŠ‚
-      ROM void*      pData;               // POINTER to data (RAM or ROM memory) æŒ‡å‘çš„æ•°æ®
+      unsigned int   index;               // Index of OD entry    ODÌõÄ¿Ë÷Òı
+      unsigned char  subindex;            // Subindex of OD entry ODÌõÄ¿×ÓË÷Òı
+      unsigned char  attribute;           // Attributes           ÊôĞÔ
+      unsigned char  length;              // Data length in bytes Êı¾İ³¤¶Èn×Ö½Ú
+      ROM void*      pData;               // POINTER to data (RAM or ROM memory) Ö¸ÏòµÄÊı¾İ
    } CO_objectDictionaryEntry;
 
    //access attributes for object dictionary
-   // å¯¹è±¡å­—å…¸çš„è®¿é—®å±æ€§
+   // ¶ÔÏó×ÖµäµÄ·ÃÎÊÊôĞÔ
    #define ATTR_RW      0x00    //attribute: read/write
    #define ATTR_WO      0x01    //attribute: write/only
    #define ATTR_RO      0x02    //attribute: read/only (TPDO may read from that entry)
@@ -147,20 +147,20 @@
    #define ATTR_RES1    0x06    //attribute: Reserved 1
    #define ATTR_RES2    0x07    //attribute: Reserved 2
    //additional attributes, must be '|' with access attributes
-   // é™„åŠ å±æ€§ï¼Œå¿…é¡»ä¸è®¿é—®å±æ€§ã€|ã€
+   // ¸½¼ÓÊôĞÔ£¬±ØĞëÓë·ÃÎÊÊôĞÔ¡º|¡»
    #define ATTR_RES3    0x80    //attribute: Reserved 3
    #define ATTR_ROM     0x10    //attribute: ROM variable is saved in retentive memory
    #define ATTR_ADD_ID  0x20    //attribute: add NODE-ID to variable value (sizeof(variable)<=4)
 
-   //Object Dictionary å¯¹è±¡å­—å…¸
+   //Object Dictionary ¶ÔÏó×Öµä
    extern ROM CO_objectDictionaryEntry CO_OD[];
-   //Number of Elements in Object Dictionary  å¯¹è±¡å­—å…¸ä¸­çš„å…ƒç´ ä¸ªæ•°
+   //Number of Elements in Object Dictionary  ¶ÔÏó×ÖµäÖĞµÄÔªËØ¸öÊı
    extern ROM unsigned int CO_OD_NoOfElements;
-   //Function for search Object Dictionary    æŸ¥æ‰¾å¯¹è±¡å­—å…¸å‡½æ•°
+   //Function for search Object Dictionary    ²éÕÒ¶ÔÏó×Öµäº¯Êı
    ROM CO_objectDictionaryEntry* CO_FindEntryInOD(unsigned int index, unsigned char subindex);
 
 /*******************************************************************************
-   CAN message Structure    CAN æ¶ˆæ¯ç»“æ„ä½“
+   CAN message Structure    CAN ÏûÏ¢½á¹¹Ìå
 *******************************************************************************/
    typedef struct{
       tData2bytes  Ident;        //Can message identifier aligned with hardware registers
@@ -178,9 +178,9 @@
    }CO_CanMessage;
 
 /*******************************************************************************
-   Main variables for storing CAN messages  å­˜å‚¨ CAN æ¶ˆæ¯çš„ä¸»è¦å˜é‡
+   Main variables for storing CAN messages  ´æ´¢ CAN ÏûÏ¢µÄÖ÷Òª±äÁ¿
 *******************************************************************************/
-   extern volatile CO_CanMessage CO_RXCAN[];                         //Receive  æ¥æ”¶æ¶ˆæ¯
+   extern volatile CO_CanMessage CO_RXCAN[];                         //Receive  ½ÓÊÕÏûÏ¢
    #define CO_RXCAN_NMT       0                                      //index for NMT message
    #define CO_RXCAN_SYNC      1                                      //index for SYNC message
    #define CO_RXCAN_RPDO     (CO_RXCAN_SYNC+CO_NO_SYNC)              //start index for RPDO messages
@@ -189,7 +189,7 @@
    #define CO_RXCAN_CONS_HB  (CO_RXCAN_SDO_CLI+CO_NO_SDO_CLIENT)     //start index for Heartbeat Consumer messages
    #define CO_RXCAN_USER     (CO_RXCAN_CONS_HB+CO_NO_CONS_HEARTBEAT) //start index for user defined CANrx messages
 
-   extern volatile CO_CanMessage CO_TXCAN[];                         //Transmit å‘é€æ¶ˆæ¯
+   extern volatile CO_CanMessage CO_TXCAN[];                         //Transmit ·¢ËÍÏûÏ¢
    #define CO_TXCAN_SYNC      0                                      //index for SYNC message
    #define CO_TXCAN_EMERG    (CO_TXCAN_SYNC+CO_NO_SYNC)              //index for Emergency message
    #define CO_TXCAN_TPDO     (CO_TXCAN_EMERG+CO_NO_EMERGENCY)        //start index for TPDO messages
@@ -199,40 +199,40 @@
    #define CO_TXCAN_USER     (CO_TXCAN_HB+1)                         //start index for user defined CANtx messages
 
    //total number of received/transmited CAN messages
-   // æ¥æ”¶ï¼å‘é€CANæ¶ˆæ¯çš„æ€»ä¸ªæ•°
+   // ½ÓÊÕ£¯·¢ËÍCANÏûÏ¢µÄ×Ü¸öÊı
    #define CO_RXCAN_NO_MSGS (1+CO_NO_SYNC+CO_NO_RPDO+CO_NO_SDO_SERVER+CO_NO_SDO_CLIENT+CO_NO_CONS_HEARTBEAT+CO_NO_USR_CAN_RX)
    #define CO_TXCAN_NO_MSGS (CO_NO_SYNC+CO_NO_EMERGENCY+CO_NO_TPDO+CO_NO_SDO_SERVER+CO_NO_SDO_CLIENT+1+CO_NO_USR_CAN_TX)
 
 /*******************************************************************************
    Macros and Variables from CO_stack.c useful for user program
-   CO_stack.c ä¸­ç”¨äºç”¨æˆ·ç¨‹åºçš„å˜é‡å’Œå®
+   CO_stack.c ÖĞÓÃÓÚÓÃ»§³ÌĞòµÄ±äÁ¿ºÍºê
 *******************************************************************************/
    extern unsigned char CO_NodeID;                    //CANopen nodeID
-   extern unsigned char CO_BitRate;                   //CANopen Bit rate  æ¯”ç‰¹ç‡
-   extern volatile unsigned char CO_NMToperatingState;//Operating state of this node  è¯¥èŠ‚ç‚¹è¿è¡ŒçŠ¶æ€
+   extern unsigned char CO_BitRate;                   //CANopen Bit rate  ±ÈÌØÂÊ
+   extern volatile unsigned char CO_NMToperatingState;//Operating state of this node  ¸Ã½ÚµãÔËĞĞ×´Ì¬
 
    #if CO_NO_SYNC > 0
-      // åœ¨ SYNC æ¶ˆæ¯åï¼Œå˜é‡è‡ªå¢
+      // ÔÚ SYNC ÏûÏ¢ºó£¬±äÁ¿×ÔÔö
       extern volatile unsigned int CO_SYNCcounter;       //variable is incremented after SYNC message
-      // å˜é‡æ¯æ¯«ç§’è‡ªå¢ï¼ŒSYNC æ¶ˆæ¯åæ¸…é›¶
+      // ±äÁ¿Ã¿ºÁÃë×ÔÔö£¬SYNC ÏûÏ¢ºóÇåÁã
       extern volatile unsigned int CO_SYNCtime;          //variable is incremented every 1ms, after SYNC message it is set to 0
    #endif
 
- /*PDO Data (type tData8bytes)    PDO æ•°æ®ï¼ˆç±»å‹ tData8bytes å…«å­—èŠ‚ï¼‰*/
-   // æ¥æ”¶
+ /*PDO Data (type tData8bytes)    PDO Êı¾İ£¨ÀàĞÍ tData8bytes °Ë×Ö½Ú£©*/
+   // ½ÓÊÕ
    #if CO_NO_RPDO > 0
       #define CO_RPDO(i)            CO_RXCAN[CO_RXCAN_RPDO+i].Data            //(0 <= i < CO_NO_RPDO)
       #define CO_RPDO_New(i)        CO_RXCAN[CO_RXCAN_RPDO+i].NewMsg
    #endif
 
-   // å‘é€
+   // ·¢ËÍ
    #if CO_NO_TPDO > 0
       #define CO_TPDO(i)               CO_TXCAN[CO_TXCAN_TPDO+i].Data            //(0 <= i < CO_NO_TPDO)
    #endif
 
  /*Heartbeat consumer - operating state of monitored nodes (type unsigned char)
-   å¿ƒè·³æ¶ˆè´¹è€… - è¢«ç›‘æ§èŠ‚ç‚¹çš„è¿è¡ŒçŠ¶æ€ ï¼ˆç±»å‹ unsigned charï¼‰*/
-   // å¦‚æœæ²¡æœ‰è¢«ç›‘æ§èŠ‚ç‚¹ï¼Œå˜é‡ä»æ˜¯æ­£ç¡®çš„
+   ĞÄÌøÏû·ÑÕß - ±»¼à¿Ø½ÚµãµÄÔËĞĞ×´Ì¬ £¨ÀàĞÍ unsigned char£©*/
+   // Èç¹ûÃ»ÓĞ±»¼à¿Ø½Úµã£¬±äÁ¿ÈÔÊÇÕıÈ·µÄ
    extern volatile unsigned char CO_HBcons_AllMonitoredOperational;//if no monitored nodes, variable is still true
    #if CO_NO_CONS_HEARTBEAT > 0
       #define CO_HBcons_NMTstate(i)    CO_RXCAN[CO_RXCAN_CONS_HB+i].Data.BYTE[1] //(0 <= i < CO_NO_CONS_HEARTBEAT)
@@ -240,24 +240,24 @@
 
 /*******************************************************************************
    Functions for sending messages directly
-   ç”¨äºç›´æ¥å‘é€æ¶ˆæ¯çš„å‡½æ•°
+   ÓÃÓÚÖ±½Ó·¢ËÍÏûÏ¢µÄº¯Êı
 *******************************************************************************/
    //Send CAN message (can be called from mainline or timer interrupt)
-   // å‘é€ CAN æ¶ˆæ¯ï¼ˆå¯ä»¥åœ¨ä¸»çº¿ç¨‹åºæˆ–å®šæ—¶å™¨ä¸­æ–­ä¸­è°ƒç”¨ï¼‰
+   // ·¢ËÍ CAN ÏûÏ¢£¨¿ÉÒÔÔÚÖ÷Ïß³ÌĞò»ò¶¨Ê±Æ÷ÖĞ¶ÏÖĞµ÷ÓÃ£©
    //   INPUT:   Index - index of CO_TXCAN array to be send
-   //                    è¦å‘é€çš„ CO_TXCAN æ•°ç»„ç´¢å¼•
+   //                    Òª·¢ËÍµÄ CO_TXCAN Êı×éË÷Òı
    //   OUTPUT:  0 = success, 1 = error, previous message was not sent
    char CO_TXCANsend(unsigned int index);
 
    //Send TPDO (can be called from mainline or timer interrupt)
-   // å‘é€ TPDOï¼ˆå¯ä»¥åœ¨ä¸»çº¿ç¨‹åºæˆ–å®šæ—¶å™¨ä¸­æ–­ä¸­è°ƒç”¨ï¼‰
+   // ·¢ËÍ TPDO£¨¿ÉÒÔÔÚÖ÷Ïß³ÌĞò»ò¶¨Ê±Æ÷ÖĞ¶ÏÖĞµ÷ÓÃ£©
    //   INPUT:   Index - index of PDO to be send (0 = first TPDO)
-   //                    è¦å‘é€çš„PDOçš„ç´¢å¼•ï¼ˆ0 = ç¬¬ä¸€ä¸ªTPDOï¼‰
+   //                    Òª·¢ËÍµÄPDOµÄË÷Òı£¨0 = µÚÒ»¸öTPDO£©
    //   OUTPUT:  0 = success, 1 = error, previous message was not sent
    char CO_TPDOsend(unsigned int index);
 
 /*******************************************************************************
-   Functions for SDO client            SDO å®¢æˆ·ç«¯çš„å‡½æ•°
+   Functions for SDO client            SDO ¿Í»§¶ËµÄº¯Êı
 *******************************************************************************/
    #if CO_NO_SDO_CLIENT > 0
       char CO_SDOclient_setup(unsigned char channel, unsigned long COB_ID_Client_to_Server,

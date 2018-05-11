@@ -30,7 +30,7 @@
 
 /*
 This function copies contents of RAM variable into Flash program
-memory space. It's use can be dangerous, since it may “reprogram”
+memory space. It's use can be dangerous, since it may ¡°reprogram¡±
 the microcontroller if wrong used.It is tested to work with PIC18Fxx8.
 Function takes about 10 ms, because writing to flash is slow. If reset
 occurs between erasing and writing new values, up to 64 bytes of memory
